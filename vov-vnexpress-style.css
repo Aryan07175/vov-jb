@@ -1,0 +1,1742 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* ─────────────────────────────────────────────────────────────────────
+   1. CSS CUSTOM PROPERTIES (Design tokens)
+──────────────────────────────────────────────────────────────────────── */
+:root {
+  --vne-red:        #e03332;
+  --vne-red-dark:   #c0392b;
+  --vne-red-light:  #f8e7e7;
+  --vne-black:      #1a1a1a;
+  --vne-text:       #333333;
+  --vne-text-sub:   #666666;
+  --vne-text-meta:  #999999;
+  --vne-bg:         #f5f5f5;
+  --vne-bg-white:   #ffffff;
+  --vne-border:     #e9e9e9;
+  --vne-border-mid: #d5d5d5;
+  --vne-nav-height: 40px;
+  --vne-container:  1200px;
+  --vne-font:       'Roboto', Arial, 'Helvetica Neue', sans-serif;
+  --vne-font-serif: Georgia, 'Times New Roman', serif;
+  --vne-radius:     2px;
+  --vne-shadow:     0 1px 3px rgba(0,0,0,0.1);
+  --vne-shadow-md:  0 2px 8px rgba(0,0,0,0.12);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   2. GLOBAL RESET & BASE
+──────────────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--vne-bg) !important;
+  color: var(--vne-text) !important;
+  font-family: var(--vne-font) !important;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 !important;
+}
+
+body.path-frontpage {
+  background-color: var(--vne-bg) !important;
+}
+
+/* Base link style */
+a {
+  color: var(--vne-text) !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--vne-red) !important;
+}
+
+/* Reset heading margins */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--vne-font) !important;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 0;
+  color: var(--vne-black);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   3. LAYOUT & CONTAINER
+   VNExpress uses a centered 1200px container with 16px side padding.
+──────────────────────────────────────────────────────────────────────── */
+.container,
+.container-fluid .container {
+  max-width: var(--vne-container) !important;
+  margin: 0 auto !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  width: 100%;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   4. CHANNEL TOP BAR  (VOV1, VOV2… channels row)
+   VNExpress equivalent: thin top utility bar with links.
+   Map: .nav-channel → VNExpress .header-topbar style
+──────────────────────────────────────────────────────────────────────── */
+.bg-light.nav-channel {
+  background-color: var(--vne-bg-white) !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  font-size: 12px;
+}
+
+.bg-light.nav-channel .nav-item .nav-link {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: var(--vne-red) !important;
+  padding: 4px 8px !important;
+  border-right: 1px solid var(--vne-border) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transition: background 0.15s;
+}
+
+.bg-light.nav-channel .nav-item .nav-link:hover {
+  background: var(--vne-red-light) !important;
+  color: var(--vne-red-dark) !important;
+}
+
+.bg-light.nav-channel .nav-item:last-child .nav-link {
+  border-right: none !important;
+}
+
+/* Language scrolling strip */
+.nav-desktop a,
+.lang-track a {
+  font-size: 12px !important;
+  color: var(--vne-text-sub) !important;
+}
+
+.nav-desktop a:hover,
+.lang-track a:hover {
+  color: var(--vne-red) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   5. HEADER
+   VNExpress: White header, logo centered/left, search top-right, 
+              date/weather top-right area. Clean minimal top area.
+   Map: .vovvn-header → VNExpress header
+──────────────────────────────────────────────────────────────────────── */
+.vovvn-header {
+  background-color: var(--vne-bg-white) !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  box-shadow: none !important;
+  position: relative;
+  z-index: 100;
+}
+
+.vovvn-header .vovvn-navbar-mobile {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+/* Logo area */
+.vovvn-header .logo--image img,
+.vovvn-header .branding img {
+  height: 55px !important;
+  width: auto !important;
+}
+
+.vovvn-header .logo--image h1 {
+  margin: 0 !important;
+}
+
+/* Weather widget */
+.custom-weather .dropdown-toggle {
+  font-size: 13px !important;
+  color: var(--vne-text-sub) !important;
+  border: 1px solid var(--vne-border) !important;
+  border-radius: var(--vne-radius);
+  padding: 4px 8px !important;
+  background: var(--vne-bg) !important;
+  transition: border-color 0.15s;
+}
+
+.custom-weather .dropdown-toggle:hover {
+  border-color: var(--vne-red) !important;
+  color: var(--vne-red) !important;
+}
+
+.dropdown-menu-custom {
+  background: var(--vne-bg-white) !important;
+  border: 1px solid var(--vne-border) !important;
+  border-radius: var(--vne-radius);
+  box-shadow: var(--vne-shadow-md) !important;
+  min-width: 200px;
+}
+
+.dropdown-menu-custom .item-location {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--vne-text);
+  border-bottom: 1px solid var(--vne-border);
+  transition: background 0.12s;
+}
+
+.dropdown-menu-custom .item-location:hover {
+  background: var(--vne-bg) !important;
+  color: var(--vne-red) !important;
+}
+
+/* Weather temperature display */
+.js-weather-temp {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--vne-text-sub);
+}
+
+/* Social icons row */
+.menu-social {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--vne-bg) !important;
+  margin: 0 2px !important;
+  transition: background 0.15s, color 0.15s;
+}
+
+.menu-social:hover {
+  background: var(--vne-red) !important;
+}
+
+.menu-social .vovvn-icon {
+  color: var(--vne-text-sub) !important;
+  font-size: 14px !important;
+}
+
+.menu-social:hover .vovvn-icon {
+  color: #fff !important;
+}
+
+/* Language link */
+.language-link {
+  font-size: 13px !important;
+  color: var(--vne-text-sub) !important;
+  border: 1px solid var(--vne-border);
+  border-radius: var(--vne-radius);
+  padding: 3px 8px !important;
+  transition: all 0.15s;
+}
+
+.language-link:hover {
+  border-color: var(--vne-red) !important;
+  color: var(--vne-red) !important;
+}
+
+/* Podcast / Radio buttons in header */
+.box-podcast, .box-radio {
+  font-size: 11px !important;
+  color: var(--vne-text-sub) !important;
+  align-items: center;
+}
+
+.box-podcast img, .box-radio img {
+  width: 22px;
+  height: 22px;
+}
+
+/* Search box */
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box form {
+  display: flex !important;
+  align-items: center;
+  border: 1px solid var(--vne-border) !important;
+  border-radius: 20px !important;
+  overflow: hidden;
+  background: var(--vne-bg) !important;
+  transition: border-color 0.2s;
+}
+
+.search-box form:focus-within {
+  border-color: var(--vne-red) !important;
+  background: var(--vne-bg-white) !important;
+}
+
+.search-box .form-text.form-control {
+  border: none !important;
+  background: transparent !important;
+  padding: 6px 12px !important;
+  font-size: 13px !important;
+  width: 180px !important;
+  outline: none !important;
+  box-shadow: none !important;
+  color: var(--vne-text) !important;
+}
+
+.search-box .form-actions #edit-actions,
+.search-box #edit-actions {
+  display: flex;
+  margin: 0 !important;
+}
+
+.search-box input[type="submit"].button {
+  background: var(--vne-red) !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 6px 12px !important;
+  font-size: 12px !important;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+.search-box input[type="submit"].button:hover {
+  background: var(--vne-red-dark) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   6. MAIN NAVIGATION BAR
+   VNExpress: Red bg nav, white text items, underline on hover,
+              dropdown menus with white bg.
+   Map: .vovvn-navbar → VNExpress .header-nav
+──────────────────────────────────────────────────────────────────────── */
+.vovvn-navbar {
+  background-color: var(--vne-red) !important;
+  min-height: var(--vne-nav-height) !important;
+  border-top: none !important;
+  border-bottom: 2px solid var(--vne-red-dark) !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15) !important;
+}
+
+.vovvn-navbar .menu-container,
+.vovvn-navbar .d-none.d-xl-flex {
+  max-width: var(--vne-container);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Nav items */
+.vovvn-navbar .nav-item,
+.vovvn-navbar .navbar-nav .nav-item {
+  position: relative;
+}
+
+.vovvn-navbar .nav-link {
+  color: #fff !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  padding: 9px 11px !important;
+  line-height: 1.3 !important;
+  white-space: nowrap;
+  border-right: none !important;
+  transition: background 0.15s;
+  position: relative;
+}
+
+.vovvn-navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  height: 2px;
+  background: #fff;
+  transition: left 0.2s ease, right 0.2s ease;
+}
+
+.vovvn-navbar .nav-item:hover > .nav-link::after,
+.vovvn-navbar .nav-link:hover::after,
+.vovvn-navbar .nav-link.active::after {
+  left: 8px;
+  right: 8px;
+}
+
+.vovvn-navbar .nav-link:hover {
+  background: rgba(0,0,0,0.15) !important;
+  color: #fff !important;
+}
+
+/* Home icon nav */
+.vovvn-navbar .home-nav .nav-link,
+.vovvn-navbar .vovvn-icon-home {
+  color: #fff !important;
+  font-size: 16px !important;
+}
+
+/* Navigation icon (hamburger) */
+.vovvn-navbar .navigation-nav .nav-link {
+  color: #fff !important;
+}
+
+/* VOV Plus in nav */
+.vovvn-navbar .vov-plus-nav img {
+  height: 22px !important;
+  width: auto !important;
+}
+
+/* Dropdown submenu */
+.vovvn-navbar .navbar-nav-sub {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--vne-bg-white) !important;
+  border: 1px solid var(--vne-border) !important;
+  border-top: 2px solid var(--vne-red) !important;
+  box-shadow: var(--vne-shadow-md) !important;
+  min-width: 200px;
+  z-index: 999;
+  padding: 6px 0 !important;
+  border-radius: 0 0 var(--vne-radius) var(--vne-radius);
+}
+
+.vovvn-navbar .nav-item:hover .navbar-nav-sub {
+  display: block;
+}
+
+.vovvn-navbar .navbar-nav-sub .nav-item,
+.vovvn-navbar .navbar-nav-sub a.nav-item {
+  display: block !important;
+}
+
+.vovvn-navbar .navbar-nav-sub .nav-link {
+  color: var(--vne-text) !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  padding: 7px 16px !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  transition: background 0.12s, color 0.12s;
+}
+
+.vovvn-navbar .navbar-nav-sub .nav-link::after {
+  display: none !important;
+}
+
+.vovvn-navbar .navbar-nav-sub .nav-link:hover {
+  background: var(--vne-bg) !important;
+  color: var(--vne-red) !important;
+}
+
+.vovvn-navbar .navbar-nav-sub .nav-item:last-child .nav-link {
+  border-bottom: none !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   7. MOBILE MENU  (bottom sticky nav visible < 768px)
+──────────────────────────────────────────────────────────────────────── */
+.menu-mobile-box {
+  background: var(--vne-bg-white) !important;
+  border-top: 2px solid var(--vne-red) !important;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.menu-mobile-box::-webkit-scrollbar { display: none; }
+
+.menu-mobile-new {
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+
+.menu-mobile-new .nav-item {
+  flex-shrink: 0;
+}
+
+.menu-mobile-new .nav-link {
+  font-size: 12px !important;
+  color: var(--vne-text) !important;
+  padding: 8px 10px !important;
+  font-weight: 500 !important;
+  white-space: nowrap;
+  border-right: 1px solid var(--vne-border) !important;
+  transition: color 0.12s;
+}
+
+.menu-mobile-new .nav-link:hover,
+.menu-mobile-new .nav-item.active .nav-link {
+  color: var(--vne-red) !important;
+}
+
+.menu-mobile-new .icon-home-custom,
+.menu-mobile-new .fa-home {
+  color: var(--vne-red) !important;
+  font-size: 16px !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   8. SUB-MENU (full-width mega menu)
+   VNExpress: Uses a wide multi-column dropdown.
+──────────────────────────────────────────────────────────────────────── */
+.sub-menu {
+  background: var(--vne-bg-white) !important;
+  border-top: 3px solid var(--vne-red) !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important;
+  padding: 16px 0 !important;
+}
+
+.sub-menu .widget-title {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  margin-bottom: 8px !important;
+  padding-bottom: 6px !important;
+  border-bottom: 2px solid var(--vne-red) !important;
+}
+
+.sub-menu .widget-title a {
+  color: var(--vne-red) !important;
+}
+
+.sub-menu .navbar-item .nav-link {
+  font-size: 12.5px !important;
+  color: var(--vne-text-sub) !important;
+  padding: 3px 0 !important;
+  display: block;
+}
+
+.sub-menu .navbar-item .nav-link:hover {
+  color: var(--vne-red) !important;
+  padding-left: 4px !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   9. PAGE BODY / MAIN CONTENT WRAPPER
+──────────────────────────────────────────────────────────────────────── */
+.vovvn-body {
+  background-color: var(--vne-bg) !important;
+  padding-top: 0 !important;
+}
+
+.vovvn-body > .container {
+  padding-top: 16px !important;
+}
+
+/* Remove extra row spacing */
+.vovvn-body .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   10. ADS BLOCKS
+──────────────────────────────────────────────────────────────────────── */
+.ads-top.advertisement,
+.ads-middle.advertisement {
+  background: var(--vne-bg-white) !important;
+  border: 1px solid var(--vne-border) !important;
+  text-align: center;
+  padding: 8px !important;
+  margin-bottom: 16px !important;
+  border-radius: var(--vne-radius);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   11. HERO / HOT NEWS BLOCK
+   VNExpress: Large featured story (left 2/3) + 2-3 smaller stories (right 1/3)
+   Map: .home-events-config-block.hot_news → VNExpress hero section
+──────────────────────────────────────────────────────────────────────── */
+.home-events-config-block.hot_news {
+  background: var(--vne-bg-white) !important;
+  border-radius: var(--vne-radius) !important;
+  overflow: hidden;
+  margin-bottom: 20px !important;
+}
+
+/* Hero article — big left card */
+.home-events-config-block.hot_news .col-left .item-first .vovvn-title picture img {
+  border-radius: 0 !important;
+  display: block;
+  width: 100% !important;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.home-events-config-block.hot_news .col-left .item-first .vovvn-title:hover picture img {
+  transform: scale(1.02);
+}
+
+.home-events-config-block.hot_news .col-left .item-first .vovvn-title {
+  overflow: hidden;
+  display: block;
+}
+
+/* Hero title */
+.home-events-config-block.hot_news .col-left .item-first .card-title {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  color: var(--vne-black) !important;
+  margin: 10px 0 6px !important;
+  overflow: visible !important;
+  -webkit-box-orient: unset !important;
+  display: block !important;
+}
+
+.home-events-config-block.hot_news .col-left .item-first .card-title:hover {
+  color: var(--vne-red) !important;
+}
+
+/* Small right articles list (3 items below hero in col-right) */
+.home-events-config-block.hot_news .col-right .article-card .card-title {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  color: var(--vne-black) !important;
+  margin-bottom: 0 !important;
+}
+
+.home-events-config-block.hot_news .col-right .article-card .card-title:hover {
+  color: var(--vne-red) !important;
+}
+
+.home-events-config-block.hot_news .col-right .article-card {
+  border-bottom: 1px solid var(--vne-border) !important;
+  padding-bottom: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.home-events-config-block.hot_news .col-right .article-card:last-child {
+  border-bottom: none !important;
+}
+
+.home-events-config-block.hot_news .col-right .article-card picture img {
+  border-radius: var(--vne-radius) !important;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Bulleted article list (desktop right column list items) */
+.home-events-config-block.hot_news .articles-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-top: 1px solid var(--vne-border) !important;
+  padding-top: 8px !important;
+}
+
+.home-events-config-block.hot_news .article-list.list-item {
+  padding: 7px 0 7px 14px !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  position: relative;
+}
+
+.home-events-config-block.hot_news .article-list.list-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  background: var(--vne-red) !important;
+  border-radius: 50%;
+}
+
+.home-events-config-block.hot_news .article-list.list-item:last-child {
+  border-bottom: none !important;
+}
+
+.home-events-config-block.hot_news .article-list.list-item .link {
+  font-size: 13.5px !important;
+  line-height: 1.5 !important;
+  color: var(--vne-text) !important;
+  font-weight: 400 !important;
+}
+
+.home-events-config-block.hot_news .article-list.list-item .link:hover {
+  color: var(--vne-red) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   12. "TIN MỚI" / UPDATE NEWS BLOCK (right sidebar)
+   VNExpress: "Tin mới" = live update column on right.
+   Map: .home-events-config-block.update_news → VNExpress right latest-news
+──────────────────────────────────────────────────────────────────────── */
+.home-events-config-block.update_news {
+  background: var(--vne-bg-white) !important;
+  border-radius: var(--vne-radius) !important;
+  padding: 12px !important;
+  margin-bottom: 16px !important;
+}
+
+.home-events-config-block.update_news .home-events-config-block-title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: var(--vne-red) !important;
+  border-bottom: 2px solid var(--vne-red) !important;
+  padding-bottom: 8px !important;
+  margin-bottom: 12px !important;
+  letter-spacing: 0.5px;
+}
+
+.home-events-config-block.update_news .home-events-config-block-title a {
+  color: var(--vne-red) !important;
+}
+
+/* Article media rows (thumbnail + title) */
+.article-media.media {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0 !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+}
+
+.article-media.media:last-child {
+  border-bottom: none !important;
+}
+
+.article-media.media picture,
+.article-media.media .vovvn-title.flex-shrink-0 {
+  flex-shrink: 0 !important;
+  width: 100px !important;
+}
+
+.article-media.media picture img,
+.article-media.media .img-fluid {
+  width: 100px !important;
+  height: 64px !important;
+  object-fit: cover;
+  border-radius: var(--vne-radius) !important;
+  display: block;
+}
+
+.article-media.media .media-body {
+  flex: 1 !important;
+  min-width: 0;
+}
+
+.article-media.media .media-title {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 1.45 !important;
+  color: var(--vne-text) !important;
+  margin: 0 !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.article-media.media .media-title:hover,
+.article-media.media:hover .media-title {
+  color: var(--vne-red) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   13. TRENDING NEWS / "XU HƯỚNG ĐỌC" CAROUSEL
+   VNExpress: horizontal card carousel "Đọc nhiều"
+   Map: .home-events-config-block.trending_news → VNExpress trending bar
+──────────────────────────────────────────────────────────────────────── */
+.home-events-config-block.trending_news {
+  background: var(--vne-bg-white) !important;
+  padding: 16px 0 !important;
+  margin: 0 0 16px !important;
+  border-top: 3px solid var(--vne-red) !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+}
+
+.home-events-config-block.trending_news .home-events-config-block-title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: var(--vne-red) !important;
+  padding: 0 16px 10px !important;
+  border-bottom: none !important;
+  margin-bottom: 12px !important;
+  position: relative;
+}
+
+.home-events-config-block.trending_news .home-events-config-block-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  width: 40px;
+  height: 3px;
+  background: var(--vne-red);
+  border-radius: 2px;
+}
+
+.home-events-config-block.trending_news .carousel {
+  display: flex !important;
+  gap: 16px;
+  padding: 0 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.home-events-config-block.trending_news .carousel::-webkit-scrollbar { display: none; }
+
+.home-events-config-block.trending_news .carousel .item {
+  flex: 0 0 calc(25% - 12px) !important;
+  min-width: 200px;
+}
+
+@media (max-width: 992px) {
+  .home-events-config-block.trending_news .carousel .item {
+    flex: 0 0 calc(50% - 8px) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-events-config-block.trending_news .carousel .item {
+    flex: 0 0 calc(80%) !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   14. ARTICLE CARDS (Universal)
+   VNExpress: Clean white card, image on top, title below.
+   Map: .article-card.card → VNExpress .item-news article card
+──────────────────────────────────────────────────────────────────────── */
+.article-card.card {
+  background: var(--vne-bg-white) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.article-card.card:hover {
+  box-shadow: none !important;
+}
+
+.article-card.card picture img,
+.article-card.card .img-fluid.w-100 {
+  display: block;
+  width: 100% !important;
+  aspect-ratio: 5/3;
+  object-fit: cover;
+  border-radius: var(--vne-radius) !important;
+  transition: transform 0.3s ease;
+}
+
+.article-card.card .vovvn-title:hover picture img {
+  transform: scale(1.02);
+}
+
+.article-card.card .card-body {
+  padding: 8px 0 0 !important;
+}
+
+.article-card.card .card-title {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.45 !important;
+  color: var(--vne-black) !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  -webkit-box-orient: unset !important;
+  display: block !important;
+}
+
+.article-card.card .vovvn-title:hover .card-title,
+.article-card.card .card-title:hover {
+  color: var(--vne-red) !important;
+}
+
+/* Media type icons (video, camera) */
+.has-media-icon.zmdi-videocam,
+.has-media-icon.zmdi-camera,
+.has-media-icon.zmdi-volume-up {
+  color: var(--vne-red) !important;
+  font-size: 13px !important;
+  margin-left: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   15. CATEGORY SECTION HEADERS
+   VNExpress: Category name in bold red left side, subcategories as 
+              smaller links with pipe separators.
+   Map: .row.row-title → VNExpress category header row
+──────────────────────────────────────────────────────────────────────── */
+.articles-by-category .row.row-title,
+.home-events-config-block .row.row-title {
+  border-bottom: 2px solid var(--vne-red) !important;
+  margin-bottom: 14px !important;
+  padding-bottom: 6px !important;
+  align-items: flex-end !important;
+}
+
+.articles-by-category .main-category-title,
+.home-events-config-block .main-category-title {
+  padding: 0 !important;
+}
+
+.articles-by-category .main-category-title a,
+.home-events-config-block .main-category-title a,
+.title--red {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: var(--vne-red) !important;
+  letter-spacing: 0.5px;
+}
+
+.articles-by-category .sub-category-title a,
+.home-events-config-block .sub-category-title a {
+  font-size: 12px !important;
+  color: var(--vne-text-sub) !important;
+  font-weight: 400 !important;
+  padding: 0 8px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transition: color 0.12s;
+}
+
+.articles-by-category .sub-category-title a:hover,
+.home-events-config-block .sub-category-title a:hover {
+  color: var(--vne-red) !important;
+}
+
+.articles-by-category .sub-category-title,
+.home-events-config-block .sub-category-title {
+  border-left: 1px solid var(--vne-border) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   16. ARTICLES BY CATEGORY BLOCKS
+   VNExpress: Card-based grid with first article large + side list.
+   Map: .articles-by-category → VNExpress category sections
+──────────────────────────────────────────────────────────────────────── */
+.articles-by-category {
+  background: var(--vne-bg-white) !important;
+  border-radius: var(--vne-radius) !important;
+  padding: 16px !important;
+  margin-bottom: 20px !important;
+}
+
+.articles-by-category .articles-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 10px 0 0 !important;
+}
+
+.articles-by-category .articles-list .article-list.list-item {
+  padding: 7px 0 7px 14px !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  position: relative;
+  font-size: 13px;
+}
+
+.articles-by-category .articles-list .article-list.list-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  background: var(--vne-red) !important;
+  border-radius: 50%;
+}
+
+.articles-by-category .articles-list .article-list.list-item:last-child {
+  border-bottom: none !important;
+}
+
+.articles-by-category .articles-list .article-list.list-item .link {
+  color: var(--vne-text) !important;
+  font-size: 13.5px !important;
+  line-height: 1.5 !important;
+}
+
+.articles-by-category .articles-list .article-list.list-item .link:hover {
+  color: var(--vne-red) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   17. MULTIMEDIA SECTION
+──────────────────────────────────────────────────────────────────────── */
+.articles-by-category.multimedia {
+  border-top: 3px solid #222 !important;
+}
+
+.articles-by-category.multimedia .main-category-title a,
+.title--black {
+  color: #222 !important;
+}
+
+.multimedia-badge {
+  width: 6px;
+  height: 20px;
+  background: #222;
+  border-radius: 1px;
+  display: inline-block;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   18. SIDEBAR  (right column)
+   VNExpress: 300px wide right sidebar with card-based widgets.
+──────────────────────────────────────────────────────────────────────── */
+aside.sidebar,
+.sidebar,
+.col-md-12.col-lg-3,
+.col-xl-330 {
+  /* Sidebar containers */
+}
+
+/* All sidebar block widgets */
+.sidebar-widget,
+[id^="block-"] .widget {
+  background: var(--vne-bg-white) !important;
+  border-radius: var(--vne-radius) !important;
+  margin-bottom: 16px !important;
+  overflow: hidden;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   19. POLL WIDGET
+──────────────────────────────────────────────────────────────────────── */
+.vov-poll-wrapper,
+.poll-block {
+  background: var(--vne-bg-white) !important;
+  border: 1px solid var(--vne-border) !important;
+  border-radius: var(--vne-radius) !important;
+  padding: 16px !important;
+  margin-bottom: 16px !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   20. TICKER / "TIN MỚI CẬP NHẬT" BLOCK TITLE STYLING
+   VNExpress: "Tin mới", "Trending" etc. block titles use red caps.
+──────────────────────────────────────────────────────────────────────── */
+.home-events-config-block-title,
+h2.home-events-config-block-title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: var(--vne-red) !important;
+  border-bottom: 2px solid var(--vne-red) !important;
+  padding-bottom: 8px !important;
+  margin-bottom: 12px !important;
+  letter-spacing: 0.5px;
+}
+
+.home-events-config-block-title a {
+  color: var(--vne-red) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   21. CUSTOM ADS BLOCKS
+──────────────────────────────────────────────────────────────────────── */
+.ads-block-custom {
+  margin-bottom: 20px !important;
+}
+
+.vovvn-title.title-block {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: var(--vne-red) !important;
+  border-bottom: 2px solid var(--vne-red) !important;
+  padding-bottom: 8px !important;
+  margin-bottom: 12px !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   22. STOCKS / MARKET DATA WIDGETS (Tỷ giá, chứng khoán, vàng)
+──────────────────────────────────────────────────────────────────────── */
+.stats-box-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--vne-text);
+}
+
+.increase-icon {
+  color: #27ae60 !important;
+}
+
+.decrease-icon {
+  color: var(--vne-red) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   23. VOVVN BREADCRUMB (mobile detail page)
+──────────────────────────────────────────────────────────────────────── */
+.vov-breadcrumb-bar {
+  background: var(--vne-bg-white) !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  font-size: 13px;
+}
+
+.vov-breadcrumb-bar .vbb-category {
+  color: var(--vne-red) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+}
+
+.vov-breadcrumb-bar .vbb-home {
+  color: var(--vne-red) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   24. BACK TO TOP BUTTON
+──────────────────────────────────────────────────────────────────────── */
+#backToTop {
+  background: var(--vne-red) !important;
+  color: #fff !important;
+  border: none !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 2px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: var(--vne-shadow) !important;
+  transition: background 0.15s !important;
+  font-size: 18px !important;
+}
+
+#backToTop:hover {
+  background: var(--vne-red-dark) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   25. FOOTER
+   VNExpress: Dark red/maroon footer bg with white text, 
+              logo + info cols + copyright strip.
+   Map: footer.vovvn-footer → VNExpress footer
+──────────────────────────────────────────────────────────────────────── */
+footer.vovvn-footer,
+.vovvn-footer {
+  background-color: #1a1a2e !important;
+  color: #ccc !important;
+  padding: 24px 0 12px !important;
+  margin-top: 24px !important;
+}
+
+/* Footer menu links (category grid) */
+.vovvn-footer .footer-menu {
+  padding: 0 !important;
+  border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+  margin-bottom: 20px !important;
+  padding-bottom: 16px !important;
+}
+
+.vovvn-footer .footer-menu .row > [class*="col"] {
+  margin-bottom: 10px;
+}
+
+.vovvn-footer .menu-container .menu-link,
+.vovvn-footer .footer-menu a {
+  color: #aaa !important;
+  font-size: 12.5px !important;
+  line-height: 2 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transition: color 0.12s;
+}
+
+.vovvn-footer .menu-container .menu-link:hover,
+.vovvn-footer .footer-menu a:hover {
+  color: var(--vne-red) !important;
+}
+
+.vovvn-footer .divider {
+  border-top: 1px solid rgba(255,255,255,0.1) !important;
+  margin: 16px 0 !important;
+}
+
+/* Footer logo */
+.vovvn-footer .footer__logo img {
+  height: 40px !important;
+  width: auto !important;
+  margin-bottom: 8px;
+}
+
+/* Footer slogan */
+.vovvn-footer .footer__slogan {
+  font-size: 11px !important;
+  color: #888 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+/* Footer body text */
+.vovvn-footer .footer-body p,
+.vovvn-footer .text-white {
+  color: #aaa !important;
+  font-size: 13px !important;
+  line-height: 1.7 !important;
+}
+
+.vovvn-footer .footer-body a {
+  color: #ccc !important;
+}
+
+.vovvn-footer .footer-body a:hover {
+  color: var(--vne-red) !important;
+}
+
+/* Footer license / copyright */
+.vovvn-footer .footer__license {
+  font-size: 11.5px !important;
+  color: #777 !important;
+  text-align: center;
+  line-height: 1.6;
+  padding: 12px 0 4px !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   26. SPECIAL DETAIL PAGE MOBILE HEADER
+──────────────────────────────────────────────────────────────────────── */
+.is-node-detail .vov-special-header {
+  background: var(--vne-red) !important;
+}
+
+.detail-mobile-header {
+  background: var(--vne-bg-white) !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
+}
+
+.detail-mobile-header .dmh-menu,
+.detail-mobile-header .dmh-category {
+  color: var(--vne-red) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   27. BADGE / LABEL COMPONENTS
+──────────────────────────────────────────────────────────────────────── */
+.badge-vov-red {
+  background-color: var(--vne-red) !important;
+}
+
+/* Location stamp (appears in article descriptions) */
+.location-stamp {
+  display: inline-block;
+  color: #888;
+  font-size: 11px;
+  margin-right: 4px;
+  font-style: italic;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   28. ARTICLE DETAIL PAGE (detail--normal)
+──────────────────────────────────────────────────────────────────────── */
+.detail--normal .article-content {
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  color: var(--vne-text) !important;
+}
+
+.detail--normal .article-content h1,
+.detail--normal .article-content h2 {
+  font-size: 1.1em !important;
+  font-weight: 700 !important;
+}
+
+.detail--normal .article-summary {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #444 !important;
+  line-height: 1.65 !important;
+}
+
+/* Article inner story (related article box) */
+.article__inner-story .inner-article {
+  border: 1px solid var(--vne-border) !important;
+  border-radius: var(--vne-radius) !important;
+  padding: 12px !important;
+  background: var(--vne-bg) !important;
+}
+
+.article__inner-story .article-title {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: var(--vne-text) !important;
+}
+
+.article__inner-story .article-title:hover {
+  color: var(--vne-red) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   29. FONT SIZE MODAL (accessibility)
+──────────────────────────────────────────────────────────────────────── */
+.fsm-modal {
+  background: var(--vne-bg-white) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+}
+
+.fsm-modal .fsm-btn {
+  background: var(--vne-bg) !important;
+  border-radius: var(--vne-radius) !important;
+}
+
+.fsm-modal .fsm-btn:hover {
+  background: var(--vne-red) !important;
+  color: #fff !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   30. VIDEO / MULTIMEDIA PLAYERS
+──────────────────────────────────────────────────────────────────────── */
+.vjs-poster {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Video play button */
+.video-js .vjs-big-play-button {
+  background: rgba(224, 51, 50, 0.85) !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 56px !important;
+  height: 56px !important;
+  line-height: 56px !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+}
+
+.video-js:hover .vjs-big-play-button {
+  background: var(--vne-red) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   31. STICKY HEADER BEHAVIOR
+──────────────────────────────────────────────────────────────────────── */
+.vovvn-header.vovvn-navbar-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(0); }
+}
+
+body.vovvn-navbar-sticky-active {
+  padding-top: 140px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   32. RESPONSIVE BREAKPOINTS
+──────────────────────────────────────────────────────────────────────── */
+
+/* Tablet: ≤ 991px */
+@media screen and (max-width: 991px) {
+  .vovvn-navbar .d-none.d-xl-flex {
+    display: none !important;
+  }
+
+  .articles-by-category {
+    padding: 12px !important;
+  }
+
+  .home-events-config-block.hot_news .col-left .item-first .card-title {
+    font-size: 18px !important;
+  }
+}
+
+/* Mobile: ≤ 767px */
+@media screen and (max-width: 767px) {
+  :root {
+    --vne-nav-height: 44px;
+  }
+
+  body {
+    font-size: 14px !important;
+  }
+
+  /* Fix body padding for fixed mobile header */
+  body.path-frontpage {
+    padding-top: 0 !important;
+  }
+
+  .vovvn-header.menu-mobile-fixed {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+
+  .vovvn-header.vovvn-navbar-sticky {
+    box-shadow: none !important;
+  }
+
+  /* Collapsed header area */
+  .vovvn-navbar-mobile {
+    padding: 4px 0 !important;
+  }
+
+  /* Mobile nav bar */
+  #navbarNav .nav-link {
+    font-size: 12px !important;
+    border-right: none !important;
+    font-weight: 500 !important;
+    padding: 4px 4px !important;
+  }
+
+  /* Article card: full width */
+  .article-card.card picture img {
+    border-radius: 0 !important;
+  }
+
+  .article-card.card .card-title {
+    font-size: 14px !important;
+  }
+
+  /* Hot news hero on mobile */
+  .home-events-config-block.hot_news .col-left .item-first .card-title {
+    font-size: 16px !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Article media thumb */
+  .article-media.media picture img,
+  .article-media.media .img-fluid {
+    width: 80px !important;
+    height: 54px !important;
+  }
+
+  /* Category section headers */
+  .articles-by-category .main-category-title a,
+  .title--red {
+    font-size: 15px !important;
+  }
+
+  /* Footer responsive */
+  .vovvn-footer .footer-body .col-md-6 {
+    margin-bottom: 12px;
+  }
+
+  .vovvn-footer .footer__logo img {
+    height: 30px !important;
+  }
+
+  /* Ads margins */
+  .ads-top.advertisement {
+    margin-bottom: 12px !important;
+  }
+
+  /* Trending carousel full items */
+  .home-events-config-block.trending_news .carousel .item {
+    flex: 0 0 85% !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   33. UTILITY / HELPER OVERRIDES
+──────────────────────────────────────────────────────────────────────── */
+/* VOV red color override to use VNE red */
+.text-vov-red {
+  color: var(--vne-red) !important;
+}
+
+.bg-vov-primary,
+.navbar-dark.bg-vov-primary {
+  background-color: var(--vne-red) !important;
+}
+
+/* Remove Bootstrap card outlines */
+.card.border-0 {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove extra background from transparent cards */
+.bg-transparent {
+  background: transparent !important;
+}
+
+/* Google reCAPTCHA badge */
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   34. SMOOTH SCROLLING + TRANSITIONS
+──────────────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Image hover transition */
+.article-card.card .vovvn-title {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   35. PRINT STYLES
+──────────────────────────────────────────────────────────────────────── */
+@media print {
+  .vovvn-header,
+  .vovvn-navbar,
+  .bg-light.nav-channel,
+  footer.vovvn-footer,
+  #backToTop,
+  .ads-top,
+  .ads-middle,
+  .sub-menu {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   36. CUSTOM SCROLLBAR (WebKit)
+──────────────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vne-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vne-border-mid);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vne-red);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   37. TEXT SELECTION
+──────────────────────────────────────────────────────────────────────── */
+::selection {
+  background: var(--vne-red);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: var(--vne-red);
+  color: #fff;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   38. IMAGE LOADING & BROKEN IMAGE FIXES
+   Images from media.vov.vn load fine when online.
+   These rules prevent layout collapse when images are slow/missing.
+──────────────────────────────────────────────────────────────────────── */
+
+/* Prevent layout collapse while image loads */
+.article-card.card picture,
+.article-card.card .vovvn-title picture {
+  display: block;
+  width: 100%;
+  background-color: #f0f0f0;
+  min-height: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer loading animation for image placeholder */
+.article-card.card picture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Once image loads, shimmer disappears */
+.article-card.card picture img {
+  position: relative;
+  z-index: 1;
+  background: #f0f0f0;
+}
+
+/* Sidebar media thumbnail placeholder */
+.article-media.media picture {
+  background-color: #f0f0f0;
+  min-height: 64px;
+  display: block;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   39. MOBILE NAV COLOR FIX
+   The inline style at line 125 of index.html sets .menu-mobile-new
+   .nav-link to color:#212121 which we must override here with !important
+──────────────────────────────────────────────────────────────────────── */
+.menu-mobile-new .nav-item .nav-link {
+  color: #333 !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+}
+
+.menu-mobile-new .nav-item .nav-link:hover {
+  color: var(--vne-red) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   40. CATEGORY SECTION LAYOUT FIXES
+   Fixes seen from screenshot: right column articles in category blocks
+   were missing their thumbnail side, and "CHÍNH TRỊ" section had 
+   its right column not showing media rows.
+──────────────────────────────────────────────────────────────────────── */
+
+/* Ensure the col-lg-7 side in category blocks shows article-media correctly */
+.articles-by-category .col-lg-7 .article-media.media,
+.articles-by-category .col-xl-470 .article-media.media {
+  border-bottom: 1px solid var(--vne-border) !important;
+  padding: 8px 0 !important;
+  gap: 10px !important;
+}
+
+/* Make sure article thumbnails in category right column aren't squished */
+.articles-by-category .col-lg-7 .article-media picture img,
+.articles-by-category .col-xl-470 .article-media .img-fluid {
+  width: 100px !important;
+  height: 64px !important;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 2px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   41. HERO BLOCK IMAGE CONTAINER FIX
+   The hero image in .col-left .item-first was slightly cut off.
+──────────────────────────────────────────────────────────────────────── */
+.home-events-config-block.hot_news .col-left .item-first picture {
+  display: block;
+  width: 100%;
+  background: #f0f0f0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.home-events-config-block.hot_news .col-left .item-first picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+  object-fit: cover;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   42. ARTICLE LIST LINK COLOR SPECIFICITY FIX
+   Drupal's inline styles were overriding link colors in list items.
+   This ensures our VNExpress text color always wins.
+──────────────────────────────────────────────────────────────────────── */
+.article-list.list-item a.link,
+.articles-list .article-list.list-item a,
+.articles-list .article-list.list-item .link {
+  color: var(--vne-text) !important;
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+  font-weight: 400 !important;
+  display: block;
+}
+
+.article-list.list-item a.link:hover,
+.articles-list .article-list.list-item a:hover,
+.articles-list .article-list.list-item .link:hover {
+  color: var(--vne-red) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   43. ADS BLOCK EMPTY STATE
+   When ads don't load (offline/local), prevent ugly empty boxes
+──────────────────────────────────────────────────────────────────────── */
+.block-ads:empty,
+[class*="block-ads"]:empty {
+  display: none !important;
+}
+
+/* Minimal ads placeholder so empty slots don't break layout */
+.ads-top.advertisement:empty,
+.ads-middle.advertisement:empty {
+  display: none !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   44. TRENDING CAROUSEL CARD TITLES
+   Ensure card titles in trending section are properly clamped
+──────────────────────────────────────────────────────────────────────── */
+.home-events-config-block.trending_news .card-title {
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  line-height: 1.45 !important;
+  margin-top: 8px !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   45. UPDATE NEWS SIDEBAR — fix thumbnail wrapper width  
+──────────────────────────────────────────────────────────────────────── */
+.home-events-config-block.update_news .article-media.media {
+  align-items: flex-start;
+  display: flex !important;
+  gap: 10px;
+}
+
+.home-events-config-block.update_news .vovvn-title.position-relative.flex-shrink-0 {
+  flex-shrink: 0 !important;
+  width: 100px !important;
+}
+
+.home-events-config-block.update_news picture img.img-fluid {
+  width: 100px !important;
+  height: 64px !important;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   46. VOVVN BODY CONTAINER — prevent row margin bleed
+──────────────────────────────────────────────────────────────────────── */
+.vovvn-body .container > .row {
+  margin-left: -8px !important;
+  margin-right: -8px !important;
+}
+
+.vovvn-body .container > .row > [class*='col'] {
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
