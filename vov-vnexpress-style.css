@@ -80,445 +80,13 @@ img {
    3. LAYOUT & CONTAINER
    VNExpress uses a centered 1200px container with 16px side padding.
 ──────────────────────────────────────────────────────────────────────── */
-.container,
-.container-fluid .container {
+.vovvn-body .container,
+.vovvn-body .container-fluid .container {
   max-width: var(--vne-container) !important;
   margin: 0 auto !important;
   padding-left: 16px !important;
   padding-right: 16px !important;
   width: 100%;
-}
-
-/* ─────────────────────────────────────────────────────────────────────
-   4. CHANNEL TOP BAR  (VOV1, VOV2… channels row)
-   VNExpress equivalent: thin top utility bar with links.
-   Map: .nav-channel → VNExpress .header-topbar style
-──────────────────────────────────────────────────────────────────────── */
-.bg-light.nav-channel {
-  background-color: var(--vne-bg-white) !important;
-  border-bottom: 1px solid var(--vne-border) !important;
-  font-size: 12px;
-}
-
-.bg-light.nav-channel .nav-item .nav-link {
-  font-size: 12px !important;
-  font-weight: 600 !important;
-  color: var(--vne-red) !important;
-  padding: 4px 8px !important;
-  border-right: 1px solid var(--vne-border) !important;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-  transition: background 0.15s;
-}
-
-.bg-light.nav-channel .nav-item .nav-link:hover {
-  background: var(--vne-red-light) !important;
-  color: var(--vne-red-dark) !important;
-}
-
-.bg-light.nav-channel .nav-item:last-child .nav-link {
-  border-right: none !important;
-}
-
-/* Language scrolling strip */
-.nav-desktop a,
-.lang-track a {
-  font-size: 12px !important;
-  color: var(--vne-text-sub) !important;
-}
-
-.nav-desktop a:hover,
-.lang-track a:hover {
-  color: var(--vne-red) !important;
-}
-
-/* ─────────────────────────────────────────────────────────────────────
-   5. HEADER
-   VNExpress: White header, logo centered/left, search top-right, 
-              date/weather top-right area. Clean minimal top area.
-   Map: .vovvn-header → VNExpress header
-──────────────────────────────────────────────────────────────────────── */
-.vovvn-header {
-  background-color: var(--vne-bg-white) !important;
-  border-bottom: 1px solid var(--vne-border) !important;
-  box-shadow: none !important;
-  position: relative;
-  z-index: 100;
-}
-
-.vovvn-header .vovvn-navbar-mobile {
-  padding-top: 8px !important;
-  padding-bottom: 8px !important;
-}
-
-/* Logo area */
-.vovvn-header .logo--image img,
-.vovvn-header .branding img {
-  height: 55px !important;
-  width: auto !important;
-}
-
-.vovvn-header .logo--image h1 {
-  margin: 0 !important;
-}
-
-/* Weather widget */
-.custom-weather .dropdown-toggle {
-  font-size: 13px !important;
-  color: var(--vne-text-sub) !important;
-  border: 1px solid var(--vne-border) !important;
-  border-radius: var(--vne-radius);
-  padding: 4px 8px !important;
-  background: var(--vne-bg) !important;
-  transition: border-color 0.15s;
-}
-
-.custom-weather .dropdown-toggle:hover {
-  border-color: var(--vne-red) !important;
-  color: var(--vne-red) !important;
-}
-
-.dropdown-menu-custom {
-  background: var(--vne-bg-white) !important;
-  border: 1px solid var(--vne-border) !important;
-  border-radius: var(--vne-radius);
-  box-shadow: var(--vne-shadow-md) !important;
-  min-width: 200px;
-}
-
-.dropdown-menu-custom .item-location {
-  padding: 8px 12px;
-  cursor: pointer;
-  font-size: 13px;
-  color: var(--vne-text);
-  border-bottom: 1px solid var(--vne-border);
-  transition: background 0.12s;
-}
-
-.dropdown-menu-custom .item-location:hover {
-  background: var(--vne-bg) !important;
-  color: var(--vne-red) !important;
-}
-
-/* Weather temperature display */
-.js-weather-temp {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--vne-text-sub);
-}
-
-/* Social icons row */
-.menu-social {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--vne-bg) !important;
-  margin: 0 2px !important;
-  transition: background 0.15s, color 0.15s;
-}
-
-.menu-social:hover {
-  background: var(--vne-red) !important;
-}
-
-.menu-social .vovvn-icon {
-  color: var(--vne-text-sub) !important;
-  font-size: 14px !important;
-}
-
-.menu-social:hover .vovvn-icon {
-  color: #fff !important;
-}
-
-/* Language link */
-.language-link {
-  font-size: 13px !important;
-  color: var(--vne-text-sub) !important;
-  border: 1px solid var(--vne-border);
-  border-radius: var(--vne-radius);
-  padding: 3px 8px !important;
-  transition: all 0.15s;
-}
-
-.language-link:hover {
-  border-color: var(--vne-red) !important;
-  color: var(--vne-red) !important;
-}
-
-/* Podcast / Radio buttons in header */
-.box-podcast, .box-radio {
-  font-size: 11px !important;
-  color: var(--vne-text-sub) !important;
-  align-items: center;
-}
-
-.box-podcast img, .box-radio img {
-  width: 22px;
-  height: 22px;
-}
-
-/* Search box */
-.search-box {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.search-box form {
-  display: flex !important;
-  align-items: center;
-  border: 1px solid var(--vne-border) !important;
-  border-radius: 20px !important;
-  overflow: hidden;
-  background: var(--vne-bg) !important;
-  transition: border-color 0.2s;
-}
-
-.search-box form:focus-within {
-  border-color: var(--vne-red) !important;
-  background: var(--vne-bg-white) !important;
-}
-
-.search-box .form-text.form-control {
-  border: none !important;
-  background: transparent !important;
-  padding: 6px 12px !important;
-  font-size: 13px !important;
-  width: 180px !important;
-  outline: none !important;
-  box-shadow: none !important;
-  color: var(--vne-text) !important;
-}
-
-.search-box .form-actions #edit-actions,
-.search-box #edit-actions {
-  display: flex;
-  margin: 0 !important;
-}
-
-.search-box input[type="submit"].button {
-  background: var(--vne-red) !important;
-  color: #fff !important;
-  border: none !important;
-  padding: 6px 12px !important;
-  font-size: 12px !important;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.15s;
-}
-
-.search-box input[type="submit"].button:hover {
-  background: var(--vne-red-dark) !important;
-}
-
-/* ─────────────────────────────────────────────────────────────────────
-   6. MAIN NAVIGATION BAR
-   VNExpress: Red bg nav, white text items, underline on hover,
-              dropdown menus with white bg.
-   Map: .vovvn-navbar → VNExpress .header-nav
-──────────────────────────────────────────────────────────────────────── */
-.vovvn-navbar {
-  background-color: var(--vne-red) !important;
-  min-height: var(--vne-nav-height) !important;
-  border-top: none !important;
-  border-bottom: 2px solid var(--vne-red-dark) !important;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15) !important;
-}
-
-.vovvn-navbar .menu-container,
-.vovvn-navbar .d-none.d-xl-flex {
-  max-width: var(--vne-container);
-  margin: 0 auto;
-  width: 100%;
-}
-
-/* Nav items */
-.vovvn-navbar .nav-item,
-.vovvn-navbar .navbar-nav .nav-item {
-  position: relative;
-}
-
-.vovvn-navbar .nav-link {
-  color: #fff !important;
-  font-size: 13.5px !important;
-  font-weight: 500 !important;
-  padding: 9px 11px !important;
-  line-height: 1.3 !important;
-  white-space: nowrap;
-  border-right: none !important;
-  transition: background 0.15s;
-  position: relative;
-}
-
-.vovvn-navbar .nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  right: 50%;
-  height: 2px;
-  background: #fff;
-  transition: left 0.2s ease, right 0.2s ease;
-}
-
-.vovvn-navbar .nav-item:hover > .nav-link::after,
-.vovvn-navbar .nav-link:hover::after,
-.vovvn-navbar .nav-link.active::after {
-  left: 8px;
-  right: 8px;
-}
-
-.vovvn-navbar .nav-link:hover {
-  background: rgba(0,0,0,0.15) !important;
-  color: #fff !important;
-}
-
-/* Home icon nav */
-.vovvn-navbar .home-nav .nav-link,
-.vovvn-navbar .vovvn-icon-home {
-  color: #fff !important;
-  font-size: 16px !important;
-}
-
-/* Navigation icon (hamburger) */
-.vovvn-navbar .navigation-nav .nav-link {
-  color: #fff !important;
-}
-
-/* VOV Plus in nav */
-.vovvn-navbar .vov-plus-nav img {
-  height: 22px !important;
-  width: auto !important;
-}
-
-/* Dropdown submenu */
-.vovvn-navbar .navbar-nav-sub {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: var(--vne-bg-white) !important;
-  border: 1px solid var(--vne-border) !important;
-  border-top: 2px solid var(--vne-red) !important;
-  box-shadow: var(--vne-shadow-md) !important;
-  min-width: 200px;
-  z-index: 999;
-  padding: 6px 0 !important;
-  border-radius: 0 0 var(--vne-radius) var(--vne-radius);
-}
-
-.vovvn-navbar .nav-item:hover .navbar-nav-sub {
-  display: block;
-}
-
-.vovvn-navbar .navbar-nav-sub .nav-item,
-.vovvn-navbar .navbar-nav-sub a.nav-item {
-  display: block !important;
-}
-
-.vovvn-navbar .navbar-nav-sub .nav-link {
-  color: var(--vne-text) !important;
-  font-size: 13px !important;
-  font-weight: 400 !important;
-  padding: 7px 16px !important;
-  border-bottom: 1px solid var(--vne-border) !important;
-  transition: background 0.12s, color 0.12s;
-}
-
-.vovvn-navbar .navbar-nav-sub .nav-link::after {
-  display: none !important;
-}
-
-.vovvn-navbar .navbar-nav-sub .nav-link:hover {
-  background: var(--vne-bg) !important;
-  color: var(--vne-red) !important;
-}
-
-.vovvn-navbar .navbar-nav-sub .nav-item:last-child .nav-link {
-  border-bottom: none !important;
-}
-
-/* ─────────────────────────────────────────────────────────────────────
-   7. MOBILE MENU  (bottom sticky nav visible < 768px)
-──────────────────────────────────────────────────────────────────────── */
-.menu-mobile-box {
-  background: var(--vne-bg-white) !important;
-  border-top: 2px solid var(--vne-red) !important;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.menu-mobile-box::-webkit-scrollbar { display: none; }
-
-.menu-mobile-new {
-  padding: 0 !important;
-  margin: 0 !important;
-  list-style: none !important;
-}
-
-.menu-mobile-new .nav-item {
-  flex-shrink: 0;
-}
-
-.menu-mobile-new .nav-link {
-  font-size: 12px !important;
-  color: var(--vne-text) !important;
-  padding: 8px 10px !important;
-  font-weight: 500 !important;
-  white-space: nowrap;
-  border-right: 1px solid var(--vne-border) !important;
-  transition: color 0.12s;
-}
-
-.menu-mobile-new .nav-link:hover,
-.menu-mobile-new .nav-item.active .nav-link {
-  color: var(--vne-red) !important;
-}
-
-.menu-mobile-new .icon-home-custom,
-.menu-mobile-new .fa-home {
-  color: var(--vne-red) !important;
-  font-size: 16px !important;
-}
-
-/* ─────────────────────────────────────────────────────────────────────
-   8. SUB-MENU (full-width mega menu)
-   VNExpress: Uses a wide multi-column dropdown.
-──────────────────────────────────────────────────────────────────────── */
-.sub-menu {
-  background: var(--vne-bg-white) !important;
-  border-top: 3px solid var(--vne-red) !important;
-  border-bottom: 1px solid var(--vne-border) !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important;
-  padding: 16px 0 !important;
-}
-
-.sub-menu .widget-title {
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  margin-bottom: 8px !important;
-  padding-bottom: 6px !important;
-  border-bottom: 2px solid var(--vne-red) !important;
-}
-
-.sub-menu .widget-title a {
-  color: var(--vne-red) !important;
-}
-
-.sub-menu .navbar-item .nav-link {
-  font-size: 12.5px !important;
-  color: var(--vne-text-sub) !important;
-  padding: 3px 0 !important;
-  display: block;
-}
-
-.sub-menu .navbar-item .nav-link:hover {
-  color: var(--vne-red) !important;
-  padding-left: 4px !important;
 }
 
 /* ─────────────────────────────────────────────────────────────────────
@@ -1323,36 +891,11 @@ footer.vovvn-footer,
 }
 
 /* ─────────────────────────────────────────────────────────────────────
-   31. STICKY HEADER BEHAVIOR
-──────────────────────────────────────────────────────────────────────── */
-.vovvn-header.vovvn-navbar-sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
-  animation: slideDown 0.3s ease;
-}
-
-@keyframes slideDown {
-  from { transform: translateY(-100%); }
-  to   { transform: translateY(0); }
-}
-
-body.vovvn-navbar-sticky-active {
-  padding-top: 140px;
-}
-
-/* ─────────────────────────────────────────────────────────────────────
    32. RESPONSIVE BREAKPOINTS
 ──────────────────────────────────────────────────────────────────────── */
 
 /* Tablet: ≤ 991px */
 @media screen and (max-width: 991px) {
-  .vovvn-navbar .d-none.d-xl-flex {
-    display: none !important;
-  }
 
   .articles-by-category {
     padding: 12px !important;
@@ -1376,31 +919,6 @@ body.vovvn-navbar-sticky-active {
   /* Fix body padding for fixed mobile header */
   body.path-frontpage {
     padding-top: 0 !important;
-  }
-
-  .vovvn-header.menu-mobile-fixed {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 1000 !important;
-  }
-
-  .vovvn-header.vovvn-navbar-sticky {
-    box-shadow: none !important;
-  }
-
-  /* Collapsed header area */
-  .vovvn-navbar-mobile {
-    padding: 4px 0 !important;
-  }
-
-  /* Mobile nav bar */
-  #navbarNav .nav-link {
-    font-size: 12px !important;
-    border-right: none !important;
-    font-weight: 500 !important;
-    padding: 4px 4px !important;
   }
 
   /* Article card: full width */
@@ -1498,9 +1016,6 @@ html {
    35. PRINT STYLES
 ──────────────────────────────────────────────────────────────────────── */
 @media print {
-  .vovvn-header,
-  .vovvn-navbar,
-  .bg-light.nav-channel,
   footer.vovvn-footer,
   #backToTop,
   .ads-top,
@@ -1593,21 +1108,6 @@ html {
   background-color: #f0f0f0;
   min-height: 64px;
   display: block;
-}
-
-/* ─────────────────────────────────────────────────────────────────────
-   39. MOBILE NAV COLOR FIX
-   The inline style at line 125 of index.html sets .menu-mobile-new
-   .nav-link to color:#212121 which we must override here with !important
-──────────────────────────────────────────────────────────────────────── */
-.menu-mobile-new .nav-item .nav-link {
-  color: #333 !important;
-  font-size: 12.5px !important;
-  font-weight: 500 !important;
-}
-
-.menu-mobile-new .nav-item .nav-link:hover {
-  color: var(--vne-red) !important;
 }
 
 /* ─────────────────────────────────────────────────────────────────────
@@ -1739,4 +1239,1301 @@ html {
 .vovvn-body .container > .row > [class*='col'] {
   padding-left: 8px !important;
   padding-right: 8px !important;
+}
+/* ─────────────────────────────────────────────────────────────────────
+   47. VNEXPRESS FIDELITY PASS
+   Presentation only: no VOV component, route, or behavior is changed.
+──────────────────────────────────────────────────────────────────────── */
+:root {
+  --vne-red: #9f224e;
+  --vne-red-dark: #7b173b;
+  --vne-red-light: #f7eef2;
+  --vne-black: #222;
+  --vne-text: #4f4f4f;
+  --vne-text-sub: #757575;
+  --vne-text-meta: #9f9f9f;
+  --vne-bg: #fff;
+  --vne-bg-soft: #f7f7f7;
+  --vne-bg-white: #fff;
+  --vne-border: #e5e5e5;
+  --vne-border-mid: #bdbdbd;
+  --vne-nav-height: 44px;
+  --vne-container: 1200px;
+  --vne-font: Arial, Helvetica, sans-serif;
+  --vne-font-serif: "Merriweather", Georgia, "Times New Roman", serif;
+  --vne-radius: 0;
+  --vne-shadow: none;
+  --vne-shadow-md: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+html {
+  background: #fff;
+}
+
+body,
+body.path-frontpage,
+.vovvn-body {
+  background: #fff !important;
+  color: var(--vne-text) !important;
+  font-family: var(--vne-font) !important;
+}
+
+.container,
+.container-fluid .container {
+  max-width: 1200px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+.custom-weather {
+  border-right: 1px solid var(--vne-border);
+  padding-right: 14px !important;
+}
+
+.custom-weather .dropdown-toggle,
+.language-link {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: #757575 !important;
+  font-size: 13px !important;
+}
+
+.search-box form {
+  background: #fff !important;
+  border: 1px solid #bdbdbd !important;
+  border-radius: 18px !important;
+  height: 34px;
+}
+
+.search-box form:focus-within {
+  border-color: #757575 !important;
+}
+
+.search-box .form-text.form-control {
+  font-family: Arial, Helvetica, sans-serif !important;
+  height: 32px;
+  padding: 5px 12px !important;
+}
+
+.search-box input[type="submit"].button {
+  background-color: transparent !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  height: 32px;
+  min-width: 38px;
+  padding: 0 !important;
+  position: relative;
+}
+
+.search-box input[type="submit"].button:hover {
+  background-color: #f5f5f5 !important;
+}
+
+/* Main content rhythm */
+.vovvn-body > .container {
+  padding-top: 20px !important;
+}
+
+.vovvn-body .container > .row {
+  margin-left: -10px !important;
+  margin-right: -10px !important;
+}
+
+.vovvn-body .container > .row > [class*="col"] {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.ads-top.advertisement,
+.ads-middle.advertisement {
+  background: transparent !important;
+  border: 0 !important;
+  margin: 0 auto 20px !important;
+  padding: 0 !important;
+}
+
+/* Lead-news composition */
+.home-events-config-block.hot_news {
+  background: #fff !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  border-radius: 0 !important;
+  margin-bottom: 24px !important;
+  overflow: visible;
+  padding-bottom: 20px;
+}
+
+.home-events-config-block.hot_news .col-left {
+  border-right: 1px solid var(--vne-border);
+  padding-right: 20px !important;
+}
+
+.home-events-config-block.hot_news .col-right {
+  padding-left: 20px !important;
+}
+
+.home-events-config-block.hot_news .col-left .item-first .vovvn-title picture {
+  background: #f4f4f4;
+  display: block;
+  overflow: hidden;
+}
+
+.home-events-config-block.hot_news .col-left .item-first .vovvn-title picture img {
+  aspect-ratio: 16 / 9;
+  border-radius: 0 !important;
+  object-fit: cover;
+}
+
+.home-events-config-block.hot_news .col-left .item-first .card-title {
+  color: #222 !important;
+  font-family: var(--vne-font-serif) !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  margin: 12px 0 8px !important;
+}
+
+.home-events-config-block.hot_news .col-right .article-card {
+  border: 0 !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  border-radius: 0 !important;
+  margin-bottom: 14px !important;
+  padding-bottom: 14px !important;
+}
+
+.home-events-config-block.hot_news .col-right .article-card .card-title {
+  font-family: var(--vne-font-serif) !important;
+  font-size: 15px !important;
+  line-height: 1.45 !important;
+}
+
+.home-events-config-block.hot_news .articles-list {
+  border-top: 1px solid var(--vne-border);
+  margin-top: 14px !important;
+  padding-top: 10px !important;
+}
+
+.home-events-config-block.hot_news .article-list.list-item {
+  border: 0 !important;
+  padding: 7px 0 7px 14px !important;
+}
+
+.home-events-config-block.hot_news .article-list.list-item::before,
+.articles-by-category .articles-list .article-list.list-item::before {
+  background: #9f224e !important;
+  height: 4px;
+  top: 15px;
+  width: 4px;
+}
+
+/* Editorial headings */
+.home-events-config-block-title,
+.articles-by-category .row.row-title,
+.home-events-config-block .row.row-title {
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  margin: 0 0 16px !important;
+  min-height: 38px;
+  padding: 0 !important;
+}
+
+.articles-by-category .main-category-title a,
+.home-events-config-block .main-category-title a,
+.home-events-config-block-title,
+.home-events-config-block-title a,
+.title--red {
+  border: 0 !important;
+  color: var(--vne-red) !important;
+  font-family: var(--vne-font-serif) !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 38px !important;
+  padding: 0 !important;
+  text-transform: none !important;
+}
+
+.articles-by-category .main-category-title a::after,
+.home-events-config-block .main-category-title a::after {
+  display: none !important;
+}
+
+.articles-by-category .sub-category-title {
+  border: 0 !important;
+  padding-left: 14px !important;
+}
+
+.articles-by-category .sub-category-title a,
+.home-events-config-block .sub-category-title a {
+  color: #4f4f4f !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 38px !important;
+  text-transform: none !important;
+}
+
+/* Flat article modules */
+.articles-by-category {
+  background: #fff !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  border-radius: 0 !important;
+  margin-bottom: 24px !important;
+  padding: 0 0 22px !important;
+}
+
+.article-card.card {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.article-card.card:hover {
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.article-card.card picture {
+  background: #f2f2f2;
+  display: block;
+  overflow: hidden;
+}
+
+.article-card.card picture img,
+.article-card.card .img-fluid.w-100 {
+  aspect-ratio: 16 / 9;
+  border-radius: 0 !important;
+  object-fit: cover;
+}
+
+.article-card.card .card-title,
+.article-media.media .media-title {
+  color: #222 !important;
+  font-family: var(--vne-font-serif) !important;
+}
+
+.article-card.card .card-title {
+  font-size: 16px !important;
+  line-height: 1.45 !important;
+  margin: 9px 0 0 !important;
+}
+
+.article-card.card .vovvn-title:hover .card-title,
+.article-media.media:hover .media-title,
+.article-media.media .media-title:hover {
+  color: var(--vne-red) !important;
+}
+
+.article-media.media {
+  align-items: flex-start !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  gap: 12px !important;
+  margin: 0 !important;
+  padding: 0 0 14px !important;
+}
+
+.article-media.media + .article-media.media {
+  padding-top: 14px !important;
+}
+
+.article-media.media picture img,
+.article-media.media .img-fluid {
+  aspect-ratio: 3 / 2;
+  border-radius: 0 !important;
+  height: auto !important;
+  object-fit: cover;
+}
+
+.article-media.media .media-title {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
+}
+
+.articles-by-category .articles-list {
+  border-top: 1px solid var(--vne-border);
+  margin-top: 12px !important;
+  padding-top: 8px !important;
+}
+
+.articles-by-category .articles-list .article-list.list-item {
+  border: 0 !important;
+  padding: 7px 0 7px 14px !important;
+}
+
+.articles-by-category .articles-list .article-list.list-item .link {
+  color: #4f4f4f !important;
+  font-family: var(--vne-font-serif) !important;
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+}
+
+/* Trending and sidebar */
+.home-events-config-block.trending_news {
+  background: #f7f7f7 !important;
+  border: 0 !important;
+  border-top: 1px solid var(--vne-border) !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  border-radius: 0 !important;
+  margin: 0 0 24px !important;
+  padding: 18px 0 20px !important;
+}
+
+.home-events-config-block.trending_news .home-events-config-block-title {
+  border: 0 !important;
+  margin-left: 15px !important;
+}
+
+.home-events-config-block.trending_news .carousel {
+  gap: 20px !important;
+}
+
+.home-events-config-block.update_news,
+.sidebar-widget,
+.vov-poll-wrapper,
+.poll-block {
+  background: #fff !important;
+  border: 0 !important;
+  border-top: 1px solid var(--vne-red) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 12px 0 !important;
+}
+
+.home-events-config-block.update_news .home-events-config-block-title {
+  border-bottom: 1px solid var(--vne-border) !important;
+  color: var(--vne-red) !important;
+  font-family: var(--vne-font-serif) !important;
+  margin-bottom: 14px !important;
+}
+
+.home-events-config-block.update_news picture img.img-fluid {
+  aspect-ratio: 3 / 2;
+  border-radius: 0 !important;
+  height: auto !important;
+  object-fit: cover;
+}
+
+/* Multimedia keeps its identity while using VNExpress spacing */
+.articles-by-category.multimedia {
+  background: #f7f7f7 !important;
+  border-top: 3px solid #222 !important;
+  padding: 20px !important;
+}
+
+.articles-by-category.multimedia .main-category-title a,
+.articles-by-category.multimedia .card-title {
+  color: #222 !important;
+}
+
+/* Footer */
+.vovvn-footer {
+  background: #f7f7f7 !important;
+  border-top: 4px solid var(--vne-border-mid) !important;
+  color: #4f4f4f !important;
+  margin-top: 30px !important;
+  padding-top: 24px !important;
+}
+
+.vovvn-footer .menu-container .menu-link,
+.vovvn-footer .footer-menu a,
+.vovvn-footer .footer-body p,
+.vovvn-footer .text-white,
+.vovvn-footer .footer__license {
+  color: #4f4f4f !important;
+}
+
+.vovvn-footer .divider {
+  background: var(--vne-border) !important;
+}
+
+.vovvn-footer .footer__license {
+  border-top: 1px solid var(--vne-border) !important;
+}
+
+/* Responsive composition */
+@media (max-width: 1199px) {
+
+  .home-events-config-block.hot_news .col-left {
+    padding-right: 16px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right {
+    padding-left: 16px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .vovvn-body > .container {
+    padding-top: 16px !important;
+  }
+
+  .home-events-config-block.hot_news .col-left {
+    border-right: 0;
+    padding-right: 0 !important;
+  }
+
+  .home-events-config-block.hot_news .col-right {
+    border-top: 1px solid var(--vne-border);
+    margin-top: 18px;
+    padding-left: 0 !important;
+    padding-top: 18px;
+  }
+
+  .articles-by-category {
+    padding-bottom: 18px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .container,
+  .container-fluid .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .vovvn-body .container > .row {
+    margin-left: -6px !important;
+    margin-right: -6px !important;
+  }
+
+  .vovvn-body .container > .row > [class*="col"] {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+
+  .home-events-config-block.hot_news {
+    margin-bottom: 20px !important;
+    padding-bottom: 16px;
+  }
+
+  .home-events-config-block.hot_news .col-left .item-first .card-title {
+    font-size: 21px !important;
+    line-height: 1.4 !important;
+  }
+
+  .articles-by-category .row.row-title,
+  .home-events-config-block .row.row-title {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .articles-by-category .main-category-title a,
+  .home-events-config-block .main-category-title a,
+  .home-events-config-block-title,
+  .home-events-config-block-title a,
+  .title--red {
+    font-size: 17px !important;
+  }
+
+  .article-card.card .card-title {
+    font-size: 15px !important;
+  }
+
+  .article-media.media .media-title {
+    font-size: 14px !important;
+  }
+
+  .articles-by-category.multimedia {
+    margin-left: -12px !important;
+    margin-right: -12px !important;
+    padding: 16px 12px !important;
+  }
+
+  .vovvn-footer {
+    margin-top: 20px !important;
+    padding-bottom: 70px !important;
+  }
+}
+
+@media (max-width: 479px) {
+  .home-events-config-block.hot_news .col-left .item-first .card-title {
+    font-size: 20px !important;
+  }
+
+  .article-media.media picture,
+  .article-media.media .vovvn-title.flex-shrink-0 {
+    width: 38% !important;
+  }
+
+  .home-events-config-block.update_news .vovvn-title.position-relative.flex-shrink-0 {
+    width: 92px !important;
+  }
+}
+/* 54. VOV-quality compact homepage thumbnails, typography, and spacing. */
+.vovvn-body picture,
+.vovvn-body .article-card.card picture,
+.vovvn-body .article-card.card .vovvn-title picture,
+.vovvn-body .article-media.media picture {
+  background: transparent !important;
+  overflow: hidden !important;
+}
+
+.vovvn-body picture::before,
+.vovvn-body .article-card.card picture::before {
+  display: none !important;
+  content: none !important;
+  animation: none !important;
+}
+
+.vovvn-body img,
+.vovvn-body picture img,
+.vovvn-body .article-card img,
+.vovvn-body .article-media img {
+  display: block !important;
+  max-width: 100% !important;
+  filter: none !important;
+  transform: none !important;
+  image-rendering: auto;
+}
+
+.vovvn-body .article-card.card .vovvn-title:hover picture img,
+.vovvn-body .home-events-config-block.hot_news .vovvn-title:hover picture img {
+  transform: none !important;
+}
+
+/* Tin Moi and media-list rows: fixed sharp thumbnail plus flexible headline. */
+.home-events-config-block.update_news .article-media.media,
+.vovvn-body .article-media.media {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  margin: 0 !important;
+  padding: 12px 0 !important;
+  border-bottom: 1px solid #eeeeee !important;
+}
+
+.home-events-config-block.update_news .article-media.media > a.vovvn-title,
+.vovvn-body .article-media.media > a.vovvn-title,
+.home-events-config-block.update_news .article-media.media picture,
+.vovvn-body .article-media.media picture {
+  flex: 0 0 120px !important;
+  width: 120px !important;
+  height: 68px !important;
+  min-width: 120px !important;
+  max-width: 120px !important;
+  background: transparent !important;
+}
+
+.home-events-config-block.update_news .article-media.media picture img,
+.vovvn-body .article-media.media picture img,
+.home-events-config-block.update_news .article-media.media .img-fluid,
+.vovvn-body .article-media.media .img-fluid {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+  background: transparent !important;
+}
+
+.home-events-config-block.update_news .article-media.media .media-body,
+.vovvn-body .article-media.media .media-body {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.home-events-config-block.update_news .article-media.media .media-title,
+.vovvn-body .article-media.media .media-title {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+  color: #222 !important;
+  overflow-wrap: break-word;
+}
+
+/* Supporting article cards keep compact original VOV proportions. */
+.home-events-config-block.hot_news .col-right .article-card {
+  gap: 12px !important;
+  padding: 12px 0 !important;
+  margin: 0 !important;
+  border-bottom: 1px solid #eeeeee !important;
+}
+
+.home-events-config-block.hot_news .col-right .article-card picture,
+.home-events-config-block.hot_news .col-right .article-card picture img {
+  width: 120px !important;
+  height: 68px !important;
+  min-width: 120px !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+  background: transparent !important;
+}
+
+.home-events-config-block.hot_news .col-right .article-card .card-title,
+.articles-by-category .article-card.card .card-title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+}
+
+/* Sub links return to compact newspaper sizing. */
+.home-events-config-block.hot_news .col-left .list.item-third.articles-list {
+  margin-top: 6px !important;
+  padding-top: 4px !important;
+}
+
+.home-events-config-block.hot_news .col-left
+  .list.item-third.articles-list .article-list.list-item,
+.home-events-config-block.hot_news .article-list.list-item .link,
+.articles-by-category .articles-list .article-list.list-item .link {
+  min-height: 0 !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+
+/* Compact row rhythm across homepage story lists. */
+.home-events-config-block,
+.articles-by-category {
+  margin-bottom: 18px !important;
+}
+
+.article-card.card .card-body {
+  padding-top: 7px !important;
+}
+
+.article-card.card .card-title {
+  font-size: 16px !important;
+  line-height: 1.4 !important;
+}
+
+@media (max-width: 767px) {
+  .home-events-config-block.update_news .article-media.media > a.vovvn-title,
+  .vovvn-body .article-media.media > a.vovvn-title,
+  .home-events-config-block.update_news .article-media.media picture,
+  .vovvn-body .article-media.media picture,
+  .home-events-config-block.hot_news .col-right .article-card picture,
+  .home-events-config-block.hot_news .col-right .article-card picture img {
+    flex-basis: 104px !important;
+    width: 104px !important;
+    min-width: 104px !important;
+    max-width: 104px !important;
+    height: 59px !important;
+  }
+
+  .home-events-config-block.update_news .article-media.media .media-title,
+  .vovvn-body .article-media.media .media-title {
+    font-size: 13px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card .card-title,
+  .articles-by-category .article-card.card .card-title {
+    font-size: 15px !important;
+  }
+}
+
+/* ═════════════════════════════════════════════════════════════════════
+   48. HOMEPAGE WIDTH & ALIGNMENT REPAIR
+   These rules replace fixed Bootstrap-like widths with fluid CSS Grid.
+   They are presentation-only and do not change content or behavior.
+═════════════════════════════════════════════════════════════════════ */
+
+/* Change: use almost the full viewport while retaining a centered news shell. */
+.vovvn-body > .container {
+  width: calc(100% - 32px) !important;
+  max-width: 1320px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Change: allow all grid/flex descendants to shrink instead of overflowing. */
+.vovvn-body .row,
+.vovvn-body .row > [class*="col"],
+.vovvn-body .home-events-config-block,
+.vovvn-body .articles-by-category {
+  min-width: 0;
+}
+
+/* Change: balance lead news and latest news across the full container. */
+.vovvn-body > .container > .row:has(.home-events-config-block.hot_news) {
+  display: grid !important;
+  grid-template-columns: minmax(0, 3fr) minmax(280px, 1fr) !important;
+  column-gap: 24px !important;
+  width: 100% !important;
+}
+
+/* Change: remove fixed Bootstrap widths from the two lead-row cells. */
+.vovvn-body > .container > .row:has(.home-events-config-block.hot_news) > .col,
+.vovvn-body > .container > .row:has(.home-events-config-block.hot_news) > .col-auto {
+  width: auto !important;
+  max-width: none !important;
+  padding: 0 !important;
+  flex: none !important;
+}
+
+/* Change: featured and supporting lead stories share the large lead column. */
+.home-events-config-block.hot_news {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 300px) !important;
+  gap: 0 22px !important;
+  align-items: start !important;
+  width: 100% !important;
+}
+
+/* Change: reset the source 8/4 column widths so the grid controls sizing. */
+.home-events-config-block.hot_news > .col-left,
+.home-events-config-block.hot_news > .col-right,
+.home-events-config-block.hot_news > .col-12.col-md-8,
+.home-events-config-block.hot_news > .col-12.col-md-4 {
+  width: auto !important;
+  max-width: none !important;
+  flex: none !important;
+  padding: 0 !important;
+}
+
+/* Change: create a clear divider between feature and supporting stories. */
+.home-events-config-block.hot_news > .col-left {
+  border-right: 1px solid var(--vne-border) !important;
+  padding-right: 22px !important;
+}
+
+/* Change: keep supporting articles as readable rows, not tiny three-up cards. */
+.home-events-config-block.hot_news .col-right .item-second.d-none.d-md-block {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Change: align each supporting image and headline in a compact two-column row. */
+.home-events-config-block.hot_news .col-right .article-card {
+  display: grid !important;
+  grid-template-columns: 104px minmax(0, 1fr) !important;
+  gap: 12px !important;
+  align-items: start !important;
+  padding: 0 0 14px !important;
+  margin: 0 0 14px !important;
+}
+
+/* Change: normalize supporting-image dimensions. */
+.home-events-config-block.hot_news .col-right .article-card picture,
+.home-events-config-block.hot_news .col-right .article-card picture img {
+  width: 104px !important;
+  height: 70px !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+}
+
+/* Change: place lead text links in two balanced columns below the feature. */
+.home-events-config-block.hot_news .list.item-third.articles-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 0 20px !important;
+}
+
+/* Change: convert every legacy 870px/330px content pair into a fluid layout. */
+.vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 310px) !important;
+  gap: 28px !important;
+  align-items: start !important;
+  width: 100% !important;
+}
+
+/* Change: advertisements in a paired row span both columns. */
+.vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) > [id^="block-ads"] {
+  grid-column: 1 / -1;
+  width: 100% !important;
+}
+
+/* Change: remove fixed widths that caused the sidebar to wrap under content. */
+.vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) > .col-xl-870,
+.vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) > .col-xl-330 {
+  width: auto !important;
+  max-width: none !important;
+  flex: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Change: ensure the long main-category stream fills its grid track. */
+.vovvn-body .col-xl-870,
+.vovvn-body .articles-by-category.grid_3,
+.vovvn-body .articles-by-category.grid_9 {
+  min-width: 0 !important;
+}
+
+/* Change: major category sections use a VNExpress-like 42/58 editorial split. */
+.articles-by-category.grid_3 > .row:not(.row-title),
+.articles-by-category.grid_9 > .row:not(.row-title) {
+  display: grid !important;
+  grid-template-columns: minmax(300px, 42%) minmax(0, 1fr) !important;
+  gap: 24px !important;
+  align-items: start !important;
+  width: 100% !important;
+}
+
+/* Change: neutralize fixed 400px and 470px source columns inside categories. */
+.articles-by-category.grid_3 > .row:not(.row-title) > .col-xl-400,
+.articles-by-category.grid_3 > .row:not(.row-title) > .col-xl-470,
+.articles-by-category.grid_9 > .row:not(.row-title) > .col-xl-400,
+.articles-by-category.grid_9 > .row:not(.row-title) > .col-xl-470,
+.articles-by-category.grid_3 > .row:not(.row-title) > .col-lg-5,
+.articles-by-category.grid_3 > .row:not(.row-title) > .col-lg-7,
+.articles-by-category.grid_9 > .row:not(.row-title) > .col-lg-5,
+.articles-by-category.grid_9 > .row:not(.row-title) > .col-lg-7 {
+  width: auto !important;
+  max-width: none !important;
+  flex: none !important;
+  padding: 0 !important;
+}
+
+/* Change: separate the category lead story from its supporting list. */
+.articles-by-category.grid_3 > .row:not(.row-title) > :first-child,
+.articles-by-category.grid_9 > .row:not(.row-title) > :first-child {
+  border-right: 1px solid var(--vne-border);
+  padding-right: 24px !important;
+}
+
+/* Change: make category thumbnails consistent and prevent image distortion. */
+.articles-by-category.grid_3 .article-card picture img,
+.articles-by-category.grid_9 .article-card picture img {
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  object-fit: cover !important;
+}
+
+/* Change: supporting category rows receive equal image and text alignment. */
+.articles-by-category.grid_3 .article-media.media,
+.articles-by-category.grid_9 .article-media.media {
+  display: grid !important;
+  grid-template-columns: 132px minmax(0, 1fr) !important;
+  gap: 14px !important;
+  align-items: start !important;
+}
+
+/* Change: supporting thumbnails keep one predictable 3:2 ratio. */
+.articles-by-category.grid_3 .article-media picture,
+.articles-by-category.grid_3 .article-media picture img,
+.articles-by-category.grid_9 .article-media picture,
+.articles-by-category.grid_9 .article-media picture img {
+  width: 132px !important;
+  height: 88px !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+}
+
+/* Change: the three compact category blocks use all available row width. */
+.vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  width: 100% !important;
+}
+
+/* Change: reset Bootstrap thirds after the parent becomes a grid. */
+.vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4)
+  > .articles-by-category.list_1.col-lg-4 {
+  width: auto !important;
+  max-width: none !important;
+  flex: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Change: add visual separation while keeping compact columns equal-height. */
+.vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4)
+  > .articles-by-category.list_1.col-lg-4:not(:last-child) {
+  border-right: 1px solid var(--vne-border) !important;
+  padding-right: 24px !important;
+}
+
+/* Change: keep all images constrained to their cards and columns. */
+.vovvn-body picture,
+.vovvn-body picture img,
+.vovvn-body .article-card img,
+.vovvn-body .article-media img {
+  max-width: 100% !important;
+}
+
+/* Change: medium desktop retains a useful sidebar without squeezing content. */
+@media (max-width: 1199px) {
+  .vovvn-body > .container {
+    width: calc(100% - 28px) !important;
+  }
+
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news) {
+    grid-template-columns: minmax(0, 1fr) 280px !important;
+    column-gap: 20px !important;
+  }
+
+  .home-events-config-block.hot_news {
+    grid-template-columns: minmax(0, 1fr) 250px !important;
+    gap: 0 18px !important;
+  }
+
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) {
+    grid-template-columns: minmax(0, 1fr) 280px !important;
+    gap: 22px !important;
+  }
+}
+
+/* Change: tablet stacks outer sidebars but keeps lead/support stories balanced. */
+@media (max-width: 991px) {
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news),
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) {
+    grid-template-columns: minmax(0, 1fr) !important;
+    row-gap: 24px !important;
+  }
+
+  .home-events-config-block.hot_news {
+    grid-template-columns: minmax(0, 1.65fr) minmax(230px, 1fr) !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title) {
+    grid-template-columns: minmax(260px, 42%) minmax(0, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Change: mobile becomes one clean reading column with no horizontal voids. */
+@media (max-width: 767px) {
+  .vovvn-body > .container {
+    width: calc(100% - 24px) !important;
+  }
+
+  .home-events-config-block.hot_news,
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title),
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .home-events-config-block.hot_news > .col-left,
+  .articles-by-category.grid_3 > .row:not(.row-title) > :first-child,
+  .articles-by-category.grid_9 > .row:not(.row-title) > :first-child {
+    border-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .home-events-config-block.hot_news > .col-right {
+    border-top: 1px solid var(--vne-border);
+    margin-top: 18px;
+    padding-top: 18px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card {
+    grid-template-columns: 120px minmax(0, 1fr) !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card picture,
+  .home-events-config-block.hot_news .col-right .article-card picture img {
+    width: 120px !important;
+    height: 80px !important;
+  }
+
+  .home-events-config-block.hot_news .list.item-third.articles-list {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .articles-by-category.grid_3 .article-media.media,
+  .articles-by-category.grid_9 .article-media.media {
+    grid-template-columns: 112px minmax(0, 1fr) !important;
+  }
+
+  .articles-by-category.grid_3 .article-media picture,
+  .articles-by-category.grid_3 .article-media picture img,
+  .articles-by-category.grid_9 .article-media picture,
+  .articles-by-category.grid_9 .article-media picture img {
+    width: 112px !important;
+    height: 75px !important;
+  }
+
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4)
+    > .articles-by-category.list_1.col-lg-4 {
+    border-right: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+/* ═════════════════════════════════════════════════════════════════════
+   49. ORIGINAL VOV HEADER & NAVIGATION
+   Restores the reference VOV masthead without changing its existing DOM.
+═════════════════════════════════════════════════════════════════════ */
+:root {
+  --vov-blue: #1d5f96;
+  --vov-blue-dark: #164d7d;
+  --vov-wide-shell: 95vw;
+  --vov-wide-max: 1680px;
+}
+
+/* Progressive desktop compaction keeps the navigation fully visible. */
+@media (max-width: 1499px) {
+}
+
+/* Tablet menu scrolls horizontally rather than clipping or wrapping. */
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+/* Existing mobile controls remain intact with compact VOV sizing. */
+@media (max-width: 991px) {
+}
+
+@media (max-width: 767px) {
+}
+
+/* 51. Original-size equal advertising gutters across all page content. */
+.vovvn-body > .container,
+main > .container {
+  --vov-ad-gutter: clamp(32px, 11.5vw, 220px);
+  width: calc(100% - (2 * var(--vov-ad-gutter))) !important;
+  max-width: 1480px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (max-width: 991px) {
+  .vovvn-body > .container,
+  main > .container {
+    --vov-ad-gutter: clamp(20px, 6vw, 56px);
+  }
+}
+
+@media (max-width: 767px) {
+  .vovvn-body > .container,
+  main > .container {
+    --vov-ad-gutter: 12px;
+  }
+}
+
+/* 52. Extend the featured related-news list like the original VOV layout. */
+.home-events-config-block.hot_news .col-left .list.item-third.articles-list {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0 !important;
+  width: 100% !important;
+  margin-top: 8px !important;
+  padding-top: 6px !important;
+}
+
+.home-events-config-block.hot_news .col-left
+  .list.item-third.articles-list .article-list.list-item {
+  min-height: 46px;
+  padding: 11px 0 11px 24px !important;
+  border-bottom: 1px solid #eeeeee !important;
+  font-size: 18px !important;
+  line-height: 1.55 !important;
+}
+
+.home-events-config-block.hot_news .col-left
+  .list.item-third.articles-list .article-list.list-item:last-child {
+  border-bottom: 0 !important;
+}
+
+@media (max-width: 767px) {
+  .home-events-config-block.hot_news .col-left
+    .list.item-third.articles-list .article-list.list-item {
+    min-height: 0;
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+    font-size: 16px !important;
+  }
+}
+
+/* 53. Responsive hardening for desktop, tablet, and mobile. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Medium screens: move auxiliary rails below the primary content. */
+@media (max-width: 1199px) {
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news),
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) {
+    grid-template-columns: minmax(0, 1fr) !important;
+    row-gap: 24px !important;
+  }
+
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330)
+    > .col-xl-870,
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330)
+    > .col-xl-330 {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* Latest-news items use two columns after moving below the lead block. */
+  .home-events-config-block.update_news .row {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0 !important;
+  }
+
+  .home-events-config-block.update_news .row > [class*="col-"] {
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  .home-events-config-block.hot_news {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .home-events-config-block.hot_news > .col-left {
+    border-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .home-events-config-block.hot_news > .col-right {
+    border-top: 1px solid #eeeeee;
+    margin-top: 18px;
+    padding-top: 18px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .item-second.d-none.d-md-block {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card {
+    display: block !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card picture,
+  .home-events-config-block.hot_news .col-right .article-card picture img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+}
+
+/* Tablet: featured story becomes full width; supporting stories follow it. */
+@media (max-width: 991px) {
+  .home-events-config-block.hot_news {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .home-events-config-block.hot_news > .col-left {
+    border-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .home-events-config-block.hot_news > .col-right {
+    width: 100% !important;
+    border-top: 1px solid var(--vne-border);
+    margin-top: 20px;
+    padding-top: 20px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .item-second.d-none.d-md-block {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card {
+    grid-template-columns: 120px minmax(0, 1fr) !important;
+    margin-bottom: 0 !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card picture,
+  .home-events-config-block.hot_news .col-right .article-card picture img {
+    width: 120px !important;
+    height: 80px !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title) {
+    grid-template-columns: minmax(240px, 40%) minmax(0, 1fr) !important;
+  }
+}
+
+/* Mobile: one reading column and no element may widen the viewport. */
+@media (max-width: 767px) {
+
+  .vovvn-body .container > .row,
+  .vovvn-body .container > .row > [class*="col"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .item-second.d-none.d-md-block,
+  .home-events-config-block.update_news .row,
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title),
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .home-events-config-block.hot_news .col-left .item-first .card-title {
+    max-width: 100%;
+    font-size: 22px !important;
+    line-height: 1.35 !important;
+    overflow-wrap: anywhere;
+  }
+
+  .home-events-config-block.hot_news .col-left
+    .list.item-third.articles-list .article-list.list-item {
+    width: 100%;
+    padding-left: 18px !important;
+    font-size: 16px !important;
+    overflow-wrap: anywhere;
+  }
+
+  .article-card,
+  .article-card picture,
+  .article-card picture img,
+  .home-events-config-block.hot_news .item-first .img-fluid.w-100 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title) > :first-child,
+  .articles-by-category.grid_9 > .row:not(.row-title) > :first-child {
+    border-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .articles-by-category .row.row-title,
+  .home-events-config-block .row.row-title {
+    width: 100% !important;
+    overflow-x: auto;
+    flex-wrap: nowrap !important;
+  }
+
+  .vovvn-footer img,
+  .vovvn-footer iframe,
+  .vovvn-body iframe,
+  .vovvn-body video {
+    max-width: 100% !important;
+    height: auto;
+  }
+}
+
+/* Small phones: supporting cards remain readable without text clipping. */
+@media (max-width: 479px) {
+  .home-events-config-block.hot_news .col-right .article-card,
+  .articles-by-category.grid_3 .article-media.media,
+  .articles-by-category.grid_9 .article-media.media {
+    grid-template-columns: 104px minmax(0, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card picture,
+  .home-events-config-block.hot_news .col-right .article-card picture img,
+  .articles-by-category.grid_3 .article-media picture,
+  .articles-by-category.grid_3 .article-media picture img,
+  .articles-by-category.grid_9 .article-media picture,
+  .articles-by-category.grid_9 .article-media picture img {
+    width: 104px !important;
+    height: 70px !important;
+  }
 }

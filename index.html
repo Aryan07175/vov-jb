@@ -2039,6 +2039,2338 @@ html {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ─────────────────────────────────────────────────────────────────────
+   47. VNEXPRESS FIDELITY PASS
+   Presentation only: no VOV component, route, or behavior is changed.
+──────────────────────────────────────────────────────────────────────── */
+:root {
+  --vne-red: #9f224e;
+  --vne-red-dark: #7b173b;
+  --vne-red-light: #f7eef2;
+  --vne-black: #222;
+  --vne-text: #4f4f4f;
+  --vne-text-sub: #757575;
+  --vne-text-meta: #9f9f9f;
+  --vne-bg: #fff;
+  --vne-bg-soft: #f7f7f7;
+  --vne-bg-white: #fff;
+  --vne-border: #e5e5e5;
+  --vne-border-mid: #bdbdbd;
+  --vne-nav-height: 44px;
+  --vne-container: 1200px;
+  --vne-font: Arial, Helvetica, sans-serif;
+  --vne-font-serif: "Merriweather", Georgia, "Times New Roman", serif;
+  --vne-radius: 0;
+  --vne-shadow: none;
+  --vne-shadow-md: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+html {
+  background: #fff;
+}
+
+body,
+body.path-frontpage,
+.vovvn-body {
+  background: #fff !important;
+  color: var(--vne-text) !important;
+  font-family: var(--vne-font) !important;
+}
+
+.container,
+.container-fluid .container {
+  max-width: 1200px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+/* Utility strip and masthead */
+.bg-light.nav-channel {
+  background: #fff !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+}
+
+.bg-light.nav-channel .nav-item .nav-link {
+  background: transparent !important;
+  border: 0 !important;
+  color: #757575 !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  padding: 6px 10px !important;
+  text-transform: none;
+}
+
+.bg-light.nav-channel .nav-item .nav-link:hover,
+.nav-desktop a:hover,
+.lang-track a:hover {
+  color: var(--vne-red) !important;
+}
+
+.vovvn-header {
+  background: #fff !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.vovvn-header .vovvn-navbar-mobile {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+.vovvn-header .row-header {
+  min-height: 58px;
+  margin: 0 !important;
+}
+
+.vovvn-header .logo--image img,
+.vovvn-header .branding img {
+  height: 48px !important;
+  max-width: 190px;
+}
+
+.custom-weather {
+  border-right: 1px solid var(--vne-border);
+  padding-right: 14px !important;
+}
+
+.custom-weather .dropdown-toggle,
+.language-link {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: #757575 !important;
+  font-size: 13px !important;
+}
+
+.search-box form {
+  background: #fff !important;
+  border: 1px solid #bdbdbd !important;
+  border-radius: 18px !important;
+  height: 34px;
+}
+
+.search-box form:focus-within {
+  border-color: #757575 !important;
+}
+
+.search-box .form-text.form-control {
+  font-family: Arial, Helvetica, sans-serif !important;
+  height: 32px;
+  padding: 5px 12px !important;
+}
+
+.search-box input[type="submit"].button {
+  background-color: transparent !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  height: 32px;
+  min-width: 38px;
+  padding: 0 !important;
+  position: relative;
+}
+
+.search-box input[type="submit"].button:hover {
+  background-color: #f5f5f5 !important;
+}
+
+/* VNExpress-style white primary navigation */
+.vovvn-navbar {
+  background: #fff !important;
+  border-top: 1px solid var(--vne-border) !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  box-shadow: none !important;
+  min-height: 44px !important;
+}
+
+.vovvn-navbar .nav-link {
+  background: transparent !important;
+  color: #4f4f4f !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 20px !important;
+  padding: 11px 9px !important;
+}
+
+.vovvn-navbar .nav-link::after {
+  display: none !important;
+}
+
+.vovvn-navbar .nav-link:hover,
+.vovvn-navbar .nav-item:hover > .nav-link {
+  background: #f7f7f7 !important;
+  color: var(--vne-red) !important;
+}
+
+.vovvn-navbar .home-nav .nav-link,
+.vovvn-navbar .vovvn-icon-home,
+.vovvn-navbar .navigation-nav .nav-link {
+  color: var(--vne-red) !important;
+}
+
+.vovvn-navbar .navbar-nav-sub {
+  border: 0 !important;
+  border-top: 1px solid var(--vne-red) !important;
+  box-shadow: var(--vne-shadow-md) !important;
+  padding: 8px 0 !important;
+}
+
+.vovvn-navbar .navbar-nav-sub .nav-link {
+  border: 0 !important;
+  color: #4f4f4f !important;
+  font-weight: 400 !important;
+  padding: 8px 15px !important;
+}
+
+/* Main content rhythm */
+.vovvn-body > .container {
+  padding-top: 20px !important;
+}
+
+.vovvn-body .container > .row {
+  margin-left: -10px !important;
+  margin-right: -10px !important;
+}
+
+.vovvn-body .container > .row > [class*="col"] {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.ads-top.advertisement,
+.ads-middle.advertisement {
+  background: transparent !important;
+  border: 0 !important;
+  margin: 0 auto 20px !important;
+  padding: 0 !important;
+}
+
+/* Lead-news composition */
+.home-events-config-block.hot_news {
+  background: #fff !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  border-radius: 0 !important;
+  margin-bottom: 24px !important;
+  overflow: visible;
+  padding-bottom: 20px;
+}
+
+.home-events-config-block.hot_news .col-left {
+  border-right: 1px solid var(--vne-border);
+  padding-right: 20px !important;
+}
+
+.home-events-config-block.hot_news .col-right {
+  padding-left: 20px !important;
+}
+
+.home-events-config-block.hot_news .col-left .item-first .vovvn-title picture {
+  background: #f4f4f4;
+  display: block;
+  overflow: hidden;
+}
+
+.home-events-config-block.hot_news .col-left .item-first .vovvn-title picture img {
+  aspect-ratio: 16 / 9;
+  border-radius: 0 !important;
+  object-fit: cover;
+}
+
+.home-events-config-block.hot_news .col-left .item-first .card-title {
+  color: #222 !important;
+  font-family: var(--vne-font-serif) !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  margin: 12px 0 8px !important;
+}
+
+.home-events-config-block.hot_news .col-right .article-card {
+  border: 0 !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  border-radius: 0 !important;
+  margin-bottom: 14px !important;
+  padding-bottom: 14px !important;
+}
+
+.home-events-config-block.hot_news .col-right .article-card .card-title {
+  font-family: var(--vne-font-serif) !important;
+  font-size: 15px !important;
+  line-height: 1.45 !important;
+}
+
+.home-events-config-block.hot_news .articles-list {
+  border-top: 1px solid var(--vne-border);
+  margin-top: 14px !important;
+  padding-top: 10px !important;
+}
+
+.home-events-config-block.hot_news .article-list.list-item {
+  border: 0 !important;
+  padding: 7px 0 7px 14px !important;
+}
+
+.home-events-config-block.hot_news .article-list.list-item::before,
+.articles-by-category .articles-list .article-list.list-item::before {
+  background: #9f224e !important;
+  height: 4px;
+  top: 15px;
+  width: 4px;
+}
+
+/* Editorial headings */
+.home-events-config-block-title,
+.articles-by-category .row.row-title,
+.home-events-config-block .row.row-title {
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  margin: 0 0 16px !important;
+  min-height: 38px;
+  padding: 0 !important;
+}
+
+.articles-by-category .main-category-title a,
+.home-events-config-block .main-category-title a,
+.home-events-config-block-title,
+.home-events-config-block-title a,
+.title--red {
+  border: 0 !important;
+  color: var(--vne-red) !important;
+  font-family: var(--vne-font-serif) !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 38px !important;
+  padding: 0 !important;
+  text-transform: none !important;
+}
+
+.articles-by-category .main-category-title a::after,
+.home-events-config-block .main-category-title a::after {
+  display: none !important;
+}
+
+.articles-by-category .sub-category-title {
+  border: 0 !important;
+  padding-left: 14px !important;
+}
+
+.articles-by-category .sub-category-title a,
+.home-events-config-block .sub-category-title a {
+  color: #4f4f4f !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 38px !important;
+  text-transform: none !important;
+}
+
+/* Flat article modules */
+.articles-by-category {
+  background: #fff !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  border-radius: 0 !important;
+  margin-bottom: 24px !important;
+  padding: 0 0 22px !important;
+}
+
+.article-card.card {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.article-card.card:hover {
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.article-card.card picture {
+  background: #f2f2f2;
+  display: block;
+  overflow: hidden;
+}
+
+.article-card.card picture img,
+.article-card.card .img-fluid.w-100 {
+  aspect-ratio: 16 / 9;
+  border-radius: 0 !important;
+  object-fit: cover;
+}
+
+.article-card.card .card-title,
+.article-media.media .media-title {
+  color: #222 !important;
+  font-family: var(--vne-font-serif) !important;
+}
+
+.article-card.card .card-title {
+  font-size: 16px !important;
+  line-height: 1.45 !important;
+  margin: 9px 0 0 !important;
+}
+
+.article-card.card .vovvn-title:hover .card-title,
+.article-media.media:hover .media-title,
+.article-media.media .media-title:hover {
+  color: var(--vne-red) !important;
+}
+
+.article-media.media {
+  align-items: flex-start !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  gap: 12px !important;
+  margin: 0 !important;
+  padding: 0 0 14px !important;
+}
+
+.article-media.media + .article-media.media {
+  padding-top: 14px !important;
+}
+
+.article-media.media picture img,
+.article-media.media .img-fluid {
+  aspect-ratio: 3 / 2;
+  border-radius: 0 !important;
+  height: auto !important;
+  object-fit: cover;
+}
+
+.article-media.media .media-title {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
+}
+
+.articles-by-category .articles-list {
+  border-top: 1px solid var(--vne-border);
+  margin-top: 12px !important;
+  padding-top: 8px !important;
+}
+
+.articles-by-category .articles-list .article-list.list-item {
+  border: 0 !important;
+  padding: 7px 0 7px 14px !important;
+}
+
+.articles-by-category .articles-list .article-list.list-item .link {
+  color: #4f4f4f !important;
+  font-family: var(--vne-font-serif) !important;
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+}
+
+/* Trending and sidebar */
+.home-events-config-block.trending_news {
+  background: #f7f7f7 !important;
+  border: 0 !important;
+  border-top: 1px solid var(--vne-border) !important;
+  border-bottom: 1px solid var(--vne-border) !important;
+  border-radius: 0 !important;
+  margin: 0 0 24px !important;
+  padding: 18px 0 20px !important;
+}
+
+.home-events-config-block.trending_news .home-events-config-block-title {
+  border: 0 !important;
+  margin-left: 15px !important;
+}
+
+.home-events-config-block.trending_news .carousel {
+  gap: 20px !important;
+}
+
+.home-events-config-block.update_news,
+.sidebar-widget,
+.vov-poll-wrapper,
+.poll-block {
+  background: #fff !important;
+  border: 0 !important;
+  border-top: 1px solid var(--vne-red) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 12px 0 !important;
+}
+
+.home-events-config-block.update_news .home-events-config-block-title {
+  border-bottom: 1px solid var(--vne-border) !important;
+  color: var(--vne-red) !important;
+  font-family: var(--vne-font-serif) !important;
+  margin-bottom: 14px !important;
+}
+
+.home-events-config-block.update_news picture img.img-fluid {
+  aspect-ratio: 3 / 2;
+  border-radius: 0 !important;
+  height: auto !important;
+  object-fit: cover;
+}
+
+/* Multimedia keeps its identity while using VNExpress spacing */
+.articles-by-category.multimedia {
+  background: #f7f7f7 !important;
+  border-top: 3px solid #222 !important;
+  padding: 20px !important;
+}
+
+.articles-by-category.multimedia .main-category-title a,
+.articles-by-category.multimedia .card-title {
+  color: #222 !important;
+}
+
+/* Footer */
+.vovvn-footer {
+  background: #f7f7f7 !important;
+  border-top: 4px solid var(--vne-border-mid) !important;
+  color: #4f4f4f !important;
+  margin-top: 30px !important;
+  padding-top: 24px !important;
+}
+
+.vovvn-footer .menu-container .menu-link,
+.vovvn-footer .footer-menu a,
+.vovvn-footer .footer-body p,
+.vovvn-footer .text-white,
+.vovvn-footer .footer__license {
+  color: #4f4f4f !important;
+}
+
+.vovvn-footer .divider {
+  background: var(--vne-border) !important;
+}
+
+.vovvn-footer .footer__license {
+  border-top: 1px solid var(--vne-border) !important;
+}
+
+/* Responsive composition */
+@media (max-width: 1199px) {
+  .vovvn-navbar .nav-link {
+    font-size: 12px !important;
+    padding-left: 7px !important;
+    padding-right: 7px !important;
+  }
+
+  .home-events-config-block.hot_news .col-left {
+    padding-right: 16px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right {
+    padding-left: 16px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .vovvn-body > .container {
+    padding-top: 16px !important;
+  }
+
+  .home-events-config-block.hot_news .col-left {
+    border-right: 0;
+    padding-right: 0 !important;
+  }
+
+  .home-events-config-block.hot_news .col-right {
+    border-top: 1px solid var(--vne-border);
+    margin-top: 18px;
+    padding-left: 0 !important;
+    padding-top: 18px;
+  }
+
+  .articles-by-category {
+    padding-bottom: 18px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .container,
+  .container-fluid .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .vovvn-header .vovvn-navbar-mobile {
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+  }
+
+  .vovvn-header .logo--image img,
+  .vovvn-header .branding img {
+    height: 40px !important;
+    max-width: 150px;
+  }
+
+  .menu-mobile-box {
+    background: #fff !important;
+    border-top: 1px solid var(--vne-border) !important;
+    box-shadow: none !important;
+  }
+
+  .menu-mobile-new .nav-link {
+    color: #4f4f4f !important;
+    font-size: 12px !important;
+    padding: 10px 9px !important;
+  }
+
+  .menu-mobile-new .nav-link:hover,
+  .menu-mobile-new .nav-item.active .nav-link {
+    background: transparent !important;
+    color: var(--vne-red) !important;
+  }
+
+  .vovvn-body .container > .row {
+    margin-left: -6px !important;
+    margin-right: -6px !important;
+  }
+
+  .vovvn-body .container > .row > [class*="col"] {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+
+  .home-events-config-block.hot_news {
+    margin-bottom: 20px !important;
+    padding-bottom: 16px;
+  }
+
+  .home-events-config-block.hot_news .col-left .item-first .card-title {
+    font-size: 21px !important;
+    line-height: 1.4 !important;
+  }
+
+  .articles-by-category .row.row-title,
+  .home-events-config-block .row.row-title {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .articles-by-category .main-category-title a,
+  .home-events-config-block .main-category-title a,
+  .home-events-config-block-title,
+  .home-events-config-block-title a,
+  .title--red {
+    font-size: 17px !important;
+  }
+
+  .article-card.card .card-title {
+    font-size: 15px !important;
+  }
+
+  .article-media.media .media-title {
+    font-size: 14px !important;
+  }
+
+  .articles-by-category.multimedia {
+    margin-left: -12px !important;
+    margin-right: -12px !important;
+    padding: 16px 12px !important;
+  }
+
+  .vovvn-footer {
+    margin-top: 20px !important;
+    padding-bottom: 70px !important;
+  }
+}
+
+@media (max-width: 479px) {
+  .home-events-config-block.hot_news .col-left .item-first .card-title {
+    font-size: 20px !important;
+  }
+
+  .article-media.media picture,
+  .article-media.media .vovvn-title.flex-shrink-0 {
+    width: 38% !important;
+  }
+
+  .home-events-config-block.update_news .vovvn-title.position-relative.flex-shrink-0 {
+    width: 92px !important;
+  }
+}
+/* ═════════════════════════════════════════════════════════════════════
+   48. HOMEPAGE WIDTH & ALIGNMENT REPAIR
+   These rules replace fixed Bootstrap-like widths with fluid CSS Grid.
+   They are presentation-only and do not change content or behavior.
+═════════════════════════════════════════════════════════════════════ */
+
+/* Change: use almost the full viewport while retaining a centered news shell. */
+.vovvn-body > .container {
+  width: calc(100% - 32px) !important;
+  max-width: 1320px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Change: allow all grid/flex descendants to shrink instead of overflowing. */
+.vovvn-body .row,
+.vovvn-body .row > [class*="col"],
+.vovvn-body .home-events-config-block,
+.vovvn-body .articles-by-category {
+  min-width: 0;
+}
+
+/* Change: balance lead news and latest news across the full container. */
+.vovvn-body > .container > .row:has(.home-events-config-block.hot_news) {
+  display: grid !important;
+  grid-template-columns: minmax(0, 3fr) minmax(280px, 1fr) !important;
+  column-gap: 24px !important;
+  width: 100% !important;
+}
+
+/* Change: remove fixed Bootstrap widths from the two lead-row cells. */
+.vovvn-body > .container > .row:has(.home-events-config-block.hot_news) > .col,
+.vovvn-body > .container > .row:has(.home-events-config-block.hot_news) > .col-auto {
+  width: auto !important;
+  max-width: none !important;
+  padding: 0 !important;
+  flex: none !important;
+}
+
+/* Change: featured and supporting lead stories share the large lead column. */
+.home-events-config-block.hot_news {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 300px) !important;
+  gap: 0 22px !important;
+  align-items: start !important;
+  width: 100% !important;
+}
+
+/* Change: reset the source 8/4 column widths so the grid controls sizing. */
+.home-events-config-block.hot_news > .col-left,
+.home-events-config-block.hot_news > .col-right,
+.home-events-config-block.hot_news > .col-12.col-md-8,
+.home-events-config-block.hot_news > .col-12.col-md-4 {
+  width: auto !important;
+  max-width: none !important;
+  flex: none !important;
+  padding: 0 !important;
+}
+
+/* Change: create a clear divider between feature and supporting stories. */
+.home-events-config-block.hot_news > .col-left {
+  border-right: 1px solid var(--vne-border) !important;
+  padding-right: 22px !important;
+}
+
+/* Change: keep supporting articles as readable rows, not tiny three-up cards. */
+.home-events-config-block.hot_news .col-right .item-second.d-none.d-md-block {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Change: align each supporting image and headline in a compact two-column row. */
+.home-events-config-block.hot_news .col-right .article-card {
+  display: grid !important;
+  grid-template-columns: 104px minmax(0, 1fr) !important;
+  gap: 12px !important;
+  align-items: start !important;
+  padding: 0 0 14px !important;
+  margin: 0 0 14px !important;
+}
+
+/* Change: normalize supporting-image dimensions. */
+.home-events-config-block.hot_news .col-right .article-card picture,
+.home-events-config-block.hot_news .col-right .article-card picture img {
+  width: 104px !important;
+  height: 70px !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+}
+
+/* Change: place lead text links in two balanced columns below the feature. */
+.home-events-config-block.hot_news .list.item-third.articles-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 0 20px !important;
+}
+
+/* Change: convert every legacy 870px/330px content pair into a fluid layout. */
+.vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 310px) !important;
+  gap: 28px !important;
+  align-items: start !important;
+  width: 100% !important;
+}
+
+/* Change: advertisements in a paired row span both columns. */
+.vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) > [id^="block-ads"] {
+  grid-column: 1 / -1;
+  width: 100% !important;
+}
+
+/* Change: remove fixed widths that caused the sidebar to wrap under content. */
+.vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) > .col-xl-870,
+.vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) > .col-xl-330 {
+  width: auto !important;
+  max-width: none !important;
+  flex: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Change: ensure the long main-category stream fills its grid track. */
+.vovvn-body .col-xl-870,
+.vovvn-body .articles-by-category.grid_3,
+.vovvn-body .articles-by-category.grid_9 {
+  min-width: 0 !important;
+}
+
+/* Change: major category sections use a VNExpress-like 42/58 editorial split. */
+.articles-by-category.grid_3 > .row:not(.row-title),
+.articles-by-category.grid_9 > .row:not(.row-title) {
+  display: grid !important;
+  grid-template-columns: minmax(300px, 42%) minmax(0, 1fr) !important;
+  gap: 24px !important;
+  align-items: start !important;
+  width: 100% !important;
+}
+
+/* Change: neutralize fixed 400px and 470px source columns inside categories. */
+.articles-by-category.grid_3 > .row:not(.row-title) > .col-xl-400,
+.articles-by-category.grid_3 > .row:not(.row-title) > .col-xl-470,
+.articles-by-category.grid_9 > .row:not(.row-title) > .col-xl-400,
+.articles-by-category.grid_9 > .row:not(.row-title) > .col-xl-470,
+.articles-by-category.grid_3 > .row:not(.row-title) > .col-lg-5,
+.articles-by-category.grid_3 > .row:not(.row-title) > .col-lg-7,
+.articles-by-category.grid_9 > .row:not(.row-title) > .col-lg-5,
+.articles-by-category.grid_9 > .row:not(.row-title) > .col-lg-7 {
+  width: auto !important;
+  max-width: none !important;
+  flex: none !important;
+  padding: 0 !important;
+}
+
+/* Change: separate the category lead story from its supporting list. */
+.articles-by-category.grid_3 > .row:not(.row-title) > :first-child,
+.articles-by-category.grid_9 > .row:not(.row-title) > :first-child {
+  border-right: 1px solid var(--vne-border);
+  padding-right: 24px !important;
+}
+
+/* Change: make category thumbnails consistent and prevent image distortion. */
+.articles-by-category.grid_3 .article-card picture img,
+.articles-by-category.grid_9 .article-card picture img {
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  object-fit: cover !important;
+}
+
+/* Change: supporting category rows receive equal image and text alignment. */
+.articles-by-category.grid_3 .article-media.media,
+.articles-by-category.grid_9 .article-media.media {
+  display: grid !important;
+  grid-template-columns: 132px minmax(0, 1fr) !important;
+  gap: 14px !important;
+  align-items: start !important;
+}
+
+/* Change: supporting thumbnails keep one predictable 3:2 ratio. */
+.articles-by-category.grid_3 .article-media picture,
+.articles-by-category.grid_3 .article-media picture img,
+.articles-by-category.grid_9 .article-media picture,
+.articles-by-category.grid_9 .article-media picture img {
+  width: 132px !important;
+  height: 88px !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+}
+
+/* Change: the three compact category blocks use all available row width. */
+.vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  width: 100% !important;
+}
+
+/* Change: reset Bootstrap thirds after the parent becomes a grid. */
+.vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4)
+  > .articles-by-category.list_1.col-lg-4 {
+  width: auto !important;
+  max-width: none !important;
+  flex: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Change: add visual separation while keeping compact columns equal-height. */
+.vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4)
+  > .articles-by-category.list_1.col-lg-4:not(:last-child) {
+  border-right: 1px solid var(--vne-border) !important;
+  padding-right: 24px !important;
+}
+
+/* Change: keep all images constrained to their cards and columns. */
+.vovvn-body picture,
+.vovvn-body picture img,
+.vovvn-body .article-card img,
+.vovvn-body .article-media img {
+  max-width: 100% !important;
+}
+
+/* Change: medium desktop retains a useful sidebar without squeezing content. */
+@media (max-width: 1199px) {
+  .vovvn-body > .container {
+    width: calc(100% - 28px) !important;
+  }
+
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news) {
+    grid-template-columns: minmax(0, 1fr) 280px !important;
+    column-gap: 20px !important;
+  }
+
+  .home-events-config-block.hot_news {
+    grid-template-columns: minmax(0, 1fr) 250px !important;
+    gap: 0 18px !important;
+  }
+
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) {
+    grid-template-columns: minmax(0, 1fr) 280px !important;
+    gap: 22px !important;
+  }
+}
+
+/* Change: tablet stacks outer sidebars but keeps lead/support stories balanced. */
+@media (max-width: 991px) {
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news),
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) {
+    grid-template-columns: minmax(0, 1fr) !important;
+    row-gap: 24px !important;
+  }
+
+  .home-events-config-block.hot_news {
+    grid-template-columns: minmax(0, 1.65fr) minmax(230px, 1fr) !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title) {
+    grid-template-columns: minmax(260px, 42%) minmax(0, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Change: mobile becomes one clean reading column with no horizontal voids. */
+@media (max-width: 767px) {
+  .vovvn-body > .container {
+    width: calc(100% - 24px) !important;
+  }
+
+  .home-events-config-block.hot_news,
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title),
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .home-events-config-block.hot_news > .col-left,
+  .articles-by-category.grid_3 > .row:not(.row-title) > :first-child,
+  .articles-by-category.grid_9 > .row:not(.row-title) > :first-child {
+    border-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .home-events-config-block.hot_news > .col-right {
+    border-top: 1px solid var(--vne-border);
+    margin-top: 18px;
+    padding-top: 18px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card {
+    grid-template-columns: 120px minmax(0, 1fr) !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card picture,
+  .home-events-config-block.hot_news .col-right .article-card picture img {
+    width: 120px !important;
+    height: 80px !important;
+  }
+
+  .home-events-config-block.hot_news .list.item-third.articles-list {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .articles-by-category.grid_3 .article-media.media,
+  .articles-by-category.grid_9 .article-media.media {
+    grid-template-columns: 112px minmax(0, 1fr) !important;
+  }
+
+  .articles-by-category.grid_3 .article-media picture,
+  .articles-by-category.grid_3 .article-media picture img,
+  .articles-by-category.grid_9 .article-media picture,
+  .articles-by-category.grid_9 .article-media picture img {
+    width: 112px !important;
+    height: 75px !important;
+  }
+
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4)
+    > .articles-by-category.list_1.col-lg-4 {
+    border-right: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+
+
+
+/* ═════════════════════════════════════════════════════════════════════
+   49. ORIGINAL VOV HEADER & NAVIGATION
+   Restores the reference VOV masthead without changing its existing DOM.
+═════════════════════════════════════════════════════════════════════ */
+:root {
+  --vov-blue: #1d5f96;
+  --vov-blue-dark: #164d7d;
+  --vov-wide-shell: 95vw;
+  --vov-wide-max: 1680px;
+}
+
+/* Shared alignment: header, navigation, and content use one wide rail. */
+.vovvn-header .vovvn-navbar-mobile,
+.vovvn-navbar .menu-container,
+.vovvn-body > .container {
+  width: var(--vov-wide-shell) !important;
+  max-width: var(--vov-wide-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* White information masthead with every tool on the same baseline. */
+.vovvn-header {
+  background: #fff !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.vovvn-header .vovvn-navbar-mobile {
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+.vovvn-header .row-header {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: clamp(8px, 1vw, 18px) !important;
+  width: 100%;
+  min-height: 88px;
+  margin: 0 !important;
+}
+
+.vovvn-header .row-header > [class*="col"] {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Reference logo size; no absolute positioning. */
+.vovvn-header .logo--image img,
+.vovvn-header .branding img {
+  width: auto !important;
+  height: 76px !important;
+  max-width: 210px;
+  object-fit: contain;
+}
+
+/* Compact location, weather, and date group. */
+.vovvn-header .custom-weather,
+.vovvn-header .custom-weather > .d-flex {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap;
+}
+
+.vovvn-header .custom-weather {
+  border: 0 !important;
+  margin-right: 0 !important;
+  padding-right: 12px !important;
+}
+
+.vovvn-header .custom-weather::before {
+  right: 0 !important;
+  background: #b6b6b6 !important;
+}
+
+.vovvn-header .custom-weather .dropdown-toggle {
+  min-width: auto !important;
+  padding: 6px 8px !important;
+  color: #6f6f6f !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+.vovvn-header .js-weather-temp,
+.vovvn-header .js-date-now {
+  color: #757575 !important;
+  font-size: 13px !important;
+  white-space: nowrap;
+}
+
+/* Circular social controls matching the reference header. */
+.vovvn-header .menu-social {
+  width: 38px !important;
+  height: 38px !important;
+  margin: 0 3px !important;
+  border-radius: 50% !important;
+}
+
+.vovvn-header .menu-social .vovvn-icon {
+  font-size: 18px !important;
+}
+
+/* Equal Podcast, Radio, and English controls. */
+.vovvn-header .box-podcast,
+.vovvn-header .box-radio {
+  min-width: 54px;
+  color: #1454a0 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1.1;
+}
+
+.vovvn-header .box-podcast img,
+.vovvn-header .box-radio img {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.vovvn-header .language-link {
+  border: 0 !important;
+  color: #174f9d !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  padding: 7px 5px !important;
+  white-space: nowrap;
+}
+
+/* Rounded search field aligned at the far right. */
+.vovvn-header .search-box form {
+  width: clamp(170px, 12vw, 215px);
+  height: 48px;
+  background: #f5f6f7 !important;
+  border: 1px solid #d3d7dc !important;
+  border-radius: 26px !important;
+}
+
+.vovvn-header .search-box .form-text.form-control {
+  width: 100% !important;
+  min-width: 0;
+  height: 46px;
+  padding-left: 18px !important;
+}
+
+.vovvn-header .search-box input[type="submit"].button {
+  width: 48px;
+  min-width: 48px;
+  height: 46px;
+}
+
+/* Full-bleed original VOV blue navigation bar. */
+.vovvn-navbar {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: 45px;
+  min-height: 45px !important;
+  padding: 0 !important;
+  background: var(--vov-blue) !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Wide menu rail prevents the final categories from being cut off. */
+.vovvn-navbar .menu-container {
+  display: flex !important;
+  align-items: stretch !important;
+  height: 45px;
+  padding: 0 !important;
+  overflow: visible;
+}
+
+.vovvn-navbar .main-nav,
+.vovvn-navbar .main-menu,
+.vovvn-navbar .main-menu > .navbar-nav {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  min-width: 0;
+  height: 45px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.vovvn-navbar .main-menu {
+  justify-content: space-between !important;
+}
+
+.vovvn-navbar .main-menu > .nav-item {
+  display: flex;
+  flex: 0 1 auto;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.vovvn-navbar .home-nav,
+.vovvn-navbar .vov-plus-nav,
+.vovvn-navbar .navigation-nav {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: stretch;
+}
+
+/* Fixed-height, vertically centered, non-wrapping navigation text. */
+.vovvn-navbar .nav-link {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center;
+  height: 45px;
+  padding: 0 clamp(5px, 0.48vw, 9px) !important;
+  background: transparent !important;
+  color: #fff !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: clamp(12px, 0.73vw, 14px) !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+.vovvn-navbar .nav-link:hover,
+.vovvn-navbar .nav-item:hover > .nav-link {
+  background: var(--vov-blue-dark) !important;
+  color: #fff !important;
+}
+
+/* White Home, VOV+, and hamburger controls. */
+.vovvn-navbar .home-nav .nav-link,
+.vovvn-navbar .vovvn-icon-home,
+.vovvn-navbar .navigation-nav .nav-link {
+  color: #fff !important;
+  font-size: 20px !important;
+}
+
+.vovvn-navbar .vov-plus-nav {
+  width: 76px !important;
+}
+
+.vovvn-navbar .vov-plus-nav img {
+  width: 62px !important;
+  height: 28px !important;
+  object-fit: contain;
+}
+
+.vovvn-navbar .navigation-nav {
+  margin-left: auto;
+}
+
+.vovvn-navbar .navigation-nav .nav-link {
+  width: 44px;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+/* Dropdowns stay readable beneath the blue bar. */
+.vovvn-navbar .navbar-nav-sub {
+  top: 45px !important;
+  background: #fff !important;
+  border: 0 !important;
+  border-top: 3px solid var(--vov-blue) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16) !important;
+}
+
+.vovvn-navbar .navbar-nav-sub .nav-link {
+  justify-content: flex-start;
+  height: auto;
+  min-height: 34px;
+  color: #333 !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+}
+
+.vovvn-navbar .navbar-nav-sub .nav-link:hover {
+  background: #f2f6fa !important;
+  color: var(--vov-blue) !important;
+}
+
+/* Progressive desktop compaction keeps the navigation fully visible. */
+@media (max-width: 1499px) {
+  .vovvn-header .row-header { gap: 8px !important; }
+
+  .vovvn-header .logo--image img,
+  .vovvn-header .branding img {
+    height: 66px !important;
+    max-width: 180px;
+  }
+
+  .vovvn-header .menu-social {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .vovvn-header .search-box form { width: 170px; height: 42px; }
+  .vovvn-header .search-box .form-text.form-control,
+  .vovvn-header .search-box input[type="submit"].button { height: 40px; }
+
+  .vovvn-navbar .nav-link {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* Tablet menu scrolls horizontally rather than clipping or wrapping. */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .vovvn-navbar .menu-container.d-none.d-xl-flex {
+    display: flex !important;
+    overflow-x: auto;
+    overflow-y: visible;
+    scrollbar-width: none;
+  }
+
+  .vovvn-navbar .menu-container.d-none.d-xl-flex::-webkit-scrollbar {
+    display: none;
+  }
+
+  .vovvn-navbar .main-menu {
+    width: max-content !important;
+    min-width: 100%;
+  }
+
+  .vovvn-navbar .main-menu > .nav-item { flex-shrink: 0; }
+}
+
+/* Existing mobile controls remain intact with compact VOV sizing. */
+@media (max-width: 991px) {
+  .vovvn-header .row-header { min-height: 62px; }
+
+  .vovvn-header .logo--image img,
+  .vovvn-header .branding img {
+    height: 48px !important;
+    max-width: 145px;
+  }
+
+  .vovvn-navbar { height: auto; min-height: 0 !important; }
+}
+
+@media (max-width: 767px) {
+  .vovvn-header .vovvn-navbar-mobile { width: calc(100% - 24px) !important; }
+  .vovvn-header .row-header { min-height: 56px; gap: 6px !important; }
+
+  .vovvn-header .logo--image img,
+  .vovvn-header .branding img {
+    height: 42px !important;
+    max-width: 125px;
+  }
+
+  .vovvn-header .language-link { font-size: 12px !important; padding: 4px !important; }
+  .menu-mobile-box { border-top-color: var(--vov-blue) !important; }
+  .menu-mobile-new .nav-link:hover,
+  .menu-mobile-new .nav-item.active .nav-link { color: var(--vov-blue) !important; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   COMPREHENSIVE RESPONSIVE FIX — All Screen Sizes
+   Covers: phones (≤479px), small phones (480-575px), tablets (576-991px),
+           medium desktop (992-1199px), large desktop (1200px+)
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── GLOBAL: prevent horizontal overflow on ALL devices ─────────────── */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
+
+/* Ensure all images are responsive by default */
+img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* iframe responsiveness */
+iframe {
+  max-width: 100% !important;
+}
+
+/* ── CONTAINER: fluid on all sizes ───────────────────────────────────── */
+.container,
+.container-fluid,
+.container-fluid .container {
+  width: 100% !important;
+  max-width: 1320px !important;
+  padding-left: clamp(8px, 2vw, 16px) !important;
+  padding-right: clamp(8px, 2vw, 16px) !important;
+}
+
+/* ── LARGE DESKTOP: 1200px and above ─────────────────────────────────── */
+@media (min-width: 1200px) {
+  .vovvn-header .row-header {
+    min-height: 80px;
+  }
+  .vovvn-navbar.d-none.d-xl-flex,
+  .vovvn-navbar {
+    display: flex !important;
+  }
+}
+
+/* ── MEDIUM DESKTOP: 992px–1199px ───────────────────────────────────── */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container,
+  .container-fluid .container {
+    max-width: 960px !important;
+  }
+
+  .vovvn-header .row-header {
+    min-height: 70px;
+    flex-wrap: wrap !important;
+  }
+
+  /* Keep the VOV blue nav bar visible but scrollable */
+  .vovvn-navbar {
+    display: flex !important;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .vovvn-navbar::-webkit-scrollbar { display: none; }
+
+  .vovvn-navbar .main-menu {
+    min-width: max-content;
+  }
+
+  /* Lead news layout: side by side with narrower sidebar */
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news) {
+    grid-template-columns: minmax(0, 1fr) 260px !important;
+    gap: 16px !important;
+  }
+
+  .home-events-config-block.hot_news {
+    grid-template-columns: minmax(0, 1fr) 220px !important;
+    gap: 0 14px !important;
+  }
+
+  /* Category grids */
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title) {
+    grid-template-columns: 40% minmax(0, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  /* 3-column compact blocks */
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  /* Search box */
+  .vovvn-header .search-box form {
+    width: clamp(140px, 10vw, 180px) !important;
+  }
+}
+
+/* ── TABLET LANDSCAPE: 768px–991px ──────────────────────────────────── */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container,
+  .container-fluid .container {
+    max-width: 720px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .vovvn-header .row-header {
+    min-height: 62px;
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  /* VOV blue navbar hidden on tablets, mobile menu shows */
+  .vovvn-navbar {
+    display: none !important;
+  }
+
+  /* Stack the hot_news + update_news sidebar vertically */
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news) {
+    grid-template-columns: 1fr !important;
+    row-gap: 20px !important;
+  }
+
+  /* Featured news: side-by-side image + supporting on tablet */
+  .home-events-config-block.hot_news {
+    grid-template-columns: minmax(0, 1.5fr) minmax(200px, 1fr) !important;
+    gap: 0 16px !important;
+  }
+
+  /* Main+sidebar row: stack vertically */
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* Category grid: 2-col on tablet */
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title) {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* 3-column compact: 2 cols on tablet */
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  /* Remove right border on first child */
+  .articles-by-category.grid_3 > .row:not(.row-title) > :first-child,
+  .articles-by-category.grid_9 > .row:not(.row-title) > :first-child {
+    border-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Smaller thumbnails in media rows */
+  .article-media.media picture,
+  .article-media.media .vovvn-title.flex-shrink-0 {
+    width: 110px !important;
+  }
+  .article-media.media picture img,
+  .article-media.media .img-fluid {
+    width: 110px !important;
+    height: 73px !important;
+  }
+
+  /* Hot news supporting cards */
+  .home-events-config-block.hot_news .col-right .article-card {
+    grid-template-columns: 100px minmax(0, 1fr) !important;
+    gap: 10px !important;
+  }
+  .home-events-config-block.hot_news .col-right .article-card picture,
+  .home-events-config-block.hot_news .col-right .article-card picture img {
+    width: 100px !important;
+    height: 67px !important;
+  }
+
+  /* Trending carousel */
+  .home-events-config-block.trending_news .carousel .item {
+    flex: 0 0 calc(33.33% - 12px) !important;
+    min-width: 180px;
+  }
+
+  /* Footer */
+  .vovvn-footer .footer-body .col-md-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+
+  /* Search box hide text, show icon only */
+  .vovvn-header .search-box form {
+    width: clamp(120px, 8vw, 160px) !important;
+  }
+}
+
+/* ── TABLET PORTRAIT: 576px–767px ───────────────────────────────────── */
+@media (min-width: 576px) and (max-width: 767px) {
+  .container,
+  .container-fluid .container {
+    max-width: 540px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* Header: compact */
+  .vovvn-header .row-header {
+    min-height: 56px;
+    gap: 6px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .vovvn-header .logo--image img,
+  .vovvn-header .branding img {
+    height: 38px !important;
+    max-width: 130px !important;
+  }
+
+  /* Hide desktop nav, show mobile menu */
+  .vovvn-navbar {
+    display: none !important;
+  }
+
+  /* Mobile menu strip */
+  .menu-mobile-box {
+    display: block !important;
+  }
+
+  /* Stack everything */
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news) {
+    grid-template-columns: 1fr !important;
+    row-gap: 16px !important;
+  }
+
+  .home-events-config-block.hot_news {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .home-events-config-block.hot_news > .col-left {
+    border-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .home-events-config-block.hot_news > .col-right {
+    border-top: 1px solid var(--vne-border);
+    margin-top: 14px;
+    padding-top: 14px !important;
+    padding-left: 0 !important;
+  }
+
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title) {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title) > :first-child,
+  .articles-by-category.grid_9 > .row:not(.row-title) > :first-child {
+    border-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  /* Font sizes */
+  .home-events-config-block.hot_news .col-left .item-first .card-title {
+    font-size: 20px !important;
+  }
+
+  .article-card.card .card-title {
+    font-size: 14px !important;
+  }
+
+  /* Thumbnails */
+  .article-media.media picture,
+  .article-media.media .vovvn-title.flex-shrink-0 {
+    width: 100px !important;
+  }
+  .article-media.media picture img,
+  .article-media.media .img-fluid {
+    width: 100px !important;
+    height: 67px !important;
+  }
+
+  /* Trending */
+  .home-events-config-block.trending_news .carousel .item {
+    flex: 0 0 calc(50% - 10px) !important;
+  }
+
+  /* Footer columns stack */
+  .vovvn-footer .footer-menu .row > [class*="col"] {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+
+  /* Hide weather, social, language on small tablet */
+  .vovvn-header .custom-weather,
+  .vovvn-header .box-podcast,
+  .vovvn-header .box-radio {
+    display: none !important;
+  }
+
+  /* Search box compact */
+  .vovvn-header .search-box form {
+    width: 120px !important;
+    height: 36px !important;
+  }
+  .vovvn-header .search-box .form-text.form-control {
+    height: 34px !important;
+    padding-left: 10px !important;
+  }
+  .vovvn-header .search-box input[type="submit"].button {
+    height: 34px !important;
+    width: 36px !important;
+    min-width: 36px !important;
+  }
+}
+
+/* ── MOBILE: up to 575px (phones) ────────────────────────────────────── */
+@media (max-width: 575px) {
+  .container,
+  .container-fluid .container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    max-width: 100% !important;
+  }
+
+  /* Header */
+  .vovvn-header .row-header {
+    min-height: 52px !important;
+    gap: 4px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .vovvn-header .logo--image img,
+  .vovvn-header .branding img {
+    height: 36px !important;
+    max-width: 110px !important;
+  }
+
+  /* Hide VOV desktop navbar */
+  .vovvn-navbar {
+    display: none !important;
+  }
+
+  /* Hide non-essential header elements */
+  .vovvn-header .custom-weather,
+  .vovvn-header .box-podcast,
+  .vovvn-header .box-radio,
+  .vovvn-header .menu-social,
+  .vovvn-header .language-link {
+    display: none !important;
+  }
+
+  /* Search box: very compact */
+  .vovvn-header .search-box form {
+    width: 100px !important;
+    height: 34px !important;
+    border-radius: 20px !important;
+  }
+  .vovvn-header .search-box .form-text.form-control {
+    width: 60px !important;
+    height: 32px !important;
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+  }
+  .vovvn-header .search-box input[type="submit"].button {
+    width: 32px !important;
+    min-width: 32px !important;
+    height: 32px !important;
+  }
+
+  /* Main content: single column */
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news),
+  .home-events-config-block.hot_news,
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330),
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title),
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+    display: block !important;
+    grid-template-columns: none !important;
+  }
+
+  .home-events-config-block.hot_news > .col-left {
+    border-right: none !important;
+    padding-right: 0 !important;
+  }
+
+  .home-events-config-block.hot_news > .col-right {
+    border-top: 1px solid var(--vne-border) !important;
+    margin-top: 12px !important;
+    padding-top: 12px !important;
+    padding-left: 0 !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title) > :first-child,
+  .articles-by-category.grid_9 > .row:not(.row-title) > :first-child,
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) > .articles-by-category.list_1.col-lg-4:not(:last-child) {
+    border-right: none !important;
+    padding-right: 0 !important;
+  }
+
+  /* Remove fixed widths from Bootstrap cols that cause overflow */
+  [class*="col-xl-"],
+  [class*="col-lg-"],
+  [class*="col-md-"],
+  .col-auto {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* But header col-auto should stay auto-width */
+  .row-header > .col-auto {
+    width: auto !important;
+    flex: 0 0 auto !important;
+    max-width: none !important;
+  }
+
+  /* Hot news: lead article */
+  .home-events-config-block.hot_news .col-left .item-first .card-title {
+    font-size: 18px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Supporting articles: horizontal thumbnail + text */
+  .home-events-config-block.hot_news .col-right .article-card {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    align-items: flex-start !important;
+    grid-template-columns: none !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card picture,
+  .home-events-config-block.hot_news .col-right .article-card picture img {
+    width: 100px !important;
+    height: 67px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Category sections */
+  .articles-by-category {
+    padding: 0 0 16px !important;
+  }
+
+  .articles-by-category .main-category-title a,
+  .home-events-config-block-title,
+  .title--red {
+    font-size: 16px !important;
+  }
+
+  /* Media rows */
+  .article-media.media {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+  }
+
+  .article-media.media picture,
+  .article-media.media .vovvn-title.flex-shrink-0 {
+    width: 90px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .article-media.media picture img,
+  .article-media.media .img-fluid {
+    width: 90px !important;
+    height: 60px !important;
+  }
+
+  .article-media.media .media-title {
+    font-size: 13px !important;
+  }
+
+  /* Article cards */
+  .article-card.card .card-title {
+    font-size: 14px !important;
+  }
+
+  /* Trending carousel: nearly full-width cards */
+  .home-events-config-block.trending_news .carousel .item {
+    flex: 0 0 85% !important;
+    min-width: 240px !important;
+  }
+
+  /* Popular news: single column */
+  .home-events-config-block.popular_news .list.articles-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Text list links */
+  .home-events-config-block.hot_news .list.item-third.articles-list {
+    grid-template-columns: 1fr !important;
+    display: block !important;
+  }
+
+  /* Footer: single column */
+  .vovvn-footer .footer-menu .row > [class*="col"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 16px;
+  }
+
+  .vovvn-footer {
+    padding-bottom: 80px !important;
+  }
+
+  /* Bottom mobile nav bar */
+  .menu-mobile-box {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    background: #fff !important;
+    border-top: 2px solid var(--vov-blue) !important;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1) !important;
+  }
+
+  /* Sub-category titles wrap on small screens */
+  .articles-by-category .row.row-title,
+  .home-events-config-block .row.row-title {
+    flex-wrap: wrap !important;
+    white-space: normal !important;
+  }
+
+  /* Sub-category links: smaller on mobile */
+  .articles-by-category .sub-category-title a,
+  .home-events-config-block .sub-category-title a {
+    font-size: 11px !important;
+    padding: 0 5px !important;
+  }
+
+  /* Block body padding */
+  .vovvn-body > .container {
+    padding-top: 12px !important;
+  }
+
+  /* Update news sidebar width fix */
+  .home-events-config-block.update_news .vovvn-title.position-relative.flex-shrink-0 {
+    width: 85px !important;
+  }
+  .home-events-config-block.update_news picture img.img-fluid {
+    width: 85px !important;
+    height: 57px !important;
+  }
+
+  /* Ads */
+  .ads-top.advertisement,
+  .ads-middle.advertisement {
+    margin-bottom: 12px !important;
+    padding: 4px !important;
+  }
+
+  /* Back to top button */
+  #backToTop {
+    bottom: 70px !important;
+    right: 12px !important;
+  }
+}
+
+/* ── EXTRA SMALL PHONES: 320px–479px ────────────────────────────────── */
+@media (max-width: 479px) {
+  html {
+    font-size: 14px;
+  }
+
+  .vovvn-header .logo--image img,
+  .vovvn-header .branding img {
+    height: 30px !important;
+    max-width: 95px !important;
+  }
+
+  .vovvn-header .search-box form {
+    width: 80px !important;
+  }
+  .vovvn-header .search-box .form-text.form-control {
+    width: 45px !important;
+    padding: 4px 6px !important;
+    font-size: 11px !important;
+  }
+
+  .home-events-config-block.hot_news .col-left .item-first .card-title {
+    font-size: 16px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card picture,
+  .home-events-config-block.hot_news .col-right .article-card picture img {
+    width: 80px !important;
+    height: 53px !important;
+  }
+
+  .article-media.media picture,
+  .article-media.media .vovvn-title.flex-shrink-0 {
+    width: 75px !important;
+  }
+  .article-media.media picture img,
+  .article-media.media .img-fluid {
+    width: 75px !important;
+    height: 50px !important;
+  }
+
+  .article-card.card .card-title {
+    font-size: 13px !important;
+  }
+
+  .home-events-config-block.trending_news .carousel .item {
+    flex: 0 0 90% !important;
+  }
+
+  .vovvn-footer {
+    padding-bottom: 85px !important;
+  }
+
+  /* Compact nav items */
+  .menu-mobile-new .nav-link {
+    font-size: 11px !important;
+    padding: 8px 7px !important;
+  }
+}
+
+/* ── UTILITY: ensure menu-mobile-box is always scrollable ─────────────── */
+.menu-mobile-box {
+  -webkit-overflow-scrolling: touch !important;
+}
+
+/* ── FIX: prevent Bootstrap col-auto from causing overflow in header ─── */
+@media (max-width: 767px) {
+  .vovvn-header .vovvn-navbar-mobile {
+    padding: 6px 0 !important;
+    width: 100% !important;
+  }
+
+  /* Hide non-critical header items on mobile */
+  .vovvn-header .d-none.d-xl-block {
+    display: none !important;
+  }
+
+  /* Ensure header row doesn't overflow */
+  .row-header {
+    overflow: hidden !important;
+  }
+
+  /* Trending news title alignment */
+  .home-events-config-block.trending_news .home-events-config-block-title {
+    margin-left: 10px !important;
+  }
+
+  /* Category title rows: horizontal scroll when too many subcats */
+  .articles-by-category .row.row-title {
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .articles-by-category .row.row-title::-webkit-scrollbar { display: none; }
+}
+
+/* ── FIX: column layout selector specificity for mobile ──────────────── */
+@media (max-width: 575px) {
+  /* Ensure sidebar stacks below main content on mobile */
+  .col-xl-330 {
+    order: 2 !important;
+  }
+  .col-xl-870 {
+    order: 1 !important;
+  }
+
+  /* Ensure custompost-list isn't forcing layout */
+  .custompost-list {
+    display: none !important;
+  }
+
+  /* Fix the 3-col compact blocks to stack on phones */
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) > .articles-by-category {
+    border-right: none !important;
+    padding-right: 0 !important;
+    margin-bottom: 16px !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   ARTICLE-MEDIA: UNIVERSAL IMAGE CROP + RESPONSIVE FIX
+   The thumbnail anchor wrapper acts as the clip box.
+   picture fills it 100%, img fills picture 100% with object-fit:cover.
+   This ensures portrait/landscape/square images are ALL cropped identically.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── ROW LAYOUT ─────────────────────────────────────────────────────── */
+.article-media.media {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+  padding: 10px 0 !important;
+  border-bottom: 1px solid #e5e5e5 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.article-media.media:last-child {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
+/* ── ANCHOR = the clip box (width + HEIGHT both set here) ────────────── */
+/* Desktop default: 144px wide × 96px tall (3:2 ratio — matches real VOV) */
+.article-media.media > a.vovvn-title,
+.article-media.media > a.vovvn-title.flex-shrink-0,
+.article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+  flex: 0 0 144px !important;
+  width: 144px !important;
+  min-width: 144px !important;
+  max-width: 144px !important;
+  height: 96px !important;       /* ← KEY: explicit height clips the image */
+  display: block !important;
+  overflow: hidden !important;   /* ← clips anything taller than 96px */
+  background: #f0f0f0 !important;
+}
+
+/* ── PICTURE fills the clip box ─────────────────────────────────────── */
+.article-media.media > a.vovvn-title picture,
+.article-media.media .vovvn-title.flex-shrink-0 picture,
+.article-media.media picture {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;       /* fill the anchor's height */
+  min-height: 0 !important;
+  overflow: hidden !important;
+  background: #f0f0f0 !important;
+  position: static !important;
+}
+
+/* Disable shimmer on media thumbnails — it causes phantom height */
+.article-media.media picture::before {
+  display: none !important;
+}
+
+/* ── IMG fills picture 100%×100%, cropped to fit ─────────────────────── */
+.article-media.media picture img,
+.article-media.media .img-fluid {
+  width: 100% !important;
+  height: 100% !important;       /* fill the clip box height */
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  border-radius: 0 !important;
+  margin: 0 !important;          /* remove Bootstrap me-2 */
+  max-width: none !important;
+  max-height: none !important;
+  min-height: 0 !important;
+}
+
+/* ── TEXT BODY ───────────────────────────────────────────────────────── */
+.article-media.media .media-body,
+.article-media.media .flex-grow-1 {
+  flex: 1 1 0% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  align-self: flex-start !important;
+}
+
+/* ── TITLE ───────────────────────────────────────────────────────────── */
+.article-media.media .media-title,
+.article-media.media h5.media-title {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.45 !important;
+  color: #222 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  word-break: break-word !important;
+}
+
+.article-media.media .media-title:hover,
+.article-media.media:hover .media-title {
+  color: #9f224e !important;
+}
+
+/* ── MEDIUM DESKTOP (992px–1199px): 120×80px ────────────────────────── */
+@media (max-width: 1199px) {
+  .article-media.media > a.vovvn-title,
+  .article-media.media > a.vovvn-title.flex-shrink-0,
+  .article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+    flex: 0 0 120px !important;
+    width: 120px !important;
+    min-width: 120px !important;
+    max-width: 120px !important;
+    height: 80px !important;
+  }
+}
+
+/* ── TABLET LANDSCAPE (768px–991px): 110×73px ───────────────────────── */
+@media (max-width: 991px) {
+  .article-media.media {
+    gap: 8px !important;
+  }
+
+  .article-media.media > a.vovvn-title,
+  .article-media.media > a.vovvn-title.flex-shrink-0,
+  .article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+    flex: 0 0 110px !important;
+    width: 110px !important;
+    min-width: 110px !important;
+    max-width: 110px !important;
+    height: 73px !important;
+  }
+
+  .article-media.media .media-title,
+  .article-media.media h5.media-title {
+    font-size: 13px !important;
+  }
+}
+
+/* ── TABLET PORTRAIT (576px–767px): 100×67px ────────────────────────── */
+@media (max-width: 767px) {
+  .article-media.media {
+    gap: 8px !important;
+    padding: 8px 0 !important;
+  }
+
+  .article-media.media > a.vovvn-title,
+  .article-media.media > a.vovvn-title.flex-shrink-0,
+  .article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+    flex: 0 0 100px !important;
+    width: 100px !important;
+    min-width: 100px !important;
+    max-width: 100px !important;
+    height: 67px !important;
+  }
+
+  .article-media.media .media-title,
+  .article-media.media h5.media-title {
+    font-size: 13px !important;
+  }
+}
+
+/* ── MOBILE PHONES (≤575px): 90×60px ────────────────────────────────── */
+@media (max-width: 575px) {
+  .article-media.media {
+    gap: 8px !important;
+    padding: 8px 0 !important;
+    align-items: flex-start !important;
+  }
+
+  .article-media.media > a.vovvn-title,
+  .article-media.media > a.vovvn-title.flex-shrink-0,
+  .article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+    flex: 0 0 90px !important;
+    width: 90px !important;
+    min-width: 90px !important;
+    max-width: 90px !important;
+    height: 60px !important;
+  }
+
+  .article-media.media .media-title,
+  .article-media.media h5.media-title {
+    font-size: 12.5px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Container fix */
+  .item-second.d-block.d-md-none {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+}
+
+/* ── EXTRA SMALL PHONES (≤479px): 80×53px ───────────────────────────── */
+@media (max-width: 479px) {
+  .article-media.media {
+    gap: 7px !important;
+    padding: 7px 0 !important;
+  }
+
+  .article-media.media > a.vovvn-title,
+  .article-media.media > a.vovvn-title.flex-shrink-0,
+  .article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+    flex: 0 0 80px !important;
+    width: 80px !important;
+    min-width: 80px !important;
+    max-width: 80px !important;
+    height: 53px !important;
+  }
+
+  .article-media.media .media-title,
+  .article-media.media h5.media-title {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+}
+
+/* ── ALSO: item-second.d-block.d-md-none (hot news mobile list) ──────── */
+.item-second.d-block.d-md-none {
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.item-second.d-block.d-md-none .article-media.media {
+  width: 100% !important;
+}
+
+/* ── ALSO: update_news sidebar ───────────────────────────────────────── */
+.home-events-config-block.update_news .article-media.media {
+  padding: 8px 0 !important;
+  gap: 10px !important;
+}
+
+.home-events-config-block.update_news > a.vovvn-title,
+.home-events-config-block.update_news .vovvn-title.position-relative.flex-shrink-0 {
+  height: 96px !important;
+}
+
+.home-events-config-block.update_news .article-media.media picture {
+  min-height: 0 !important;
+}
+
+/* ── ALSO: category grid article-media rows ──────────────────────────── */
+/* These appear in .articles-by-category right columns */
+.articles-by-category .article-media.media > a.vovvn-title,
+.articles-by-category .article-media.media > a.vovvn-title.flex-shrink-0,
+.articles-by-category .article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+  flex: 0 0 132px !important;
+  width: 132px !important;
+  min-width: 132px !important;
+  max-width: 132px !important;
+  height: 88px !important;       /* 3:2 ratio */
+}
+
+@media (max-width: 991px) {
+  .articles-by-category .article-media.media > a.vovvn-title,
+  .articles-by-category .article-media.media > a.vovvn-title.flex-shrink-0,
+  .articles-by-category .article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+    flex: 0 0 110px !important;
+    width: 110px !important;
+    min-width: 110px !important;
+    max-width: 110px !important;
+    height: 73px !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .articles-by-category .article-media.media > a.vovvn-title,
+  .articles-by-category .article-media.media > a.vovvn-title.flex-shrink-0,
+  .articles-by-category .article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+    flex: 0 0 90px !important;
+    width: 90px !important;
+    min-width: 90px !important;
+    max-width: 90px !important;
+    height: 60px !important;
+  }
+}
+
+@media (max-width: 479px) {
+  .articles-by-category .article-media.media > a.vovvn-title,
+  .articles-by-category .article-media.media > a.vovvn-title.flex-shrink-0,
+  .articles-by-category .article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+    flex: 0 0 80px !important;
+    width: 80px !important;
+    min-width: 80px !important;
+    max-width: 80px !important;
+    height: 53px !important;
+  }
+}
 </style>
             
 <!--[if lte IE 8]>
@@ -2418,10 +4750,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 document.addEventListener('DOMContentLoaded', function () {
-  // Thêm margin cho row
+  // Thêm margin cho row — chỉ áp dụng trên desktop để tránh horizontal scroll trên mobile
   const blockAdsElement = document.getElementById('block-ads-84');
   const rowElement = blockAdsElement ? blockAdsElement.closest('.row') : null;
-  if (rowElement) {
+  if (rowElement && window.innerWidth >= 768) {
     rowElement.style.marginLeft = '-25px';
     rowElement.style.marginRight = '-25px';
   }
@@ -2445,7 +4777,8 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 <script src="https://sdk.moneyoyo.com/v1/webpush.js?pid=GmUPsEaU1JXygGm8y5hOAA" async defer></script>
 
-
+<!-- Responsive Fix: loaded last to win all specificity battles -->
+<link rel="stylesheet" media="all" href="responsive-fix.css" />
                 </head>
 <body class="path-frontpage">
 <div id="fb-root"></div>
@@ -4944,10 +7277,10 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="article-media media ">
   <a class="vovvn-title position-relative flex-shrink-0" href="https://vov.vn/xa-hoi/ha-noi-nang-cap-he-thong-tram-bom-tieu-dong-my-voi-tong-von-hon-4433-ty-dong-post1306848.vov">
     <picture>
-      <source media="(min-width:720px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/chuong_my.jpg?resize=p_8,w_113">
-      <source media="(min-width:576px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/chuong_my.jpg?resize=p_8,w_113">
-      <source media="(min-width:0px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/chuong_my.jpg?resize=p_8,w_113">
-      <img src="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/chuong_my.jpg?resize=p_8,w_113" loading="lazy" alt="Hà Nội nâng cấp hệ thống trạm bơm tiêu Đông Mỹ với tổng vốn hơn 4.433 tỷ đồng" class="img-fluid me-2">
+      <source media="(min-width:720px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/chuong_my.jpg?resize=p_8,w_400">
+      <source media="(min-width:576px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/chuong_my.jpg?resize=p_8,w_400">
+      <source media="(min-width:0px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/chuong_my.jpg?resize=p_8,w_400">
+      <img src="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/chuong_my.jpg?resize=p_8,w_400" loading="lazy" alt="Hà Nội nâng cấp hệ thống trạm bơm tiêu Đông Mỹ với tổng vốn hơn 4.433 tỷ đồng" class="img-fluid me-2">
     </picture>
       </a>
   <div class="media-body flex-grow-1">
@@ -4963,10 +7296,10 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="article-media media ">
   <a class="vovvn-title position-relative flex-shrink-0" href="https://vov.vn/xa-hoi/rac-thai-un-u-ngap-ngua-nhieu-tuyen-pho-trung-tam-o-thanh-hoa-post1306828.vov">
     <picture>
-      <source media="(min-width:720px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/z7941189536775_43f580d776935e5ad781b7bdd5534813.jpg?resize=p_8,w_113">
-      <source media="(min-width:576px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/z7941189536775_43f580d776935e5ad781b7bdd5534813.jpg?resize=p_8,w_113">
-      <source media="(min-width:0px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/z7941189536775_43f580d776935e5ad781b7bdd5534813.jpg?resize=p_8,w_113">
-      <img src="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/z7941189536775_43f580d776935e5ad781b7bdd5534813.jpg?resize=p_8,w_113" loading="lazy" alt="Rác thải ùn ứ, ngập ngụa nhiều tuyến phố trung tâm ở Thanh Hóa" class="img-fluid me-2">
+      <source media="(min-width:720px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/z7941189536775_43f580d776935e5ad781b7bdd5534813.jpg?resize=p_8,w_400">
+      <source media="(min-width:576px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/z7941189536775_43f580d776935e5ad781b7bdd5534813.jpg?resize=p_8,w_400">
+      <source media="(min-width:0px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/z7941189536775_43f580d776935e5ad781b7bdd5534813.jpg?resize=p_8,w_400">
+      <img src="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/z7941189536775_43f580d776935e5ad781b7bdd5534813.jpg?resize=p_8,w_400" loading="lazy" alt="Rác thải ùn ứ, ngập ngụa nhiều tuyến phố trung tâm ở Thanh Hóa" class="img-fluid me-2">
     </picture>
       </a>
   <div class="media-body flex-grow-1">
@@ -4982,10 +7315,10 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="article-media media ">
   <a class="vovvn-title position-relative flex-shrink-0" href="https://vov.vn/phap-luat/khoi-to-doi-tuong-lua-dao-chiem-doat-21-ty-dong-bang-chieu-tro-mua-ban-dat-post1306849.vov">
     <picture>
-      <source media="(min-width:720px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/co_quan_canh_sat_dieu_tra_cong_an_tinh_quang_ninh_da_ra_quyet_dinh_khoi_to_bi_can_va_thi_hanh_lenh_bat_bi_can_de_tam_giam_doi_voi_le_thi_nhu_de_phuc_vu_cong_tac_dieu_tra_theo_quy_dinh_cua_phap_luat._1.jpg?resize=p_8,w_113">
-      <source media="(min-width:576px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/co_quan_canh_sat_dieu_tra_cong_an_tinh_quang_ninh_da_ra_quyet_dinh_khoi_to_bi_can_va_thi_hanh_lenh_bat_bi_can_de_tam_giam_doi_voi_le_thi_nhu_de_phuc_vu_cong_tac_dieu_tra_theo_quy_dinh_cua_phap_luat._1.jpg?resize=p_8,w_113">
-      <source media="(min-width:0px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/co_quan_canh_sat_dieu_tra_cong_an_tinh_quang_ninh_da_ra_quyet_dinh_khoi_to_bi_can_va_thi_hanh_lenh_bat_bi_can_de_tam_giam_doi_voi_le_thi_nhu_de_phuc_vu_cong_tac_dieu_tra_theo_quy_dinh_cua_phap_luat._1.jpg?resize=p_8,w_113">
-      <img src="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/co_quan_canh_sat_dieu_tra_cong_an_tinh_quang_ninh_da_ra_quyet_dinh_khoi_to_bi_can_va_thi_hanh_lenh_bat_bi_can_de_tam_giam_doi_voi_le_thi_nhu_de_phuc_vu_cong_tac_dieu_tra_theo_quy_dinh_cua_phap_luat._1.jpg?resize=p_8,w_113" loading="lazy" alt="Khởi tố đối tượng lừa đảo chiếm đoạt 2,1 tỷ đồng bằng chiêu trò mua bán đất" class="img-fluid me-2">
+      <source media="(min-width:720px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/co_quan_canh_sat_dieu_tra_cong_an_tinh_quang_ninh_da_ra_quyet_dinh_khoi_to_bi_can_va_thi_hanh_lenh_bat_bi_can_de_tam_giam_doi_voi_le_thi_nhu_de_phuc_vu_cong_tac_dieu_tra_theo_quy_dinh_cua_phap_luat._1.jpg?resize=p_8,w_400">
+      <source media="(min-width:576px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/co_quan_canh_sat_dieu_tra_cong_an_tinh_quang_ninh_da_ra_quyet_dinh_khoi_to_bi_can_va_thi_hanh_lenh_bat_bi_can_de_tam_giam_doi_voi_le_thi_nhu_de_phuc_vu_cong_tac_dieu_tra_theo_quy_dinh_cua_phap_luat._1.jpg?resize=p_8,w_400">
+      <source media="(min-width:0px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/co_quan_canh_sat_dieu_tra_cong_an_tinh_quang_ninh_da_ra_quyet_dinh_khoi_to_bi_can_va_thi_hanh_lenh_bat_bi_can_de_tam_giam_doi_voi_le_thi_nhu_de_phuc_vu_cong_tac_dieu_tra_theo_quy_dinh_cua_phap_luat._1.jpg?resize=p_8,w_400">
+      <img src="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/co_quan_canh_sat_dieu_tra_cong_an_tinh_quang_ninh_da_ra_quyet_dinh_khoi_to_bi_can_va_thi_hanh_lenh_bat_bi_can_de_tam_giam_doi_voi_le_thi_nhu_de_phuc_vu_cong_tac_dieu_tra_theo_quy_dinh_cua_phap_luat._1.jpg?resize=p_8,w_400" loading="lazy" alt="Khởi tố đối tượng lừa đảo chiếm đoạt 2,1 tỷ đồng bằng chiêu trò mua bán đất" class="img-fluid me-2">
     </picture>
       </a>
   <div class="media-body flex-grow-1">
@@ -5001,10 +7334,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="article-media media ">
   <a class="vovvn-title position-relative flex-shrink-0" href="https://vov.vn/the-gioi/hien-truong-vu-roi-may-bay-b-52-cua-khong-quan-my-post1306826.vov">
     <picture>
-      <source media="(min-width:720px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/b-52_my_reuters.jpg?resize=p_8,w_113">
-      <source media="(min-width:576px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/b-52_my_reuters.jpg?resize=p_8,w_113">
-      <source media="(min-width:0px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/b-52_my_reuters.jpg?resize=p_8,w_113">
-      <img src="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/b-52_my_reuters.jpg?resize=p_8,w_113" loading="lazy" alt="Hiện trường vụ rơi máy bay B-52 của Không quân Mỹ" class="img-fluid me-2">
+      <source media="(min-width:720px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/b-52_my_reuters.jpg?resize=p_8,w_400">
+      <source media="(min-width:576px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/b-52_my_reuters.jpg?resize=p_8,w_400">
+      <source media="(min-width:0px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/b-52_my_reuters.jpg?resize=p_8,w_400">
+      <img src="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/b-52_my_reuters.jpg?resize=p_8,w_400" loading="lazy" alt="Hiện trường vụ rơi máy bay B-52 của Không quân Mỹ" class="img-fluid me-2">
     </picture>
       </a>
   <div class="media-body flex-grow-1">
@@ -5021,10 +7354,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="article-media media ">
   <a class="vovvn-title position-relative flex-shrink-0" href="https://vov.vn/the-thao/bang-xep-hang-world-cup-2026-moi-nhat-cac-dai-dien-chau-a-gay-bat-ngo-post1306834.vov">
     <picture>
-      <source media="(min-width:720px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/B%E1%BA%A3ng%20x%E1%BA%BFp%20h%E1%BA%A1ng%20World%20Cup%202026%20m%E1%BB%9Bi%20nh%E1%BA%A5t.jpg?resize=p_8,w_113">
-      <source media="(min-width:576px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/B%E1%BA%A3ng%20x%E1%BA%BFp%20h%E1%BA%A1ng%20World%20Cup%202026%20m%E1%BB%9Bi%20nh%E1%BA%A5t.jpg?resize=p_8,w_113">
-      <source media="(min-width:0px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/B%E1%BA%A3ng%20x%E1%BA%BFp%20h%E1%BA%A1ng%20World%20Cup%202026%20m%E1%BB%9Bi%20nh%E1%BA%A5t.jpg?resize=p_8,w_113">
-      <img src="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/B%E1%BA%A3ng%20x%E1%BA%BFp%20h%E1%BA%A1ng%20World%20Cup%202026%20m%E1%BB%9Bi%20nh%E1%BA%A5t.jpg?resize=p_8,w_113" loading="lazy" alt="Bảng xếp hạng World Cup 2026 mới nhất: Các đại diện châu Á gây bất ngờ" class="img-fluid me-2">
+      <source media="(min-width:720px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/B%E1%BA%A3ng%20x%E1%BA%BFp%20h%E1%BA%A1ng%20World%20Cup%202026%20m%E1%BB%9Bi%20nh%E1%BA%A5t.jpg?resize=p_8,w_400">
+      <source media="(min-width:576px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/B%E1%BA%A3ng%20x%E1%BA%BFp%20h%E1%BA%A1ng%20World%20Cup%202026%20m%E1%BB%9Bi%20nh%E1%BA%A5t.jpg?resize=p_8,w_400">
+      <source media="(min-width:0px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/B%E1%BA%A3ng%20x%E1%BA%BFp%20h%E1%BA%A1ng%20World%20Cup%202026%20m%E1%BB%9Bi%20nh%E1%BA%A5t.jpg?resize=p_8,w_400">
+      <img src="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/B%E1%BA%A3ng%20x%E1%BA%BFp%20h%E1%BA%A1ng%20World%20Cup%202026%20m%E1%BB%9Bi%20nh%E1%BA%A5t.jpg?resize=p_8,w_400" loading="lazy" alt="Bảng xếp hạng World Cup 2026 mới nhất: Các đại diện châu Á gây bất ngờ" class="img-fluid me-2">
     </picture>
       </a>
   <div class="media-body flex-grow-1">
@@ -5041,10 +7374,10 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="article-media media ">
   <a class="vovvn-title position-relative flex-shrink-0" href="https://vov.vn/the-gioi/iran-xac-nhan-my-bat-dau-do-phong-toa-hai-quan-post1306814.vov">
     <picture>
-      <source media="(min-width:720px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/2026-06-15T135611Z_291843175_RC25ULAIIIGF_RTRMADP_3_IRAN-CRISIS-ENERGY-FLOWS.JPG?resize=p_8,w_113">
-      <source media="(min-width:576px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/2026-06-15T135611Z_291843175_RC25ULAIIIGF_RTRMADP_3_IRAN-CRISIS-ENERGY-FLOWS.JPG?resize=p_8,w_113">
-      <source media="(min-width:0px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/2026-06-15T135611Z_291843175_RC25ULAIIIGF_RTRMADP_3_IRAN-CRISIS-ENERGY-FLOWS.JPG?resize=p_8,w_113">
-      <img src="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/2026-06-15T135611Z_291843175_RC25ULAIIIGF_RTRMADP_3_IRAN-CRISIS-ENERGY-FLOWS.JPG?resize=p_8,w_113" loading="lazy" alt="Iran xác nhận Mỹ bắt đầu dỡ phong tỏa hải quân" class="img-fluid me-2">
+      <source media="(min-width:720px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/2026-06-15T135611Z_291843175_RC25ULAIIIGF_RTRMADP_3_IRAN-CRISIS-ENERGY-FLOWS.JPG?resize=p_8,w_400">
+      <source media="(min-width:576px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/2026-06-15T135611Z_291843175_RC25ULAIIIGF_RTRMADP_3_IRAN-CRISIS-ENERGY-FLOWS.JPG?resize=p_8,w_400">
+      <source media="(min-width:0px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/2026-06-15T135611Z_291843175_RC25ULAIIIGF_RTRMADP_3_IRAN-CRISIS-ENERGY-FLOWS.JPG?resize=p_8,w_400">
+      <img src="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/2026-06-15T135611Z_291843175_RC25ULAIIIGF_RTRMADP_3_IRAN-CRISIS-ENERGY-FLOWS.JPG?resize=p_8,w_400" loading="lazy" alt="Iran xác nhận Mỹ bắt đầu dỡ phong tỏa hải quân" class="img-fluid me-2">
     </picture>
       </a>
   <div class="media-body flex-grow-1">
@@ -5060,10 +7393,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="article-media media ">
   <a class="vovvn-title position-relative flex-shrink-0" href="https://vov.vn/doi-song/phat-hien-chong-ngoai-tinh-co-3-con-rieng-sau-14-nam-chung-song-o-tuoi-xe-chieu-post1306388.vov">
     <picture>
-      <source media="(min-width:720px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/3c829123ccea4db414fb.jpg?resize=p_8,w_113">
-      <source media="(min-width:576px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/3c829123ccea4db414fb.jpg?resize=p_8,w_113">
-      <source media="(min-width:0px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/3c829123ccea4db414fb.jpg?resize=p_8,w_113">
-      <img src="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/3c829123ccea4db414fb.jpg?resize=p_8,w_113" loading="lazy" alt="Phát hiện chồng ngoại tình, có 3 con riêng sau 14 năm chung sống ở tuổi xế chiều" class="img-fluid me-2">
+      <source media="(min-width:720px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/3c829123ccea4db414fb.jpg?resize=p_8,w_400">
+      <source media="(min-width:576px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/3c829123ccea4db414fb.jpg?resize=p_8,w_400">
+      <source media="(min-width:0px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/3c829123ccea4db414fb.jpg?resize=p_8,w_400">
+      <img src="https://media.vov.vn/sites/default/files/styles/front_large/public/2026-06/3c829123ccea4db414fb.jpg?resize=p_8,w_400" loading="lazy" alt="Phát hiện chồng ngoại tình, có 3 con riêng sau 14 năm chung sống ở tuổi xế chiều" class="img-fluid me-2">
     </picture>
       </a>
   <div class="media-body flex-grow-1">
@@ -5080,10 +7413,10 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="article-media media ">
   <a class="vovvn-title position-relative flex-shrink-0" href="https://vov.vn/xa-hoi/loc-xoay-lam-hu-hong-hon-70-nha-dan-o-xa-son-linh-quang-ngai-post1306790.vov">
     <picture>
-      <source media="(min-width:720px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/z7940290434485_154f782f2619f96d0bc63dd3c808b7a2_20260616081948.jpg?resize=p_8,w_113">
-      <source media="(min-width:576px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/z7940290434485_154f782f2619f96d0bc63dd3c808b7a2_20260616081948.jpg?resize=p_8,w_113">
-      <source media="(min-width:0px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/z7940290434485_154f782f2619f96d0bc63dd3c808b7a2_20260616081948.jpg?resize=p_8,w_113">
-      <img src="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/z7940290434485_154f782f2619f96d0bc63dd3c808b7a2_20260616081948.jpg?resize=p_8,w_113" loading="lazy" alt="Lốc xoáy làm hư hỏng hơn 70 nhà dân ở xã Sơn Linh (Quảng Ngãi)" class="img-fluid me-2">
+      <source media="(min-width:720px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/z7940290434485_154f782f2619f96d0bc63dd3c808b7a2_20260616081948.jpg?resize=p_8,w_400">
+      <source media="(min-width:576px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/z7940290434485_154f782f2619f96d0bc63dd3c808b7a2_20260616081948.jpg?resize=p_8,w_400">
+      <source media="(min-width:0px)" srcset="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/z7940290434485_154f782f2619f96d0bc63dd3c808b7a2_20260616081948.jpg?resize=p_8,w_400">
+      <img src="https://media.vov.vn/sites/default/files/styles/front_large_watermark/public/2026-06/z7940290434485_154f782f2619f96d0bc63dd3c808b7a2_20260616081948.jpg?resize=p_8,w_400" loading="lazy" alt="Lốc xoáy làm hư hỏng hơn 70 nhà dân ở xã Sơn Linh (Quảng Ngãi)" class="img-fluid me-2">
     </picture>
       </a>
   <div class="media-body flex-grow-1">
@@ -10549,5 +12882,1530 @@ var domainApi="https://vov-api.vov.vn/vov-data";
     <script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"Báo điện tử VOV","url":"https://vov.vn","slogan":"Báo điện tử VOV, tin tức thời sự về chính trị, kinh tế, đời sống, xã hội, pháp luật, thể thao, văn hóa, giải trí, thế giới, nghe radio và xem TV của VOV","logo":"https://media.vov.vn/themes/custom/vovvn/images/logo_meta_home.jpg","email":"toasoan@vovnews.vn","additionalType":"https://vi.wikipedia.org/wiki/B%C3%A1o_%C4%91i%E1%BB%87n_t%E1%BB%AD","sameAs":["https://www.facebook.com/baodientuvov.vn","https://vi.wikipedia.org/wiki/%C4%90%C3%A0i_Ti%E1%BA%BFng_n%C3%B3i_Vi%E1%BB%87t_Nam"],"address":{"@type":"PostalAddress","streetAddress":"37 Bà Triệu, Hoàn Kiếm","addressLocality":"Hà Nội"},"contactPoint":[{"@type":"ContactPoint","telephone":"+842422105148","contactOption":"TollFree","contactType":"customer service","areaServed":"VN"}]}</script>
     
     
+<style id="vov-header-final-override">
+
+/* Final cascade safeguard: VOV component styles are emitted later in the page. */
+html body .vovvn-header .vovvn-navbar {
+  background-color: #1d5f96 !important;
+  background-image: none !important;
+  border-color: #1d5f96 !important;
+}
+
+html body .vovvn-header .vovvn-navbar .nav-link,
+html body .vovvn-header .vovvn-navbar .vovvn-icon-home,
+html body .vovvn-header .vovvn-navbar .navigation-nav .nav-link {
+  color: #fff !important;
+}
+
+html body .vovvn-header .vovvn-navbar .nav-link:hover,
+html body .vovvn-header .vovvn-navbar .nav-item:hover > .nav-link {
+  background-color: #164d7d !important;
+  color: #fff !important;
+}
+
+html body .vovvn-header .vovvn-navbar .navbar-nav-sub {
+  background-color: #fff !important;
+  border-top-color: #1d5f96 !important;
+}
+
+html body .vovvn-header .vovvn-navbar .navbar-nav-sub .nav-link {
+  color: #333 !important;
+}
+
+html body .vovvn-header .vovvn-navbar .navbar-nav-sub .nav-link:hover {
+  background-color: #f2f6fa !important;
+  color: #1d5f96 !important;
+}
+
+/* Original-size equal advertising gutters across all page content. */
+.vovvn-body > .container,
+main > .container {
+  --vov-ad-gutter: clamp(32px, 11.5vw, 220px);
+  width: calc(100% - (2 * var(--vov-ad-gutter))) !important;
+  max-width: 1480px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (max-width: 991px) {
+  .vovvn-body > .container,
+  main > .container {
+    --vov-ad-gutter: clamp(20px, 6vw, 56px);
+  }
+}
+
+@media (max-width: 767px) {
+  .vovvn-body > .container,
+  main > .container {
+    --vov-ad-gutter: 12px;
+  }
+}
+
+/* Extend the featured related-news list like the original VOV layout. */
+.home-events-config-block.hot_news .col-left .list.item-third.articles-list {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0 !important;
+  width: 100% !important;
+  margin-top: 8px !important;
+  padding-top: 6px !important;
+}
+
+.home-events-config-block.hot_news .col-left
+  .list.item-third.articles-list .article-list.list-item {
+  min-height: 46px;
+  padding: 11px 0 11px 24px !important;
+  border-bottom: 1px solid #eeeeee !important;
+  font-size: 18px !important;
+  line-height: 1.55 !important;
+}
+
+.home-events-config-block.hot_news .col-left
+  .list.item-third.articles-list .article-list.list-item:last-child {
+  border-bottom: 0 !important;
+}
+
+@media (max-width: 767px) {
+  .home-events-config-block.hot_news .col-left
+    .list.item-third.articles-list .article-list.list-item {
+    min-height: 0;
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+    font-size: 16px !important;
+  }
+}
+
+/* Responsive hardening for desktop, tablet, and mobile. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 1199px) {
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news),
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) {
+    grid-template-columns: minmax(0, 1fr) !important;
+    row-gap: 24px !important;
+  }
+
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330)
+    > .col-xl-870,
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330)
+    > .col-xl-330 {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .home-events-config-block.update_news .row {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0 !important;
+  }
+
+  .home-events-config-block.update_news .row > [class*="col-"] {
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  .home-events-config-block.hot_news {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .home-events-config-block.hot_news > .col-left {
+    border-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .home-events-config-block.hot_news > .col-right {
+    border-top: 1px solid #eeeeee;
+    margin-top: 18px;
+    padding-top: 18px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .item-second.d-none.d-md-block {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card {
+    display: block !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card picture,
+  .home-events-config-block.hot_news .col-right .article-card picture img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .home-events-config-block.hot_news {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .home-events-config-block.hot_news > .col-left {
+    border-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .home-events-config-block.hot_news > .col-right {
+    width: 100% !important;
+    border-top: 1px solid var(--vne-border);
+    margin-top: 20px;
+    padding-top: 20px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .item-second.d-none.d-md-block {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card {
+    grid-template-columns: 120px minmax(0, 1fr) !important;
+    margin-bottom: 0 !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card picture,
+  .home-events-config-block.hot_news .col-right .article-card picture img {
+    width: 120px !important;
+    height: 80px !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title) {
+    grid-template-columns: minmax(240px, 40%) minmax(0, 1fr) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-channel,
+  .nav-channel .container-fluid,
+  .vovvn-header,
+  .vovvn-navbar,
+  .vovvn-body,
+  .vovvn-footer {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden;
+  }
+
+  .nav-channel #navbarNav,
+  .nav-channel .nav-desktop,
+  .lang-slider-wrapper,
+  .menu-mobile-box,
+  .fix-scroll-menu-mobile {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-width: none;
+  }
+
+  .nav-channel #navbarNav::-webkit-scrollbar,
+  .nav-channel .nav-desktop::-webkit-scrollbar,
+  .lang-slider-wrapper::-webkit-scrollbar,
+  .menu-mobile-box::-webkit-scrollbar,
+  .fix-scroll-menu-mobile::-webkit-scrollbar {
+    display: none;
+  }
+
+  .vovvn-header .vovvn-navbar-mobile,
+  .vovvn-body > .container,
+  main > .container {
+    width: calc(100% - 24px) !important;
+    max-width: none !important;
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+  }
+
+  .vovvn-body .container > .row,
+  .vovvn-body .container > .row > [class*="col"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .vovvn-header .row-header {
+    display: grid !important;
+    grid-template-columns: minmax(72px, 1fr) auto minmax(72px, 1fr) !important;
+    gap: 6px !important;
+  }
+
+  .vovvn-header .row-header > [class*="col"]:last-of-type {
+    justify-self: end;
+  }
+
+  .vovvn-header .box-podcast,
+  .vovvn-header .box-radio {
+    min-width: 32px !important;
+    font-size: 9px !important;
+  }
+
+  .vovvn-header .box-podcast img,
+  .vovvn-header .box-radio img {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .vovvn-header .row-header .gap-2 { gap: 4px !important; }
+
+  .vovvn-header .logo--image img,
+  .vovvn-header .branding img { max-width: 112px !important; }
+
+  .home-events-config-block.hot_news .col-right .item-second.d-none.d-md-block,
+  .home-events-config-block.update_news .row,
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title),
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .home-events-config-block.hot_news .col-left .item-first .card-title {
+    max-width: 100%;
+    font-size: 22px !important;
+    line-height: 1.35 !important;
+    overflow-wrap: anywhere;
+  }
+
+  .home-events-config-block.hot_news .col-left
+    .list.item-third.articles-list .article-list.list-item {
+    width: 100%;
+    padding-left: 18px !important;
+    font-size: 16px !important;
+    overflow-wrap: anywhere;
+  }
+
+  .article-card,
+  .article-card picture,
+  .article-card picture img,
+  .home-events-config-block.hot_news .item-first .img-fluid.w-100 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title) > :first-child,
+  .articles-by-category.grid_9 > .row:not(.row-title) > :first-child {
+    border-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .articles-by-category .row.row-title,
+  .home-events-config-block .row.row-title {
+    width: 100% !important;
+    overflow-x: auto;
+    flex-wrap: nowrap !important;
+  }
+
+  .vovvn-footer img,
+  .vovvn-footer iframe,
+  .vovvn-body iframe,
+  .vovvn-body video {
+    max-width: 100% !important;
+    height: auto;
+  }
+}
+
+@media (max-width: 479px) {
+  .home-events-config-block.hot_news .col-right .article-card,
+  .articles-by-category.grid_3 .article-media.media,
+  .articles-by-category.grid_9 .article-media.media {
+    grid-template-columns: 104px minmax(0, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card picture,
+  .home-events-config-block.hot_news .col-right .article-card picture img,
+  .articles-by-category.grid_3 .article-media picture,
+  .articles-by-category.grid_3 .article-media picture img,
+  .articles-by-category.grid_9 .article-media picture,
+  .articles-by-category.grid_9 .article-media picture img {
+    width: 104px !important;
+    height: 70px !important;
+  }
+}
+/* 54. VOV-quality compact homepage thumbnails, typography, and spacing. */
+.vovvn-body picture,
+.vovvn-body .article-card.card picture,
+.vovvn-body .article-card.card .vovvn-title picture,
+.vovvn-body .article-media.media picture {
+  background: transparent !important;
+  overflow: hidden !important;
+}
+
+.vovvn-body picture::before,
+.vovvn-body .article-card.card picture::before {
+  display: none !important;
+  content: none !important;
+  animation: none !important;
+}
+
+.vovvn-body img,
+.vovvn-body picture img,
+.vovvn-body .article-card img,
+.vovvn-body .article-media img {
+  display: block !important;
+  max-width: 100% !important;
+  filter: none !important;
+  transform: none !important;
+  image-rendering: auto;
+}
+
+.vovvn-body .article-card.card .vovvn-title:hover picture img,
+.vovvn-body .home-events-config-block.hot_news .vovvn-title:hover picture img {
+  transform: none !important;
+}
+
+/* Tin Moi and media-list rows: fixed sharp thumbnail plus flexible headline. */
+.home-events-config-block.update_news .article-media.media,
+.vovvn-body .article-media.media {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  margin: 0 !important;
+  padding: 12px 0 !important;
+  border-bottom: 1px solid #eeeeee !important;
+}
+
+.home-events-config-block.update_news .article-media.media > a.vovvn-title,
+.vovvn-body .article-media.media > a.vovvn-title,
+.home-events-config-block.update_news .article-media.media picture,
+.vovvn-body .article-media.media picture {
+  flex: 0 0 120px !important;
+  width: 120px !important;
+  height: 68px !important;
+  min-width: 120px !important;
+  max-width: 120px !important;
+  background: transparent !important;
+}
+
+.home-events-config-block.update_news .article-media.media picture img,
+.vovvn-body .article-media.media picture img,
+.home-events-config-block.update_news .article-media.media .img-fluid,
+.vovvn-body .article-media.media .img-fluid {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+  background: transparent !important;
+}
+
+.home-events-config-block.update_news .article-media.media .media-body,
+.vovvn-body .article-media.media .media-body {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.home-events-config-block.update_news .article-media.media .media-title,
+.vovvn-body .article-media.media .media-title {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+  color: #222 !important;
+  overflow-wrap: break-word;
+}
+
+/* Supporting article cards keep compact original VOV proportions. */
+.home-events-config-block.hot_news .col-right .article-card {
+  gap: 12px !important;
+  padding: 12px 0 !important;
+  margin: 0 !important;
+  border-bottom: 1px solid #eeeeee !important;
+}
+
+.home-events-config-block.hot_news .col-right .article-card picture,
+.home-events-config-block.hot_news .col-right .article-card picture img {
+  width: 120px !important;
+  height: 68px !important;
+  min-width: 120px !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+  background: transparent !important;
+}
+
+.home-events-config-block.hot_news .col-right .article-card .card-title,
+.articles-by-category .article-card.card .card-title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+}
+
+/* Sub links return to compact newspaper sizing. */
+.home-events-config-block.hot_news .col-left .list.item-third.articles-list {
+  margin-top: 6px !important;
+  padding-top: 4px !important;
+}
+
+.home-events-config-block.hot_news .col-left
+  .list.item-third.articles-list .article-list.list-item,
+.home-events-config-block.hot_news .article-list.list-item .link,
+.articles-by-category .articles-list .article-list.list-item .link {
+  min-height: 0 !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+
+/* Compact row rhythm across homepage story lists. */
+.home-events-config-block,
+.articles-by-category {
+  margin-bottom: 18px !important;
+}
+
+.article-card.card .card-body {
+  padding-top: 7px !important;
+}
+
+.article-card.card .card-title {
+  font-size: 16px !important;
+  line-height: 1.4 !important;
+}
+
+@media (max-width: 767px) {
+  .home-events-config-block.update_news .article-media.media > a.vovvn-title,
+  .vovvn-body .article-media.media > a.vovvn-title,
+  .home-events-config-block.update_news .article-media.media picture,
+  .vovvn-body .article-media.media picture,
+  .home-events-config-block.hot_news .col-right .article-card picture,
+  .home-events-config-block.hot_news .col-right .article-card picture img {
+    flex-basis: 104px !important;
+    width: 104px !important;
+    min-width: 104px !important;
+    max-width: 104px !important;
+    height: 59px !important;
+  }
+
+  .home-events-config-block.update_news .article-media.media .media-title,
+  .vovvn-body .article-media.media .media-title {
+    font-size: 13px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card .card-title,
+  .articles-by-category .article-card.card .card-title {
+    font-size: 15px !important;
+  }
+}
+
+
+</style>
+<!-- =========================================================
+     RESPONSIVE FIX — Injected LAST so all !important rules
+     from this block beat the inline styles above them.
+     This is the canonical cascade override point.
+     ========================================================= -->
+<link rel="stylesheet" media="all" href="responsive-fix.css" />
+<style>
+/*
+ * CRITICAL LAST-POSITION OVERRIDES
+ * These rules MUST be last in the document to win !important battles.
+ * Do NOT add non-responsive rules here.
+ */
+
+/* ── GLOBAL: No horizontal overflow ─────────────────────── */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
+
+img { max-width: 100% !important; }
+iframe { max-width: 100% !important; }
+
+/* ── CONTAINER: fluid ───────────────────────────────────── */
+.container,
+.container-fluid,
+.container-fluid .container {
+  width: 100% !important;
+  max-width: 1320px !important;
+  padding-left: clamp(10px, 2vw, 20px) !important;
+  padding-right: clamp(10px, 2vw, 20px) !important;
+}
+
+/* ── NAV CHANNEL BARS ───────────────────────────────────── */
+.bg-light.nav-channel {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+.nav-desktop {
+  overflow-x: auto !important;
+  white-space: nowrap !important;
+  scrollbar-width: none !important;
+}
+.nav-desktop::-webkit-scrollbar { display: none !important; }
+
+/* ── HEADER ──────────────────────────────────────────────── */
+.vovvn-header {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+.vovvn-header .vovvn-navbar-mobile {
+  width: 100% !important;
+  max-width: 1320px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 8px clamp(10px, 2vw, 20px) !important;
+}
+
+.vovvn-header .row-header {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: clamp(4px, 0.8vw, 14px) !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+.vovvn-header .row-header > [class*="col"] {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+}
+
+.vovvn-header .logo--image img,
+.vovvn-header .branding img {
+  height: clamp(32px, 5vw, 72px) !important;
+  width: auto !important;
+  max-width: clamp(90px, 15vw, 210px) !important;
+  object-fit: contain !important;
+}
+
+/* Search box */
+.vovvn-header .search-box form {
+  width: clamp(88px, 14vw, 220px) !important;
+  border-radius: 24px !important;
+}
+
+/* ── MOBILE MENU BOX ─────────────────────────────────────── */
+.menu-mobile-box {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scrollbar-width: none !important;
+}
+.menu-mobile-box::-webkit-scrollbar { display: none !important; }
+
+/* ── ALL IMAGES RESPONSIVE ───────────────────────────────── */
+.vovvn-body picture,
+.vovvn-body picture img,
+.vovvn-body .article-card img,
+.vovvn-body .article-media img,
+.vovvn-body .img-fluid {
+  max-width: 100% !important;
+}
+
+/* ── MAIN BODY CONTENT ───────────────────────────────────── */
+.vovvn-body > .container {
+  width: 100% !important;
+  max-width: 1320px !important;
+  padding-left: clamp(10px, 2vw, 20px) !important;
+  padding-right: clamp(10px, 2vw, 20px) !important;
+}
+
+.vovvn-body .row,
+.vovvn-body .row > [class*="col"],
+.vovvn-body .home-events-config-block,
+.vovvn-body .articles-by-category {
+  min-width: 0 !important;
+}
+
+/* ── LARGE DESKTOP (1200px+) ─────────────────────────────── */
+@media (min-width: 1200px) {
+  .vovvn-navbar { display: flex !important; }
+
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news) {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 360px) !important;
+    gap: 20px !important;
+    align-items: start !important;
+    width: 100% !important;
+  }
+
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news) > .col,
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news) > .col-auto {
+    width: auto !important;
+    max-width: none !important;
+    flex: none !important;
+    padding: 0 !important;
+  }
+
+  .home-events-config-block.hot_news {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(250px, 300px) !important;
+    gap: 0 22px !important;
+    align-items: start !important;
+    width: 100% !important;
+  }
+
+  .home-events-config-block.hot_news > .col-left,
+  .home-events-config-block.hot_news > .col-right,
+  .home-events-config-block.hot_news > .col-12.col-md-8,
+  .home-events-config-block.hot_news > .col-12.col-md-4 {
+    width: auto !important;
+    max-width: none !important;
+    flex: none !important;
+    padding: 0 !important;
+  }
+
+  .home-events-config-block.hot_news > .col-left {
+    border-right: 1px solid #e5e5e5 !important;
+    padding-right: 22px !important;
+  }
+
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 360px) !important;
+    gap: 24px !important;
+    align-items: start !important;
+    width: 100% !important;
+  }
+
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) > .col-xl-870,
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) > .col-xl-330 {
+    width: auto !important;
+    max-width: none !important;
+    flex: none !important;
+    padding: 0 !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title) {
+    display: grid !important;
+    grid-template-columns: minmax(300px, 42%) minmax(0, 1fr) !important;
+    gap: 24px !important;
+    align-items: start !important;
+    width: 100% !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title) > [class*="col"],
+  .articles-by-category.grid_9 > .row:not(.row-title) > [class*="col"] {
+    width: auto !important;
+    max-width: none !important;
+    flex: none !important;
+    padding: 0 !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title) > :first-child,
+  .articles-by-category.grid_9 > .row:not(.row-title) > :first-child {
+    border-right: 1px solid #e5e5e5 !important;
+    padding-right: 24px !important;
+  }
+
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    width: 100% !important;
+  }
+
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) > .articles-by-category.list_1.col-lg-4 {
+    width: auto !important;
+    max-width: none !important;
+    flex: none !important;
+    padding: 0 !important;
+  }
+
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) > .articles-by-category.list_1.col-lg-4:not(:last-child) {
+    border-right: 1px solid #e5e5e5 !important;
+    padding-right: 24px !important;
+  }
+}
+
+/* ── MEDIUM DESKTOP (992–1199px) ─────────────────────────── */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container, .container-fluid .container { max-width: 960px !important; }
+
+  .vovvn-navbar {
+    display: flex !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+  }
+  .vovvn-navbar::-webkit-scrollbar { display: none !important; }
+  .vovvn-navbar .main-menu { min-width: max-content !important; }
+
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news) {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 260px !important;
+    gap: 18px !important;
+    align-items: start !important;
+    width: 100% !important;
+  }
+
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news) > .col,
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news) > .col-auto {
+    width: auto !important; max-width: none !important; flex: none !important; padding: 0 !important;
+  }
+
+  .home-events-config-block.hot_news {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 220px !important;
+    gap: 0 16px !important;
+    align-items: start !important;
+    width: 100% !important;
+  }
+
+  .home-events-config-block.hot_news > .col-left,
+  .home-events-config-block.hot_news > .col-right,
+  .home-events-config-block.hot_news > .col-12.col-md-8,
+  .home-events-config-block.hot_news > .col-12.col-md-4 {
+    width: auto !important; max-width: none !important; flex: none !important; padding: 0 !important;
+  }
+
+  .home-events-config-block.hot_news > .col-left {
+    border-right: 1px solid #e5e5e5 !important;
+    padding-right: 16px !important;
+  }
+
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 260px !important;
+    gap: 20px !important;
+    align-items: start !important;
+    width: 100% !important;
+  }
+
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) > .col-xl-870,
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) > .col-xl-330 {
+    width: auto !important; max-width: none !important; flex: none !important; padding: 0 !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title) {
+    display: grid !important;
+    grid-template-columns: 40% minmax(0, 1fr) !important;
+    gap: 16px !important;
+    align-items: start !important;
+    width: 100% !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title) > [class*="col"],
+  .articles-by-category.grid_9 > .row:not(.row-title) > [class*="col"] {
+    width: auto !important; max-width: none !important; flex: none !important; padding: 0 !important;
+  }
+
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) > .articles-by-category.list_1.col-lg-4 {
+    width: auto !important; max-width: none !important; flex: none !important; padding: 0 !important;
+  }
+}
+
+/* ── TABLET (768–991px) ──────────────────────────────────── */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container, .container-fluid .container {
+    max-width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .vovvn-navbar,
+  .vovvn-navbar.d-none.d-xl-flex { display: none !important; }
+
+  .vovvn-header .row-header { min-height: 60px !important; }
+
+  .vovvn-header .logo--image img,
+  .vovvn-header .branding img { height: 46px !important; max-width: 140px !important; }
+
+  .vovvn-header .box-podcast,
+  .vovvn-header .box-radio { display: none !important; }
+
+  /* Stack outer row */
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news),
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news) > .col,
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news) > .col-auto,
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) > .col-xl-870,
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) > .col-xl-330 {
+    width: auto !important; max-width: none !important; flex: none !important; padding: 0 !important;
+  }
+
+  /* Hot news: side by side on tablet */
+  .home-events-config-block.hot_news {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.5fr) minmax(200px, 1fr) !important;
+    gap: 0 14px !important;
+    align-items: start !important;
+    width: 100% !important;
+  }
+
+  .home-events-config-block.hot_news > .col-left,
+  .home-events-config-block.hot_news > .col-right,
+  .home-events-config-block.hot_news > .col-12.col-md-8,
+  .home-events-config-block.hot_news > .col-12.col-md-4 {
+    width: auto !important; max-width: none !important; flex: none !important; padding: 0 !important;
+  }
+
+  /* 2-col categories on tablet */
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title) {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+    align-items: start !important;
+    width: 100% !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title) > [class*="col"],
+  .articles-by-category.grid_9 > .row:not(.row-title) > [class*="col"] {
+    width: auto !important; max-width: none !important; flex: none !important; padding: 0 !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title) > :first-child,
+  .articles-by-category.grid_9 > .row:not(.row-title) > :first-child {
+    border-right: 0 !important; padding-right: 0 !important;
+  }
+
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) > .articles-by-category.list_1.col-lg-4 {
+    width: auto !important; max-width: none !important; flex: none !important; padding: 0 !important;
+  }
+}
+
+/* ── MOBILE (up to 767px) ────────────────────────────────── */
+@media (max-width: 767px) {
+  .container, .container-fluid .container {
+    max-width: 100% !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .vovvn-navbar,
+  .vovvn-navbar.d-none.d-xl-flex { display: none !important; }
+
+  .vovvn-header .vovvn-navbar-mobile {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 6px 10px !important;
+  }
+
+  .vovvn-header .row-header {
+    min-height: 52px !important;
+    gap: 4px !important;
+    flex-wrap: nowrap !important;
+    overflow: hidden !important;
+  }
+
+  .vovvn-header .custom-weather,
+  .vovvn-header .box-podcast,
+  .vovvn-header .box-radio { display: none !important; }
+
+  /* Single column everything */
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news),
+  .home-events-config-block.hot_news,
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330),
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title),
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+    display: block !important;
+    grid-template-columns: none !important;
+    width: 100% !important;
+  }
+
+  /* Reset all Bootstrap col widths */
+  .vovvn-body [class*="col-xl-"],
+  .vovvn-body [class*="col-lg-"],
+  .vovvn-body [class*="col-md-"],
+  .vovvn-body .col-auto {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* But header col-auto stays auto */
+  .row-header > .col-auto {
+    width: auto !important;
+    flex: 0 0 auto !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  /* Remove dividing borders when stacked */
+  .home-events-config-block.hot_news > .col-left,
+  .articles-by-category.grid_3 > .row:not(.row-title) > :first-child,
+  .articles-by-category.grid_9 > .row:not(.row-title) > :first-child {
+    border-right: none !important;
+    padding-right: 0 !important;
+  }
+
+  .home-events-config-block.hot_news > .col-right {
+    border-top: 1px solid #e5e5e5 !important;
+    margin-top: 12px !important;
+    padding-top: 12px !important;
+  }
+
+  /* Mobile nav: fixed at bottom */
+  .menu-mobile-box {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    background: #fff !important;
+    border-top: 2px solid #1d5f96 !important;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1) !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+  }
+  .menu-mobile-box::-webkit-scrollbar { display: none !important; }
+
+  /* Footer padding above fixed nav */
+  .vovvn-footer { padding-bottom: 72px !important; }
+
+  /* Back-to-top above nav */
+  #backToTop { bottom: 68px !important; right: 12px !important; }
+
+  /* Nav channel bar: hidden on mobile (use mobile menu instead) */
+  .bg-light.nav-channel .hidden-list-chanel,
+  .bg-light.nav-channel .hidden-is-mobile { display: none !important; }
+
+  /* Trending carousel */
+  .home-events-config-block.trending_news .carousel .item {
+    flex: 0 0 85% !important;
+    min-width: 220px !important;
+  }
+
+  /* Supporting articles: flex row */
+  .home-events-config-block.hot_news .col-right .article-card {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    align-items: flex-start !important;
+    grid-template-columns: none !important;
+    padding-bottom: 12px !important;
+    margin-bottom: 12px !important;
+    border-bottom: 1px solid #e5e5e5 !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card picture,
+  .home-events-config-block.hot_news .col-right .article-card picture img {
+    width: 90px !important;
+    height: 60px !important;
+    flex-shrink: 0 !important;
+    object-fit: cover !important;
+    max-width: none !important;
+  }
+
+  /* Text link list: single column */
+  .home-events-config-block.hot_news .list.item-third.articles-list {
+    display: block !important;
+    grid-template-columns: none !important;
+  }
+
+  /* Article media thumbnails on mobile */
+  .article-media.media > a.vovvn-title,
+  .article-media.media > a.vovvn-title.flex-shrink-0,
+  .article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+    flex: 0 0 90px !important;
+    width: 90px !important;
+    min-width: 90px !important;
+    max-width: 90px !important;
+    height: 60px !important;
+  }
+
+  /* Category article media on mobile */
+  .articles-by-category .article-media.media > a.vovvn-title,
+  .articles-by-category .article-media.media > a.vovvn-title.flex-shrink-0,
+  .articles-by-category .article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+    flex: 0 0 90px !important;
+    width: 90px !important;
+    min-width: 90px !important;
+    max-width: 90px !important;
+    height: 60px !important;
+  }
+
+  /* Fix JavaScript-injected negative margins */
+  #block-ads-84,
+  [id*="block-ads"] {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* Hero title font size */
+  .home-events-config-block.hot_news .col-left .item-first .card-title {
+    font-size: clamp(17px, 4vw, 22px) !important;
+    line-height: 1.35 !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  /* Footer: single column */
+  .vovvn-footer .footer-menu .row > [class*="col"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ── EXTRA SMALL PHONES (up to 479px) ───────────────────── */
+@media (max-width: 479px) {
+  html { font-size: 14px !important; }
+
+  .vovvn-header .logo--image img,
+  .vovvn-header .branding img {
+    height: 30px !important;
+    max-width: 95px !important;
+  }
+
+  .vovvn-header .menu-social,
+  .vovvn-header .language-link { display: none !important; }
+
+  .vovvn-header .search-box form {
+    width: 80px !important;
+    height: 34px !important;
+  }
+
+  .vovvn-header .search-box .form-text.form-control {
+    width: 45px !important;
+    font-size: 11px !important;
+  }
+
+  .home-events-config-block.hot_news .col-left .item-first .card-title {
+    font-size: 16px !important;
+  }
+
+  /* Even smaller thumbnails on tiny phones */
+  .article-media.media > a.vovvn-title,
+  .article-media.media > a.vovvn-title.flex-shrink-0,
+  .article-media.media .vovvn-title.position-relative.flex-shrink-0,
+  .articles-by-category .article-media.media > a.vovvn-title,
+  .articles-by-category .article-media.media > a.vovvn-title.flex-shrink-0,
+  .articles-by-category .article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+    flex: 0 0 75px !important;
+    width: 75px !important;
+    min-width: 75px !important;
+    max-width: 75px !important;
+    height: 50px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card picture,
+  .home-events-config-block.hot_news .col-right .article-card picture img {
+    width: 75px !important;
+    height: 50px !important;
+  }
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   TIN MỚI (UPDATE_NEWS) SECTION — FINAL OVERRIDE v2
+   Matches real VOV.VN homepage: tighter spacing, 120×68 thumbnails,
+   14px headlines, sharp image rendering, no grey placeholders.
+   Must remain at the END of the cascade to win all specificity battles.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Section container ──────────────────────────────────────────────── */
+.home-events-config-block.update_news {
+  background: #fff !important;
+  padding: 0 !important;
+  border-top: 2px solid #c02a29 !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* ── Section title — VOV red accent like real VOV.VN ────────────────── */
+.home-events-config-block.update_news .home-events-config-block-title,
+.home-events-config-block.update_news h2.home-events-config-block-title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #c02a29 !important;
+  text-transform: uppercase !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  padding: 10px 0 8px !important;
+  margin-bottom: 0 !important;
+  line-height: 1.3 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  letter-spacing: 0.3px !important;
+}
+
+.home-events-config-block.update_news .home-events-config-block-title a {
+  color: #c02a29 !important;
+  text-decoration: none !important;
+}
+
+.home-events-config-block.update_news .home-events-config-block-title a:hover {
+  color: #9f224e !important;
+}
+
+/* ── Inner row: vertical list of items ──────────────────────────────── */
+.home-events-config-block.update_news > .row,
+.home-events-config-block.update_news .row {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.home-events-config-block.update_news .row > [class*="col-"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
+  padding: 0 !important;
+}
+
+/* ── News card layout: tight horizontal flex matching VOV.VN ────────── */
+.home-events-config-block.update_news .article-media.media {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  padding: 10px 0 !important;
+  margin: 0 !important;
+  border-bottom: 1px solid #eee !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.home-events-config-block.update_news .article-media.media:last-child {
+  border-bottom: none !important;
+  padding-bottom: 2px !important;
+}
+
+/* ── Thumbnail container: 120×68px clip box (VOV.VN ratio) ──────────── */
+.home-events-config-block.update_news .article-media.media > a.vovvn-title,
+.home-events-config-block.update_news .article-media.media > a.vovvn-title.flex-shrink-0,
+.home-events-config-block.update_news .article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+  flex: 0 0 120px !important;
+  width: 120px !important;
+  min-width: 120px !important;
+  max-width: 120px !important;
+  height: 68px !important;
+  display: block !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  border-radius: 2px !important;
+}
+
+/* ── Picture fills the clip box ─────────────────────────────────────── */
+.home-events-config-block.update_news .article-media.media picture {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  min-height: 0 !important;
+  position: static !important;
+}
+
+/* Disable shimmer/placeholder */
+.home-events-config-block.update_news .article-media.media picture::before {
+  display: none !important;
+}
+
+/* ── Image: sharp rendering, no stretch, no grey box ────────────────── */
+.home-events-config-block.update_news .article-media.media picture img,
+.home-events-config-block.update_news .article-media.media .img-fluid,
+.home-events-config-block.update_news .article-media.media .img-fluid.me-2 {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  border-radius: 2px !important;
+  max-width: none !important;
+  max-height: none !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  aspect-ratio: auto !important;
+  background: transparent !important;
+  image-rendering: auto !important;
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+}
+
+/* ── Text body ──────────────────────────────────────────────────────── */
+.home-events-config-block.update_news .article-media.media .media-body,
+.home-events-config-block.update_news .article-media.media .flex-grow-1 {
+  flex: 1 1 0% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  align-self: flex-start !important;
+  padding-top: 0 !important;
+}
+
+/* ── Headlines: 14px bold — matches VOV.VN Tin Moi exactly ──────────── */
+.home-events-config-block.update_news .article-media.media .media-title,
+.home-events-config-block.update_news .article-media.media h5.media-title {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  color: #222 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  word-break: break-word !important;
+  letter-spacing: 0 !important;
+}
+
+.home-events-config-block.update_news .article-media.media .media-title:hover,
+.home-events-config-block.update_news .article-media.media:hover .media-title {
+  color: #c02a29 !important;
+}
+
+/* ── Media type icons ───────────────────────────────────────────────── */
+.home-events-config-block.update_news .has-media-icon {
+  color: #c02a29 !important;
+  font-size: 11px !important;
+  margin-left: 3px !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   MAIN HERO HEADLINE + SUB-LINKS — VOV.VN Typography Match
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* Main story headline: 17px bold */
+.home-events-config-block.hot_news .col-left .item-first .card-title {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  color: #222 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* Sub-links (bullet list under hero): 13px normal */
+.home-events-config-block.hot_news .list.item-third.articles-list .article-list.list-item {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  padding: 8px 0 8px 20px !important;
+}
+
+.home-events-config-block.hot_news .list.item-third.articles-list .article-list.list-item a {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: #333 !important;
+}
+
+.home-events-config-block.hot_news .list.item-third.articles-list .article-list.list-item a:hover {
+  color: #c02a29 !important;
+}
+
+/* Hot news right column article titles: smaller */
+.home-events-config-block.hot_news .col-right .article-card .card-title,
+.home-events-config-block.hot_news .col-right .media-title {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+}
+
+/* General article-media titles across the page: 14px */
+.article-media.media .media-title,
+.article-media.media h5.media-title {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+}
+
+/* Remove ALL grey backgrounds from ALL article-media thumbnails */
+.article-media.media > a.vovvn-title,
+.article-media.media .vovvn-title.position-relative.flex-shrink-0,
+.article-media.media picture {
+  background: transparent !important;
+}
+
+/* Sharp image rendering on ALL thumbnails */
+.article-media.media picture img,
+.article-media.media .img-fluid {
+  image-rendering: auto !important;
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  background: transparent !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   RESPONSIVE: TIN MỚI section
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Desktop wide (1200px+): single column sidebar ──────────────────── */
+@media (min-width: 1200px) {
+  .home-events-config-block.update_news .row {
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+  }
+
+  .home-events-config-block.update_news .row > [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+}
+
+/* ── Medium desktop / laptop (992–1199px): 2-column grid ────────────── */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .home-events-config-block.update_news .row {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0 16px !important;
+    flex-direction: unset !important;
+  }
+
+  .home-events-config-block.update_news .row > [class*="col-"] {
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  .home-events-config-block.update_news .article-media.media > a.vovvn-title,
+  .home-events-config-block.update_news .article-media.media > a.vovvn-title.flex-shrink-0,
+  .home-events-config-block.update_news .article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+    flex: 0 0 100px !important;
+    width: 100px !important;
+    min-width: 100px !important;
+    max-width: 100px !important;
+    height: 57px !important;
+  }
+
+  .home-events-config-block.update_news .media-title,
+  .home-events-config-block.update_news h5.media-title {
+    font-size: 13px !important;
+  }
+}
+
+/* ── Tablet (768–991px): 2 columns, smaller thumbnails ──────────────── */
+@media (min-width: 768px) and (max-width: 991px) {
+  .home-events-config-block.update_news .row {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0 14px !important;
+    flex-direction: unset !important;
+  }
+
+  .home-events-config-block.update_news .row > [class*="col-"] {
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  .home-events-config-block.update_news .article-media.media > a.vovvn-title,
+  .home-events-config-block.update_news .article-media.media > a.vovvn-title.flex-shrink-0,
+  .home-events-config-block.update_news .article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+    flex: 0 0 90px !important;
+    width: 90px !important;
+    min-width: 90px !important;
+    max-width: 90px !important;
+    height: 51px !important;
+  }
+
+  .home-events-config-block.update_news .media-title,
+  .home-events-config-block.update_news h5.media-title {
+    font-size: 13px !important;
+  }
+}
+
+/* ── Mobile (up to 767px): single column, 90×51px thumbnails ────────── */
+@media (max-width: 767px) {
+  .home-events-config-block.update_news .row {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    gap: 0 !important;
+  }
+
+  .home-events-config-block.update_news .row > [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .home-events-config-block.update_news .article-media.media {
+    gap: 10px !important;
+    padding: 9px 0 !important;
+  }
+
+  .home-events-config-block.update_news .article-media.media > a.vovvn-title,
+  .home-events-config-block.update_news .article-media.media > a.vovvn-title.flex-shrink-0,
+  .home-events-config-block.update_news .article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+    flex: 0 0 90px !important;
+    width: 90px !important;
+    min-width: 90px !important;
+    max-width: 90px !important;
+    height: 51px !important;
+  }
+
+  .home-events-config-block.update_news .media-title,
+  .home-events-config-block.update_news h5.media-title {
+    font-size: 13px !important;
+    -webkit-line-clamp: 3 !important;
+  }
+
+  /* Mobile main hero headline */
+  .home-events-config-block.hot_news .col-left .item-first .card-title {
+    font-size: 16px !important;
+  }
+}
+
+/* ── Extra small phones (up to 479px): 75×43px thumbnails ───────────── */
+@media (max-width: 479px) {
+  .home-events-config-block.update_news .article-media.media {
+    gap: 8px !important;
+    padding: 8px 0 !important;
+  }
+
+  .home-events-config-block.update_news .article-media.media > a.vovvn-title,
+  .home-events-config-block.update_news .article-media.media > a.vovvn-title.flex-shrink-0,
+  .home-events-config-block.update_news .article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+    flex: 0 0 75px !important;
+    width: 75px !important;
+    min-width: 75px !important;
+    max-width: 75px !important;
+    height: 43px !important;
+  }
+
+  .home-events-config-block.update_news .media-title,
+  .home-events-config-block.update_news h5.media-title {
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+  }
+
+  .home-events-config-block.hot_news .col-left .item-first .card-title {
+    font-size: 15px !important;
+  }
+}
+</style>
+
 </body>
 </html>
