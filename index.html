@@ -14407,5 +14407,243 @@ iframe { max-width: 100% !important; }
 }
 </style>
 
+<!-- =========================================================
+     VOV.VN INTERACTIVE NAVIGATION SCRIPT & CSS
+     ========================================================= -->
+<style>
+/* 55. Interactive Navigation Overrides */
+/* VOV Red Hover Effects */
+.vovvn-navbar .nav-link,
+.vovvn-navbar .navbar-nav-sub .nav-link,
+.menu-mobile-new .nav-link {
+    transition: color 0.2s ease, background 0.2s ease !important;
+}
+
+.vovvn-navbar .nav-item > .nav-link:hover,
+.vovvn-navbar .nav-item > .nav-link:focus-visible {
+    color: #c41e3a !important;
+}
+
+.vovvn-navbar .navbar-nav-sub .nav-link:hover,
+.vovvn-navbar .navbar-nav-sub .nav-link:focus-visible {
+    color: #c41e3a !important;
+    background: #f5f5f5 !important;
+}
+
+/* Ensure dropdowns can be keyboard-focused */
+.vovvn-navbar .nav-item:focus-within .navbar-nav-sub {
+    display: block !important;
+}
+
+/* Off-Canvas Mobile Hamburger Menu */
+#block-menumobile {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #fff;
+    z-index: 10001;
+    overflow-y: auto;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#block-menumobile.is-open {
+    left: 0;
+}
+
+#block-menumobile .menu-mobile-box {
+    display: block !important;
+    margin-top: 0 !important;
+    padding-top: 50px !important; 
+    border-top: none !important;
+}
+
+#block-menumobile .menu-mobile-new {
+    flex-direction: column !important;
+}
+
+#block-menumobile .menu-mobile-new .nav-item {
+    width: 100% !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+}
+
+#block-menumobile .menu-mobile-new .nav-link {
+    font-size: 15px !important;
+    padding: 12px 16px !important;
+    border-right: none !important;
+}
+
+/* Close Button inside Mobile Menu */
+.mobile-menu-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10002;
+}
+
+/* Backdrop for Mobile Menu */
+.menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.menu-backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Search Box Interactive States */
+.vovvn-header .search-box form {
+    transition: width 0.3s ease, border-color 0.3s ease;
+}
+
+.vovvn-header .search-box.is-open form {
+    width: 250px !important;
+    border-color: #c41e3a !important;
+    background: #fff !important;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // ---------------------------------------------------------
+    // 1. MOBILE HAMBURGER MENU LOGIC
+    // ---------------------------------------------------------
+    const hamburgerBtn = document.querySelector('.toggle-sub-menu');
+    const mobileMenu = document.getElementById('block-menumobile');
+    
+    if (hamburgerBtn && mobileMenu) {
+        // Create backdrop
+        const backdrop = document.createElement('div');
+        backdrop.className = 'menu-backdrop';
+        document.body.appendChild(backdrop);
+        
+        // Create close button
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'mobile-menu-close';
+        closeBtn.innerHTML = '&times;';
+        closeBtn.setAttribute('aria-label', 'Close menu');
+        mobileMenu.appendChild(closeBtn);
+
+        function openMobileMenu(e) {
+            if(e) e.preventDefault();
+            mobileMenu.classList.add('is-open');
+            backdrop.classList.add('is-open');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('is-open');
+            backdrop.classList.remove('is-open');
+            document.body.style.overflow = '';
+        }
+
+        hamburgerBtn.addEventListener('click', openMobileMenu);
+        closeBtn.addEventListener('click', closeMobileMenu);
+        backdrop.addEventListener('click', closeMobileMenu);
+        
+        // Close on Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+                closeMobileMenu();
+            }
+        });
+    }
+
+    // ---------------------------------------------------------
+    // 2. SEARCH BOX LOGIC
+    // ---------------------------------------------------------
+    const searchBox = document.querySelector('.search-box');
+    const searchForm = searchBox ? searchBox.querySelector('form') : null;
+    const searchInput = searchBox ? searchBox.querySelector('.form-text.form-control') : null;
+    const searchIcon = searchBox ? searchBox.querySelector('input[type="submit"]') : null;
+
+    if (searchBox && searchInput && searchIcon) {
+        // Intercept icon click to expand first, then submit if open
+        searchIcon.addEventListener('click', function(e) {
+            if (!searchBox.classList.contains('is-open')) {
+                e.preventDefault();
+                searchBox.classList.add('is-open');
+                searchInput.focus();
+            } else if (searchInput.value.trim() === '') {
+                // If open but empty, just close it instead of submitting
+                e.preventDefault();
+                searchBox.classList.remove('is-open');
+            }
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', function(e) {
+            if (searchBox.classList.contains('is-open') && !searchBox.contains(e.target)) {
+                searchBox.classList.remove('is-open');
+            }
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && searchBox.classList.contains('is-open')) {
+                searchBox.classList.remove('is-open');
+                searchInput.blur();
+            }
+        });
+    }
+
+    // ---------------------------------------------------------
+    // 3. DROPDOWN TOUCH & KEYBOARD ACCESSIBILITY
+    // ---------------------------------------------------------
+    const navItems = document.querySelectorAll('.vovvn-navbar .nav-item');
+    
+    navItems.forEach(item => {
+        const subMenu = item.querySelector('.navbar-nav-sub');
+        const link = item.querySelector('.nav-link');
+        
+        if (subMenu && link) {
+            // Touch devices: first tap opens dropdown, second tap navigates
+            link.addEventListener('click', function(e) {
+                // Only prevent default on touch devices if menu isn't open
+                if (window.innerWidth <= 1199) return; // Ignore on small screens if relying on other nav
+                
+                const isOpen = item.classList.contains('touch-open');
+                if (!isOpen && ('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
+                    e.preventDefault();
+                    
+                    // Close siblings
+                    navItems.forEach(sibling => {
+                        if (sibling !== item) sibling.classList.remove('touch-open');
+                    });
+                    
+                    item.classList.add('touch-open');
+                    // Add CSS class dynamically to force display block on touch
+                    subMenu.style.display = 'block';
+                }
+            });
+
+            // Close touch dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (item.classList.contains('touch-open') && !item.contains(e.target)) {
+                    item.classList.remove('touch-open');
+                    subMenu.style.display = '';
+                }
+            });
+        }
+    });
+
+});
+</script>
 </body>
 </html>
