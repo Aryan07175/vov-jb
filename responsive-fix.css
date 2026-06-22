@@ -1,0 +1,1361 @@
+/*
+ * =========================================================
+ * responsive-fix.css — VOV.VN Complete Responsive Overhaul
+ * =========================================================
+ * Author   : Senior Frontend Engineer (Antigravity)
+ * Scope    : Mobile-first responsive system for all breakpoints
+ * Devices  : iPhone SE → Ultrawide monitor
+ * Strategy : This file is loaded LAST so it wins all specificity
+ *            battles without touching existing HTML or JS.
+ *
+ * BREAKPOINTS:
+ *   xs  : ≤ 479px   (Extra-small phones: iPhone SE, Galaxy A)
+ *   sm  : 480–767px (Phones: iPhone 14, Galaxy S)
+ *   md  : 768–991px (Tablets: iPad, Galaxy Tab)
+ *   lg  : 992–1199px (Laptop: 13"–15")
+ *   xl  : 1200–1440px (Desktop)
+ *   xxl : 1441px+   (Large desktop, Ultrawide)
+ * =========================================================
+ */
+
+/* ─────────────────────────────────────────────────────────────────────
+   0. DESIGN TOKENS — Single source of truth
+   Override the duplicate :root blocks scattered across the inline styles
+──────────────────────────────────────────────────────────────────────── */
+:root {
+  /* Colors */
+  --rf-red:          #1d5f96;   /* VOV blue — primary brand */
+  --rf-red-dark:     #164d7d;
+  --rf-accent:       #c02a29;   /* VOV accent red */
+  --rf-text:         #222222;
+  --rf-text-sub:     #555555;
+  --rf-text-meta:    #888888;
+  --rf-bg:           #f5f5f5;
+  --rf-white:        #ffffff;
+  --rf-border:       #e5e5e5;
+
+  /* Spacing */
+  --rf-gap-sm:       8px;
+  --rf-gap-md:       16px;
+  --rf-gap-lg:       24px;
+
+  /* Container */
+  --rf-container-max: 1320px;
+  --rf-container-pad: clamp(12px, 2vw, 20px);
+
+  /* Thumbnail sizes (article-media) */
+  --rf-thumb-w:      144px;
+  --rf-thumb-h:      96px;
+
+  /* Mobile nav bar height for bottom padding */
+  --rf-mobile-nav-h: 56px;
+
+  /* Touch target minimum */
+  --rf-touch-min:    44px;
+
+  /* Nav bar height */
+  --rf-navbar-h:     45px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   1. GLOBAL RESET — No horizontal overflow anywhere
+──────────────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
+
+html,
+body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* All images are responsive by default */
+img,
+picture img,
+video,
+canvas,
+svg {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+
+/* iframes need special handling */
+iframe {
+  max-width: 100% !important;
+  border: 0;
+}
+
+/* Responsive YouTube embeds */
+iframe[src*="youtube"],
+iframe[src*="vimeo"] {
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  height: auto !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   2. CONTAINER — Fluid with sensible max-width
+──────────────────────────────────────────────────────────────────────── */
+.container,
+.container-fluid,
+.container-fluid .container {
+  width: 100% !important;
+  max-width: var(--rf-container-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--rf-container-pad) !important;
+  padding-right: var(--rf-container-pad) !important;
+}
+
+/* Body content container */
+.vovvn-body > .container,
+main > .container {
+  width: 100% !important;
+  max-width: var(--rf-container-max) !important;
+  padding-left: var(--rf-container-pad) !important;
+  padding-right: var(--rf-container-pad) !important;
+  padding-top: 16px !important;
+}
+
+/* Prevent min-width: 0 issues on flex/grid children */
+.vovvn-body .row,
+.vovvn-body .row > [class*="col"],
+.vovvn-body .home-events-config-block,
+.vovvn-body .articles-by-category {
+  min-width: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   3. CHANNEL TOP BAR (VOV1, VOV2 etc.)
+──────────────────────────────────────────────────────────────────────── */
+.bg-light.nav-channel {
+  background: var(--rf-white) !important;
+  border-bottom: 1px solid var(--rf-border) !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* The scrolling language bar */
+.nav-desktop {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  white-space: nowrap !important;
+  scrollbar-width: none !important;
+}
+
+.nav-desktop::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   4. HEADER — Responsive masthead
+──────────────────────────────────────────────────────────────────────── */
+.vovvn-header {
+  background: var(--rf-white) !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+/* Header inner container */
+.vovvn-header .vovvn-navbar-mobile {
+  width: 100% !important;
+  max-width: var(--rf-container-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--rf-container-pad) !important;
+  padding-right: var(--rf-container-pad) !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+/* Header row — responsive flex */
+.vovvn-header .row-header {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: clamp(6px, 1vw, 16px) !important;
+  width: 100% !important;
+  min-height: 68px !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+.vovvn-header .row-header > [class*="col"] {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+}
+
+/* Logo */
+.vovvn-header .logo--image img,
+.vovvn-header .branding img {
+  height: clamp(38px, 5vw, 72px) !important;
+  width: auto !important;
+  max-width: 200px !important;
+  object-fit: contain !important;
+}
+
+/* Search box */
+.vovvn-header .search-box form {
+  width: clamp(100px, 14vw, 220px) !important;
+  height: 40px !important;
+  border-radius: 24px !important;
+}
+
+.vovvn-header .search-box .form-text.form-control {
+  height: 38px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.vovvn-header .search-box input[type="submit"].button {
+  height: 38px !important;
+  width: 40px !important;
+  min-width: 40px !important;
+}
+
+/* Social icons */
+.vovvn-header .menu-social {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   5. MAIN NAVIGATION BAR — Blue VOV nav (desktop)
+──────────────────────────────────────────────────────────────────────── */
+.vovvn-navbar {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+  background: var(--rf-red) !important;
+}
+
+.vovvn-navbar .menu-container {
+  width: 100% !important;
+  max-width: var(--rf-container-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--rf-container-pad) !important;
+  padding-right: var(--rf-container-pad) !important;
+}
+
+.vovvn-navbar .nav-link {
+  white-space: nowrap !important;
+  min-height: var(--rf-touch-min) !important;
+  display: flex !important;
+  align-items: center !important;
+  color: #fff !important;
+  font-size: clamp(11px, 0.7vw, 14px) !important;
+  padding: 0 clamp(4px, 0.5vw, 10px) !important;
+}
+
+/* Dropdown submenus */
+.vovvn-navbar .navbar-nav-sub {
+  position: absolute !important;
+  top: var(--rf-navbar-h) !important;
+  left: 0 !important;
+  z-index: 9999 !important;
+  min-width: 200px !important;
+  max-width: 300px !important;
+  background: var(--rf-white) !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15) !important;
+  border-top: 3px solid var(--rf-red) !important;
+}
+
+/* Fix last few dropdowns from going offscreen to the right */
+.vovvn-navbar .nav-item:nth-last-child(-n+5) .navbar-nav-sub {
+  left: auto !important;
+  right: 0 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   6. MOBILE NAVIGATION — Horizontal scroll strip
+──────────────────────────────────────────────────────────────────────── */
+.menu-mobile-box {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: none !important;
+  background: var(--rf-white) !important;
+  border-top: 2px solid var(--rf-red) !important;
+}
+
+.menu-mobile-box::-webkit-scrollbar {
+  display: none !important;
+}
+
+.menu-mobile-new {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+}
+
+.menu-mobile-new .nav-item {
+  flex-shrink: 0 !important;
+}
+
+.menu-mobile-new .nav-link {
+  display: flex !important;
+  align-items: center !important;
+  min-height: var(--rf-touch-min) !important;
+  padding: 8px 10px !important;
+  font-size: 12px !important;
+  white-space: nowrap !important;
+  color: var(--rf-text) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   7. HERO / HOT NEWS BLOCK
+──────────────────────────────────────────────────────────────────────── */
+.home-events-config-block.hot_news {
+  width: 100% !important;
+  background: var(--rf-white) !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--rf-border) !important;
+  overflow: visible !important;
+}
+
+/* Hot news hero image */
+.home-events-config-block.hot_news .item-first img,
+.home-events-config-block.hot_news .item-first .img-fluid.w-100 {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+  aspect-ratio: 16 / 9 !important;
+}
+
+/* Hero title — fluid font size */
+.home-events-config-block.hot_news .col-left .item-first .card-title {
+  font-size: clamp(18px, 2vw, 26px) !important;
+  line-height: 1.35 !important;
+  overflow-wrap: anywhere !important;
+  max-width: 100% !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   8. ARTICLE CARDS — Universal responsive card
+──────────────────────────────────────────────────────────────────────── */
+.article-card,
+.article-card.card {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.article-card picture,
+.article-card.card picture {
+  display: block !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+.article-card picture img,
+.article-card.card picture img,
+.article-card .img-fluid.w-100 {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  object-fit: cover !important;
+  max-width: 100% !important;
+}
+
+.article-card .card-title {
+  font-size: clamp(13px, 1.2vw, 16px) !important;
+  line-height: 1.45 !important;
+  overflow-wrap: anywhere !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   9. ARTICLE-MEDIA ROWS — Thumbnail + text side by side
+──────────────────────────────────────────────────────────────────────── */
+.article-media.media {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: var(--rf-gap-sm) !important;
+  padding: 10px 0 !important;
+  border-bottom: 1px solid var(--rf-border) !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.article-media.media:last-child {
+  border-bottom: none !important;
+}
+
+/* Thumbnail anchor wrapper (clip box) */
+.article-media.media > a.vovvn-title,
+.article-media.media > a.vovvn-title.flex-shrink-0,
+.article-media.media .vovvn-title.position-relative.flex-shrink-0 {
+  flex: 0 0 var(--rf-thumb-w) !important;
+  width: var(--rf-thumb-w) !important;
+  min-width: var(--rf-thumb-w) !important;
+  max-width: var(--rf-thumb-w) !important;
+  height: var(--rf-thumb-h) !important;
+  display: block !important;
+  overflow: hidden !important;
+}
+
+/* Picture fills the clip box */
+.article-media.media picture {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+/* Image fills picture completely */
+.article-media.media picture img,
+.article-media.media .img-fluid {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 0 !important;
+  max-width: none !important;
+}
+
+/* Text body */
+.article-media.media .media-body,
+.article-media.media .flex-grow-1 {
+  flex: 1 1 0% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Title */
+.article-media.media .media-title,
+.article-media.media h5.media-title {
+  font-size: clamp(12px, 1.1vw, 15px) !important;
+  line-height: 1.45 !important;
+  word-break: break-word !important;
+  overflow-wrap: anywhere !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   10. TRENDING NEWS CAROUSEL
+──────────────────────────────────────────────────────────────────────── */
+.home-events-config-block.trending_news .carousel {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  gap: var(--rf-gap-md) !important;
+  padding: 0 var(--rf-container-pad) !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: none !important;
+}
+
+.home-events-config-block.trending_news .carousel::-webkit-scrollbar {
+  display: none !important;
+}
+
+.home-events-config-block.trending_news .carousel .item {
+  flex: 0 0 calc(25% - 12px) !important;
+  min-width: 200px !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   11. CATEGORY ROW TITLES — Responsive, horizontally scrollable on mobile
+──────────────────────────────────────────────────────────────────────── */
+.articles-by-category .row.row-title,
+.home-events-config-block .row.row-title {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: flex-end !important;
+  border-bottom: 2px solid var(--rf-accent) !important;
+  margin-bottom: 14px !important;
+  padding-bottom: 6px !important;
+  overflow-x: auto !important;
+  scrollbar-width: none !important;
+}
+
+.articles-by-category .row.row-title::-webkit-scrollbar {
+  display: none !important;
+}
+
+.articles-by-category .main-category-title a,
+.home-events-config-block .main-category-title a,
+.home-events-config-block-title,
+.home-events-config-block-title a,
+.title--red {
+  font-size: clamp(15px, 1.4vw, 20px) !important;
+  white-space: nowrap !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   12. FOOTER — Responsive
+──────────────────────────────────────────────────────────────────────── */
+footer.vovvn-footer,
+.vovvn-footer {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+.vovvn-footer .container,
+.vovvn-footer > .container {
+  padding-left: var(--rf-container-pad) !important;
+  padding-right: var(--rf-container-pad) !important;
+}
+
+.vovvn-footer img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+.vovvn-footer iframe {
+  max-width: 100% !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   13. BACK TO TOP BUTTON
+──────────────────────────────────────────────────────────────────────── */
+#backToTop {
+  position: fixed !important;
+  right: 20px !important;
+  bottom: 20px !important;
+  z-index: 9000 !important;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   14. ACCESSIBILITY — Touch targets & focus
+──────────────────────────────────────────────────────────────────────── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--rf-accent) !important;
+  outline-offset: 2px !important;
+}
+
+/* Minimum touch target size for interactive elements */
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+select {
+  min-height: var(--rf-touch-min) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   15. MISC FIXES
+──────────────────────────────────────────────────────────────────────── */
+/* Fix the JS-injected margin that causes horizontal overflow on mobile */
+@media (max-width: 767px) {
+  #block-ads-84,
+  [id*="block-ads"] {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+}
+
+/* Prevent the parent-category font from being 30px on mobile */
+.parent-category a {
+  font-size: clamp(18px, 2.5vw, 30px) !important;
+}
+
+/* Fix absolute positioned nav on mobile */
+.detail-mobile-header {
+  width: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+/* Ads blocks */
+.ads-top.advertisement,
+.ads-middle.advertisement {
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+/* Poll widget */
+.vov-poll-wrapper,
+.poll-block {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+/* Tables */
+table {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   BREAKPOINTS — Mobile-first, progressively enhanced
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────
+   BP: XXLARGE — 1441px and above (Ultrawide, Large Desktop)
+──────────────────────────────────────────────────────────────────────── */
+@media (min-width: 1441px) {
+  :root {
+    --rf-container-max: 1480px;
+    --rf-container-pad: 24px;
+    --rf-thumb-w: 160px;
+    --rf-thumb-h: 107px;
+  }
+
+  .vovvn-header .row-header {
+    min-height: 88px !important;
+  }
+
+  .vovvn-header .logo--image img,
+  .vovvn-header .branding img {
+    height: 76px !important;
+  }
+
+  .vovvn-header .search-box form {
+    width: 240px !important;
+    height: 48px !important;
+  }
+
+  .home-events-config-block.hot_news .col-left .item-first .card-title {
+    font-size: 28px !important;
+  }
+
+  .home-events-config-block.trending_news .carousel .item {
+    flex: 0 0 calc(25% - 15px) !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   BP: XLARGE — 1200–1440px (Desktop Monitor)
+──────────────────────────────────────────────────────────────────────── */
+@media (min-width: 1200px) and (max-width: 1440px) {
+  :root {
+    --rf-container-max: 1320px;
+    --rf-container-pad: 20px;
+    --rf-thumb-w: 144px;
+    --rf-thumb-h: 96px;
+  }
+
+  /* Show desktop nav */
+  .vovvn-navbar {
+    display: flex !important;
+  }
+
+  .home-events-config-block.hot_news .col-left .item-first .card-title {
+    font-size: 24px !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   BP: LARGE — 992–1199px (Laptop 13"–15")
+──────────────────────────────────────────────────────────────────────── */
+@media (min-width: 992px) and (max-width: 1199px) {
+  :root {
+    --rf-container-max: 960px;
+    --rf-container-pad: 16px;
+    --rf-thumb-w: 120px;
+    --rf-thumb-h: 80px;
+  }
+
+  /* Desktop nav visible but scrollable to fit */
+  .vovvn-navbar {
+    display: flex !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+  }
+
+  .vovvn-navbar::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .vovvn-navbar .main-menu {
+    min-width: max-content !important;
+  }
+
+  .vovvn-navbar .nav-link {
+    font-size: 12px !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+
+  .vovvn-header .row-header {
+    min-height: 70px !important;
+  }
+
+  .vovvn-header .logo--image img,
+  .vovvn-header .branding img {
+    height: 58px !important;
+  }
+
+  .vovvn-header .search-box form {
+    width: 160px !important;
+  }
+
+  /* Hot news layout: 2/3 + 1/3 */
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news) {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 260px !important;
+    gap: 18px !important;
+    align-items: start !important;
+  }
+
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news) > .col,
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news) > .col-auto {
+    width: auto !important;
+    max-width: none !important;
+    flex: none !important;
+    padding: 0 !important;
+  }
+
+  /* Hot news inner: 60/40 */
+  .home-events-config-block.hot_news {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 220px !important;
+    gap: 0 16px !important;
+    align-items: start !important;
+  }
+
+  .home-events-config-block.hot_news > .col-left,
+  .home-events-config-block.hot_news > .col-right,
+  .home-events-config-block.hot_news > .col-12.col-md-8,
+  .home-events-config-block.hot_news > .col-12.col-md-4 {
+    width: auto !important;
+    max-width: none !important;
+    flex: none !important;
+    padding: 0 !important;
+  }
+
+  .home-events-config-block.hot_news > .col-left {
+    border-right: 1px solid var(--rf-border) !important;
+    padding-right: 16px !important;
+  }
+
+  /* Main + sidebar layout */
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 260px !important;
+    gap: 20px !important;
+    align-items: start !important;
+    width: 100% !important;
+  }
+
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) > .col-xl-870,
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) > .col-xl-330 {
+    width: auto !important;
+    max-width: none !important;
+    flex: none !important;
+    padding: 0 !important;
+  }
+
+  /* Category grids */
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title) {
+    display: grid !important;
+    grid-template-columns: 40% minmax(0, 1fr) !important;
+    gap: 16px !important;
+    align-items: start !important;
+    width: 100% !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title) > .col-xl-400,
+  .articles-by-category.grid_3 > .row:not(.row-title) > .col-xl-470,
+  .articles-by-category.grid_9 > .row:not(.row-title) > .col-xl-400,
+  .articles-by-category.grid_9 > .row:not(.row-title) > .col-xl-470,
+  .articles-by-category.grid_3 > .row:not(.row-title) > .col-lg-5,
+  .articles-by-category.grid_3 > .row:not(.row-title) > .col-lg-7,
+  .articles-by-category.grid_9 > .row:not(.row-title) > .col-lg-5,
+  .articles-by-category.grid_9 > .row:not(.row-title) > .col-lg-7 {
+    width: auto !important;
+    max-width: none !important;
+    flex: none !important;
+    padding: 0 !important;
+  }
+
+  /* 3-column compact blocks */
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) > .articles-by-category.list_1.col-lg-4 {
+    width: auto !important;
+    max-width: none !important;
+    flex: none !important;
+    padding: 0 !important;
+  }
+
+  /* Trending carousel: 3-across */
+  .home-events-config-block.trending_news .carousel .item {
+    flex: 0 0 calc(33.33% - 12px) !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   BP: MEDIUM — 768–991px (Tablet: iPad, Galaxy Tab)
+──────────────────────────────────────────────────────────────────────── */
+@media (min-width: 768px) and (max-width: 991px) {
+  :root {
+    --rf-container-max: 720px;
+    --rf-container-pad: 12px;
+    --rf-thumb-w: 110px;
+    --rf-thumb-h: 73px;
+  }
+
+  /* Hide desktop nav on tablet, show mobile strip */
+  .vovvn-navbar,
+  .vovvn-navbar.d-none.d-xl-flex {
+    display: none !important;
+  }
+
+  .menu-mobile-box {
+    display: block !important;
+  }
+
+  .vovvn-header .row-header {
+    min-height: 60px !important;
+    gap: 8px !important;
+  }
+
+  .vovvn-header .logo--image img,
+  .vovvn-header .branding img {
+    height: 48px !important;
+    max-width: 140px !important;
+  }
+
+  .vovvn-header .search-box form {
+    width: 140px !important;
+    height: 36px !important;
+  }
+
+  .vovvn-header .search-box .form-text.form-control {
+    height: 34px !important;
+  }
+
+  .vovvn-header .search-box input[type="submit"].button {
+    height: 34px !important;
+    width: 36px !important;
+    min-width: 36px !important;
+  }
+
+  /* Stack hot_news + update_news sidebar */
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news),
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330) {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  /* Hot news: side by side on tablet */
+  .home-events-config-block.hot_news {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.5fr) minmax(200px, 1fr) !important;
+    gap: 0 14px !important;
+    align-items: start !important;
+  }
+
+  .home-events-config-block.hot_news > .col-left,
+  .home-events-config-block.hot_news > .col-right,
+  .home-events-config-block.hot_news > .col-12.col-md-8,
+  .home-events-config-block.hot_news > .col-12.col-md-4 {
+    width: auto !important;
+    max-width: none !important;
+    flex: none !important;
+    padding: 0 !important;
+  }
+
+  /* Category grids: 2-col on tablet */
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title) {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+    align-items: start !important;
+    width: 100% !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title) > [class*="col"],
+  .articles-by-category.grid_9 > .row:not(.row-title) > [class*="col"] {
+    width: auto !important;
+    max-width: none !important;
+    flex: none !important;
+    padding: 0 !important;
+  }
+
+  .articles-by-category.grid_3 > .row:not(.row-title) > :first-child,
+  .articles-by-category.grid_9 > .row:not(.row-title) > :first-child {
+    border-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* 3-column compact: 2-col on tablet */
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) > .articles-by-category.list_1.col-lg-4 {
+    width: auto !important;
+    max-width: none !important;
+    flex: none !important;
+    padding: 0 !important;
+  }
+
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) > .articles-by-category.list_1.col-lg-4:not(:last-child) {
+    border-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Trending carousel: 2-across on tablet */
+  .home-events-config-block.trending_news .carousel .item {
+    flex: 0 0 calc(50% - 10px) !important;
+    min-width: 180px !important;
+  }
+
+  /* Supporting articles in hot_news right col */
+  .home-events-config-block.hot_news .col-right .article-card {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    align-items: flex-start !important;
+    padding-bottom: 12px !important;
+    margin-bottom: 12px !important;
+    border-bottom: 1px solid var(--rf-border) !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card picture,
+  .home-events-config-block.hot_news .col-right .article-card picture img {
+    width: 100px !important;
+    height: 67px !important;
+    flex-shrink: 0 !important;
+    object-fit: cover !important;
+  }
+
+  /* Footer: 2-col on tablet */
+  .vovvn-footer .footer-menu .row > [class*="col"] {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+
+  /* Hide non-critical header elements on tablet */
+  .vovvn-header .box-podcast,
+  .vovvn-header .box-radio {
+    display: none !important;
+  }
+
+  /* Back-to-top has normal positioning on tablet */
+  #backToTop {
+    bottom: 20px !important;
+    right: 16px !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   BP: SMALL — 480–767px (Large Mobile: iPhone 14, Galaxy S)
+──────────────────────────────────────────────────────────────────────── */
+@media (min-width: 480px) and (max-width: 767px) {
+  :root {
+    --rf-container-max: 540px;
+    --rf-container-pad: 12px;
+    --rf-thumb-w: 100px;
+    --rf-thumb-h: 67px;
+  }
+
+  /* Hide desktop nav */
+  .vovvn-navbar,
+  .vovvn-navbar.d-none.d-xl-flex {
+    display: none !important;
+  }
+
+  /* Header: compact */
+  .vovvn-header .row-header {
+    min-height: 52px !important;
+    gap: 6px !important;
+  }
+
+  .vovvn-header .logo--image img,
+  .vovvn-header .branding img {
+    height: 38px !important;
+    max-width: 120px !important;
+  }
+
+  /* Hide non-critical header items */
+  .vovvn-header .custom-weather,
+  .vovvn-header .box-podcast,
+  .vovvn-header .box-radio {
+    display: none !important;
+  }
+
+  .vovvn-header .search-box form {
+    width: 120px !important;
+    height: 36px !important;
+  }
+
+  .vovvn-header .search-box .form-text.form-control {
+    height: 34px !important;
+    padding-left: 10px !important;
+  }
+
+  .vovvn-header .search-box input[type="submit"].button {
+    height: 34px !important;
+    width: 36px !important;
+    min-width: 36px !important;
+  }
+
+  /* Stack all main content */
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news),
+  .home-events-config-block.hot_news,
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330),
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title) {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0 !important;
+    width: 100% !important;
+  }
+
+  .home-events-config-block.hot_news > .col-left,
+  .articles-by-category.grid_3 > .row:not(.row-title) > :first-child,
+  .articles-by-category.grid_9 > .row:not(.row-title) > :first-child {
+    border-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .home-events-config-block.hot_news > .col-right {
+    border-top: 1px solid var(--rf-border) !important;
+    margin-top: 14px !important;
+    padding-top: 14px !important;
+    padding-left: 0 !important;
+  }
+
+  /* 3-column compact: 2-col on large phone */
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) > .articles-by-category.list_1.col-lg-4 {
+    width: auto !important;
+    max-width: none !important;
+    flex: none !important;
+    padding: 0 !important;
+  }
+
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) > .articles-by-category.list_1.col-lg-4:not(:last-child) {
+    border-right: 0 !important;
+  }
+
+  /* Supporting articles: flex row */
+  .home-events-config-block.hot_news .col-right .article-card {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    align-items: flex-start !important;
+    padding-bottom: 12px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card picture,
+  .home-events-config-block.hot_news .col-right .article-card picture img {
+    width: 100px !important;
+    height: 67px !important;
+    flex-shrink: 0 !important;
+    object-fit: cover !important;
+  }
+
+  /* Trending: 50% items */
+  .home-events-config-block.trending_news .carousel .item {
+    flex: 0 0 calc(50% - 10px) !important;
+    min-width: 200px !important;
+  }
+
+  /* Footer: 50% cols */
+  .vovvn-footer .footer-menu .row > [class*="col"] {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+
+  /* Bottom mobile nav: fixed at bottom */
+  .menu-mobile-box {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    border-top: 2px solid var(--rf-red) !important;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1) !important;
+  }
+
+  /* Add padding to footer so content doesn't hide behind fixed nav */
+  .vovvn-footer {
+    padding-bottom: calc(var(--rf-mobile-nav-h) + 16px) !important;
+  }
+
+  /* Back-to-top above mobile nav */
+  #backToTop {
+    bottom: calc(var(--rf-mobile-nav-h) + 12px) !important;
+    right: 12px !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   BP: XSMALL — 320–479px (Extra-small: iPhone SE, Galaxy A32)
+──────────────────────────────────────────────────────────────────────── */
+@media (max-width: 479px) {
+  :root {
+    --rf-container-max: 100%;
+    --rf-container-pad: 10px;
+    --rf-thumb-w: 80px;
+    --rf-thumb-h: 53px;
+  }
+
+  html {
+    font-size: 14px !important;
+  }
+
+  /* Header: very compact */
+  .vovvn-header .row-header {
+    min-height: 48px !important;
+    gap: 4px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .vovvn-header .logo--image img,
+  .vovvn-header .branding img {
+    height: 32px !important;
+    max-width: 100px !important;
+  }
+
+  /* Hide ALL non-critical header elements on small phone */
+  .vovvn-header .custom-weather,
+  .vovvn-header .box-podcast,
+  .vovvn-header .box-radio,
+  .vovvn-header .menu-social,
+  .vovvn-header .language-link {
+    display: none !important;
+  }
+
+  .vovvn-header .search-box form {
+    width: 90px !important;
+    height: 34px !important;
+  }
+
+  .vovvn-header .search-box .form-text.form-control {
+    height: 32px !important;
+    width: 52px !important;
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+  }
+
+  .vovvn-header .search-box input[type="submit"].button {
+    height: 32px !important;
+    width: 32px !important;
+    min-width: 32px !important;
+  }
+
+  /* All layouts: single column */
+  .vovvn-body > .container > .row:has(.home-events-config-block.hot_news),
+  .home-events-config-block.hot_news,
+  .vovvn-body .row:has(> .col-xl-870):has(> .col-xl-330),
+  .articles-by-category.grid_3 > .row:not(.row-title),
+  .articles-by-category.grid_9 > .row:not(.row-title),
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) {
+    display: block !important;
+    grid-template-columns: none !important;
+    width: 100% !important;
+  }
+
+  /* Reset Bootstrap col widths */
+  [class*="col-xl-"],
+  [class*="col-lg-"],
+  [class*="col-md-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* But header col-auto stays auto */
+  .row-header > .col-auto {
+    width: auto !important;
+    flex: 0 0 auto !important;
+    max-width: none !important;
+  }
+
+  /* Remove all borders from stacked columns */
+  .home-events-config-block.hot_news > .col-left,
+  .articles-by-category.grid_3 > .row:not(.row-title) > :first-child,
+  .articles-by-category.grid_9 > .row:not(.row-title) > :first-child,
+  .vovvn-body .row:has(> .articles-by-category.list_1.col-lg-4) > .articles-by-category.list_1.col-lg-4:not(:last-child) {
+    border-right: none !important;
+    padding-right: 0 !important;
+  }
+
+  .home-events-config-block.hot_news > .col-right {
+    border-top: 1px solid var(--rf-border) !important;
+    margin-top: 12px !important;
+    padding-top: 12px !important;
+    padding-left: 0 !important;
+  }
+
+  /* Hot news hero title */
+  .home-events-config-block.hot_news .col-left .item-first .card-title {
+    font-size: 17px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Supporting articles: flex row on phone */
+  .home-events-config-block.hot_news .col-right .article-card {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important;
+    align-items: flex-start !important;
+    grid-template-columns: none !important;
+  }
+
+  .home-events-config-block.hot_news .col-right .article-card picture,
+  .home-events-config-block.hot_news .col-right .article-card picture img {
+    width: 80px !important;
+    height: 53px !important;
+    flex-shrink: 0 !important;
+    object-fit: cover !important;
+  }
+
+  /* Text list links below featured article */
+  .home-events-config-block.hot_news .list.item-third.articles-list {
+    display: block !important;
+    grid-template-columns: none !important;
+  }
+
+  /* Category titles */
+  .articles-by-category .main-category-title a,
+  .home-events-config-block-title,
+  .title--red {
+    font-size: 15px !important;
+  }
+
+  /* Card titles */
+  .article-card.card .card-title {
+    font-size: 13px !important;
+  }
+
+  /* Trending: almost full width */
+  .home-events-config-block.trending_news .carousel .item {
+    flex: 0 0 88% !important;
+    min-width: 220px !important;
+  }
+
+  /* Popular news: single column */
+  .home-events-config-block.popular_news .list.articles-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Footer: single column */
+  .vovvn-footer .footer-menu .row > [class*="col"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* Footer padded for fixed mobile nav */
+  .vovvn-footer {
+    padding-bottom: calc(var(--rf-mobile-nav-h) + 20px) !important;
+  }
+
+  /* Fixed mobile nav */
+  .menu-mobile-box {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    border-top: 2px solid var(--rf-red) !important;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1) !important;
+  }
+
+  /* Back-to-top above mobile nav */
+  #backToTop {
+    bottom: calc(var(--rf-mobile-nav-h) + 10px) !important;
+    right: 10px !important;
+  }
+
+  /* Nav link touch targets */
+  .menu-mobile-new .nav-link {
+    min-height: 44px !important;
+    padding: 10px 8px !important;
+    font-size: 11px !important;
+  }
+
+  /* Fix JS-injected negative margins */
+  .vovvn-body [style*="margin-left"],
+  .vovvn-body [style*="marginLeft"] {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   PRINT STYLES
+──────────────────────────────────────────────────────────────────────── */
+@media print {
+  .vovvn-header,
+  .vovvn-navbar,
+  .bg-light.nav-channel,
+  footer.vovvn-footer,
+  #backToTop,
+  .menu-mobile-box,
+  .ads-top,
+  .ads-middle,
+  .sub-menu {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 12pt !important;
+  }
+
+  a {
+    text-decoration: underline !important;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+}
